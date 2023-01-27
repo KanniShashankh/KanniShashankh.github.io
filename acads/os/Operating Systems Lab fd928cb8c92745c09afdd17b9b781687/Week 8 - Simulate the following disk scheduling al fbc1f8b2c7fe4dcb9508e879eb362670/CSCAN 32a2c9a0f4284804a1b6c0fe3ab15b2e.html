@@ -666,4 +666,60 @@ blockquote {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style></head><body><article id="32a2c9a0-f428-4804-a1b6-c0fe3ab15b2e" class="page sans"><header><h1 class="page-title">CSCAN</h1></header><div class="page-body"></div></article></body></html>
+</style></head><body><article id="32a2c9a0-f428-4804-a1b6-c0fe3ab15b2e" class="page sans"><header><h1 class="page-title">CSCAN</h1></header><div class="page-body"><pre id="77ff200f-7376-48a4-b63b-cb4084850b58" class="code"><code>#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+int main()
+{
+    int ARRAY[100],i,j,n,Total=0,h,size;
+    printf(&quot;Enter the number of Requests\n&quot;);
+    scanf(&quot;%d&quot;,&amp;n);
+    printf(&quot;Enter the Requests sequence\n&quot;);
+    for(i=0;i&lt;n;i++)
+     scanf(&quot;%d&quot;,&amp;ARRAY[i]);
+    printf(&quot;Enter h head position\n&quot;);
+    scanf(&quot;%d&quot;,&amp;h);
+    printf(&quot;Enter total disk size\n&quot;);
+    scanf(&quot;%d&quot;,&amp;size);
+    for(i=0;i&lt;n;i++)
+    {
+        for( j=0;j&lt;n-i-1;j++)
+        {
+            if(ARRAY[j]&gt;ARRAY[j+1])
+            {
+                int temp;
+                temp=ARRAY[j];
+                ARRAY[j]=ARRAY[j+1];
+                ARRAY[j+1]=temp;
+            }
+
+        }
+    }
+
+    int index;
+    for(i=0;i&lt;n;i++)
+    {
+        if(h&lt;ARRAY[i])
+        {
+            index=i;
+            break;
+        }
+    }
+    for(i=index-1;i&gt;=0;i--)
+        {
+            Total=Total+abs(ARRAY[i]-h);
+            h=ARRAY[i];
+        }
+        
+        Total=Total+abs(ARRAY[i+1]-0);
+        Total=Total+abs(size-1-0);
+        h =size-1;
+        for(i=n-1;i&gt;=index;i--)
+        {
+             Total=Total+abs(ARRAY[i]-h);
+             h=ARRAY[i];
+            
+        }
+    printf(&quot;Total head movement is %d&quot;,Total);
+    return 0;
+
+}</code></pre></div></article></body></html>

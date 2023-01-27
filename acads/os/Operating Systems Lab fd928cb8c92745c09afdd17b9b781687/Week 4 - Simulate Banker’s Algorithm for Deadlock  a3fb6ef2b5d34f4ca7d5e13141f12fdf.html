@@ -666,5 +666,104 @@ blockquote {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style></head><body><article id="a3fb6ef2-b5d3-4f4c-a7d5-e13141f12fdf" class="page sans"><header><h1 class="page-title">Week 4 - Simulate Banker’s Algorithm for Deadlock Avoidance.</h1></header><div class="page-body"><p id="f4052de9-7bc9-4685-a58a-e4bca9b7f051" class="">
-</p></div></article></body></html>
+</style></head><body><article id="a3fb6ef2-b5d3-4f4c-a7d5-e13141f12fdf" class="page sans"><header><h1 class="page-title">Week 4 - Simulate Banker’s Algorithm for Deadlock Avoidance.</h1></header><div class="page-body"><pre id="cb568c94-2d9e-4211-a27d-04c5769f21ad" class="code"><code>#include &lt;stdio.h&gt;
+int main()
+{
+int Max[10][10], need[10][10], allocation[10][10], available[10], completed[10], safeSequence[10];
+int p, r, i, j, process, count;
+count = 0;
+
+printf(&quot;Enter the number of processes : &quot;);
+scanf(&quot;%d&quot;, &amp;p);
+
+for(i = 0; i&lt; p; i++)
+ completed[i] = 0;
+
+printf(&quot;\nEnter the number of resources : &quot;);
+scanf(&quot;%d&quot;, &amp;r);
+
+printf(&quot;\nEnter the MAX Matrix for each process : \n&quot;);
+for(i = 0; i &lt; p; i++)
+{
+ printf(&quot;For process %d : &quot;, i + 1);
+ for(j = 0; j &lt; r; j++)
+  scanf(&quot;%d&quot;, &amp;Max[i][j]);
+}
+
+printf(&quot;\n\nEnter the ALLOCATION for each process : \n&quot;);
+for(i = 0; i &lt; p; i++)
+{
+ printf(&quot;For process %d : &quot;,i + 1);
+ for(j = 0; j &lt; r; j++)
+  scanf(&quot;%d&quot;, &amp;allocation[i][j]); 
+}
+
+printf(&quot;\n\nEnter the AVAILABLE Resources : &quot;);
+for(i = 0; i &lt; r; i++)
+  scanf(&quot;%d&quot;, &amp;available[i]); 
+
+
+ for(i = 0; i &lt; p; i++)
+  for(j = 0; j &lt; r; j++)
+   need[i][j] = Max[i][j] - allocation[i][j];
+  
+do
+{
+ printf(&quot;\n Max matrix:\tALLOCATION matrix:\n&quot;);
+ for(i = 0; i &lt; p; i++)
+ {
+  for( j = 0; j &lt; r; j++)
+   printf(&quot;%d  &quot;, Max[i][j]);
+  printf(&quot;\t\t&quot;);
+  for( j = 0; j &lt; r; j++)
+   printf(&quot;%d  &quot;, allocation[i][j]);
+  printf(&quot;\n&quot;);
+ }
+
+ process = -1;
+
+ for(i = 0; i &lt; p; i++)
+ {
+  if(completed[i] == 0)
+  {
+   process = i ;
+   for(j = 0; j &lt; r; j++)
+   {
+    if(available[j] &lt; need[i][j])
+    {
+     process = -1;
+     break;
+    }
+   }
+  }
+  if(process != -1)
+   break;
+ }
+
+ if(process != -1)
+ {
+  printf(&quot;\nProcess %d runs to completion!&quot;, process + 1);
+  safeSequence[count] = process + 1;
+  count++;
+  for(j = 0; j &lt; r; j++)
+  {
+   available[j] += allocation[process][j];
+   allocation[process][j] = 0;
+   Max[process][j] = 0;
+   completed[process] = 1;
+  }
+ }
+}while(count != p &amp;&amp; process != -1);
+
+if(count == p)
+{
+ printf(&quot;\nThe system is in a SAFE state!!\n&quot;);
+ printf(&quot;Safe Sequence : &lt; &quot;);
+ for( i = 0; i &lt; p; i++)
+   printf(&quot;%d  &quot;, safeSequence[i]);
+ printf(&quot;&gt;\n&quot;);
+}
+else
+ printf(&quot;\nThe system is in an UNSAFE state!!&quot;);
+
+}</code></pre></div></article></body></html>

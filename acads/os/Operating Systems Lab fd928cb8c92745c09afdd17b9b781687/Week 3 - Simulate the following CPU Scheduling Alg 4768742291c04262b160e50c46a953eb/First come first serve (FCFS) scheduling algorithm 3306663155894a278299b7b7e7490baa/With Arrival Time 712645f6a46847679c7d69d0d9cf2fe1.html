@@ -1,4 +1,4 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Week 2 - Linux Shell Scripts</title><style>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>With Arrival Time</title><style>
 /* cspell:disable-file */
 /* webkit printing magic: print all background colors */
 html {
@@ -666,26 +666,72 @@ blockquote {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style></head><body><article id="a393571a-23fb-4691-94bb-f0eb08b87e81" class="page sans"><header><h1 class="page-title">Week 2 - Linux Shell Scripts</h1></header><div class="page-body"><ol type="1" id="709d878d-2121-432e-979b-705925e289e1" class="numbered-list" start="1"><li><strong>Write a Linux shell script program to create and print the value of variables</strong></li></ol><pre id="976087ee-0801-4689-986c-5fd6ab403b58" class="code"><code>#filename : &quot;printvar.sh&quot;
-Country=&quot;India&quot;
-year=2023
-echo &quot;Country name : $Country&quot;
-echo &quot;Year : $year&quot;</code></pre><figure id="cfaf6cf0-61a5-4051-ab35-4242d9d67196" class="image"><a href="Week%202%20-%20Linux%20Shell%20Scripts%20a393571a23fb469194bbf0eb08b87e81/Screenshot_2023-01-27_at_12.41.31_PM.png"><img style="width:1424px" src="Week%202%20-%20Linux%20Shell%20Scripts%20a393571a23fb469194bbf0eb08b87e81/Screenshot_2023-01-27_at_12.41.31_PM.png"/></a></figure><hr id="2b71e26c-4cc7-4d17-982c-19be9a93de0d"/><ol type="1" id="eddb789f-a75b-4a1e-9ed8-238a57acfb12" class="numbered-list" start="2"><li><strong> Write a linux shell script program to print program name using command line argument</strong></li></ol><pre id="b53be269-9236-401e-b7a1-b78bd01b5fa3" class="code"><code>#program name : &quot;script_name.sh&quot;
-echo &quot;script program name : $0&quot;</code></pre><figure id="2704f1f5-36ec-4605-8692-15910e8e57d2" class="image"><a href="Week%202%20-%20Linux%20Shell%20Scripts%20a393571a23fb469194bbf0eb08b87e81/Screenshot_2023-01-27_at_12.45.10_PM.png"><img style="width:1630px" src="Week%202%20-%20Linux%20Shell%20Scripts%20a393571a23fb469194bbf0eb08b87e81/Screenshot_2023-01-27_at_12.45.10_PM.png"/></a></figure><hr id="7f721928-e27d-4140-9c92-8742792a419c"/><ol type="1" id="62b829ae-971b-4c99-980b-f64756193b44" class="numbered-list" start="3"><li><strong>Write a Linux shell script program to read two integer numbers and print the sum, difference, product.</strong>	</li></ol><pre id="cf5e9768-2eb9-44d9-be40-c9cc8e068c98" class="code"><code>#program name : &quot;arithmetic.sh&quot;
-echo &quot;Enter num1 : &quot;
-read num1
-echo &quot;Enter num2 : &quot;
-read num2
-result=$(($num1 + $num2))
-diff=$(($num1 - $num2))
-prod=$(($num1 * $num2))
-echo &quot;Sum : $result&quot;
-echo &quot;Subtraction : $diff&quot;
-echo &quot;Product : $prod&quot;</code></pre><figure id="906552be-3058-49b5-a0d5-2d154924c7ba" class="image"><a href="Week%202%20-%20Linux%20Shell%20Scripts%20a393571a23fb469194bbf0eb08b87e81/Screenshot_2023-01-27_at_12.52.23_PM.png"><img style="width:1158px" src="Week%202%20-%20Linux%20Shell%20Scripts%20a393571a23fb469194bbf0eb08b87e81/Screenshot_2023-01-27_at_12.52.23_PM.png"/></a></figure><hr id="913f9631-55d6-4a70-b47a-b76df27cd147"/><ol type="1" id="ae656990-7247-4df2-8fe4-402ffa6316b4" class="numbered-list" start="4"><li><strong>Write a Linux shell script to print multiplication table.</strong></li></ol><pre id="9809e331-419f-4c1d-81b0-e2a9e84faffa" class="code"><code># printing table
-echo &quot;Enter a number :&quot;
-read num
-i=1
-for i in {1..10}
-do
-  echo &quot;$num x $i = $(($num * $i))&quot;
-done</code></pre><figure id="a68d989f-a166-4614-b2d4-ed347b313138" class="image"><a href="Week%202%20-%20Linux%20Shell%20Scripts%20a393571a23fb469194bbf0eb08b87e81/Screenshot_2023-01-27_at_12.59.41_PM.png"><img style="width:1364px" src="Week%202%20-%20Linux%20Shell%20Scripts%20a393571a23fb469194bbf0eb08b87e81/Screenshot_2023-01-27_at_12.59.41_PM.png"/></a></figure></div></article></body></html>
+</style></head><body><article id="712645f6-a468-4767-9c7d-69d0d9cf2fe1" class="page sans"><header><h1 class="page-title">With Arrival Time</h1></header><div class="page-body"><pre id="4751c2d3-8a35-4db6-b0f7-e628d10b07c7" class="code"><code>#include&lt;stdio.h&gt;
+int main()
+{
+    int  p[10],at[10],bt[10],ct[10],tat[10],wt[10],i,j,temp=0,n;
+    float awt=0,atat=0;
+    printf(&quot;enter no of proccess you want:&quot;);
+    scanf(&quot;%d&quot;,&amp;n);
+    printf(&quot;enter %d process:&quot;,n);
+    for(i=0;i&lt;n;i++)
+    {
+    scanf(&quot;%d&quot;,&amp;p[i]);
+    }
+    printf(&quot;enter %d arrival time:&quot;,n);
+    for(i=0;i&lt;n;i++)
+    {
+    scanf(&quot;%d&quot;,&amp;at[i]);
+    }
+    printf(&quot;enter %d burst time:&quot;,n);
+    for(i=0;i&lt;n;i++)
+    {
+    scanf(&quot;%d&quot;,&amp;bt[i]);
+    }
+    for(i=0;i&lt;n;i++)
+    {
+     for(j=0;j&lt;(n-i);j++)
+    {
+      if(at[j]&gt;at[j+1])
+     {
+        temp=p[j+1];
+        p[j+1]=p[j];
+        p[j]=temp;
+        temp=at[j+1];
+        at[j+1]=at[j];
+        at[j]=temp;
+        temp=bt[j+1];
+        bt[j+1]=bt[j];
+        bt[j]=temp;
+      }
+     }
+    }
+    ct[0]=at[0]+bt[0];
+    for(i=1;i&lt;n;i++)
+    {  
+      temp=0;
+     if(ct[i-1]&lt;at[i])
+     {
+        temp=at[i]-ct[i-1];
+     }
+     ct[i]=ct[i-1]+bt[i]+temp;
+    }
+    printf(&quot;\np\t A.T\t B.T\t C.T\t TAT\t WT&quot;);
+    for(i=0;i&lt;n;i++)
+    {
+    tat[i]=ct[i]-at[i];
+    wt[i]=tat[i]-bt[i];
+    atat+=tat[i];
+    awt+=wt[i];
+    }
+    atat=atat/n;
+    awt=awt/n;
+    for(i=0;i&lt;n;i++)
+    {
+      printf(&quot;\nP%d\t %d\t %d\t %d \t %d \t %d&quot;,p[i],at[i],bt[i],ct[i],tat[i],wt[i]);
+    }
+    printf(&quot;\naverage turnaround time is %f&quot;,atat);
+
+    printf(&quot;\naverage wating timme is %f&quot;,awt);
+    return 0;
+}</code></pre></div></article></body></html>

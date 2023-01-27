@@ -666,4 +666,38 @@ blockquote {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style></head><body><article id="4d3b8240-4f1b-474b-b84f-7ca9b43dc58c" class="page sans"><header><h1 class="page-title">SSTF</h1></header><div class="page-body"></div></article></body></html>
+</style></head><body><article id="4d3b8240-4f1b-474b-b84f-7ca9b43dc58c" class="page sans"><header><h1 class="page-title">SSTF</h1></header><div class="page-body"><pre id="b506e03e-ad02-416d-b90d-df3e0f9dd088" class="code"><code>#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+int main()
+{
+    int ARRAY[100],i,n,Total=0,h,count=0;
+    printf(&quot;Enter the number of Requests\n&quot;);
+    scanf(&quot;%d&quot;,&amp;n);
+    printf(&quot;Enter the Requests sequence\n&quot;);
+    for(i=0;i&lt;n;i++)
+     scanf(&quot;%d&quot;,&amp;ARRAY[i]);
+    printf(&quot;Enter h head position\n&quot;);
+    scanf(&quot;%d&quot;,&amp;h);
+    while(count!=n)
+    {
+        int min=1000,d,index;
+        for(i=0;i&lt;n;i++)
+        {
+           d=abs(ARRAY[i]-h);
+           if(min&gt;d)
+           {
+               min=d;
+               index=i;
+           }
+           
+        }
+        Total=Total+min;
+        h=ARRAY[index];
+        
+        ARRAY[index]=1000;
+        count++;
+    }
+    
+    printf(&quot;Total head movement is %d&quot;,Total);
+    return 0;
+}</code></pre></div></article></body></html>
