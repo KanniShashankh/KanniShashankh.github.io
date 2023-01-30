@@ -666,65 +666,61 @@ blockquote {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style></head><body><article id="89383f52-8ce8-45f9-9bcf-571436e927d8" class="page sans"><header><h1 class="page-title">Without Arrival Time</h1></header><div class="page-body"><pre id="1b3b9a11-edbc-4724-b1c7-5af9de6390db" class="code"><code>#include&lt;stdio.h&gt;
- int main()
+</style></head><body><article id="89383f52-8ce8-45f9-9bcf-571436e927d8" class="page sans"><header><h1 class="page-title">Without Arrival Time</h1></header><div class="page-body"><pre id="1b3b9a11-edbc-4724-b1c7-5af9de6390db" class="code"><code>#include &lt;stdio.h&gt;
+
+void swap(int* xp, int* yp)
 {
-    int bt[20],p[20],wt[20],tat[20],i,j,n,total=0,pos,temp;
-    float avg_wt,avg_tat;
-    printf(&quot;Enter number of process:&quot;);
-    scanf(&quot;%d&quot;,&amp;n);
-  
-    printf(&quot;\nEnter Burst Time:n&quot;);
-    for(i=0;i&lt;n;i++)
-    {
-        printf(&quot;p%d:&quot;,i+1);
-        scanf(&quot;%d&quot;,&amp;bt[i]);
-        p[i]=i+1;         
-    }
-  
-  
-    for(i=0;i&lt;n;i++)
-    {
-        pos=i;
-        for(j=i+1;j&lt;n;j++)
-        {
-            if(bt[j]&lt;bt[pos])
-                pos=j;
+    int temp = *xp;
+    *xp = *yp;
+    *yp = temp;
+}
+
+void sort_array(int times[], int process[], int n){
+    int i, j;
+    for(i = 0; i &lt; n-1; i++){
+        for(j = 0; j &lt; n-i-1; j++){
+            if(times[j] &gt; times[j+1]){
+                swap(&amp;times[j], &amp;times[j+1]);
+                swap(&amp;process[j], &amp;process[j+1]);
+            }
         }
-  
-        temp=bt[i];
-        bt[i]=bt[pos];
-        bt[pos]=temp;
-  
-        temp=p[i];
-        p[i]=p[pos];
-        p[pos]=temp;
     }
-   
-    wt[0]=0;            
-    for(i=1;i&lt;n;i++)
+}
+
+int main()
+{
+    int n;
+    printf(&quot;Enter the number of processes: &quot;);
+    scanf(&quot;%d&quot;, &amp;n);
+
+    int burst_time[n], waiting_time[n], turnaround_time[n], process_id[n];
+    float avg_wt = 0, avg_tat = 0;
+    printf(&quot;Enter the burst time of processes: &quot;);
+    for (int i = 0; i &lt; n; i++)
     {
-        wt[i]=0;
-        for(j=0;j&lt;i;j++)
-            wt[i]+=bt[j];
-  
-        total+=wt[i];
+        scanf(&quot;%d&quot;, &amp;burst_time[i]);
+        process_id[i] = i+1;
     }
-  
-    avg_wt=(float)total/n;      
-    total=0;
-  
-    printf(&quot;nProcesst    Burst Time    tWaiting TimetTurnaround Time&quot;);
-    for(i=0;i&lt;n;i++)
-    {
-        tat[i]=bt[i]+wt[i];   
-        total+=tat[i];
-        printf(&quot;\n&quot;);
-        printf(&quot;np %d\t\t  %d\t\t    %d\t\t\t%d&quot;,p[i],bt[i],wt[i],tat[i]);
-        printf(&quot;\n&quot;);
+    sort_array(burst_time, process_id, n);
+    waiting_time[0] = 0;
+    for(int i = 1; i &lt; n; i++){
+        waiting_time[i] = waiting_time[i-1] + burst_time[i];
     }
-  
-    avg_tat=(float)total/n;    
-    printf(&quot;nnAverage Waiting Time=%f&quot;,avg_wt);
-    printf(&quot;nAverage Turnaround Time=%fn&quot;,avg_tat);
+    for(int i = 0; i &lt; n; i++){
+        turnaround_time[i] = waiting_time[i] + burst_time[i];
+    }
+    for(int i = 0; i &lt; n; i++){
+        avg_tat += turnaround_time[i];
+        avg_wt += waiting_time[i];
+    }
+    avg_tat /= n;
+    avg_wt /= n;
+    printf(&quot;\nProcess\tBurst Time\tWaiting Time\tTurnaround Time\n&quot;   );
+    for(int i = 0; i &lt; n; i++){
+        printf(&quot;%d\t%d\t\t%d\t\t%d \n&quot;, process_id[i], burst_time[i], waiting_time[i], turnaround_time[i]);
+    }
+    printf(&quot;\nAverage Waiting Time: %f\n&quot;, avg_wt);
+    printf(&quot;\nAverage Turnaround Time: %f\n&quot;, avg_tat);
+    return 0;
+
 }</code></pre></div></article></body></html>

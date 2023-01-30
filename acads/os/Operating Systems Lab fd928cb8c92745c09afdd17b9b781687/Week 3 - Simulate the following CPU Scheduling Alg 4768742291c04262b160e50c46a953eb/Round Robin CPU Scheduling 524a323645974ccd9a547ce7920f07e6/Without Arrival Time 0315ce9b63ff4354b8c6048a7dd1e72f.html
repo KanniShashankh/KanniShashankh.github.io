@@ -666,5 +666,102 @@ blockquote {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style></head><body><article id="0315ce9b-63ff-4354-b8c6-048a7dd1e72f" class="page sans"><header><h1 class="page-title">Without Arrival Time</h1></header><div class="page-body"><p id="6532f465-abb3-4b2f-a1c1-4e6e8be43041" class="">
-</p></div></article></body></html>
+</style></head><body><article id="0315ce9b-63ff-4354-b8c6-048a7dd1e72f" class="page sans"><header><h1 class="page-title">Without Arrival Time</h1></header><div class="page-body"><pre id="21905eee-0a5f-4602-806f-0355cd603255" class="code"><code>#include &lt;stdio.h&gt;
+#include &lt;stdbool.h&gt;
+
+void findWaitingTime(int processes[], int n,
+			int bt[], int wt[], int quantum)
+{
+	int rem_bt[n];
+	for (int i = 0 ; i &lt; n ; i++)
+		rem_bt[i] = bt[i];
+
+	int t = 0; 
+	while (1)
+	{
+		bool done = true;
+		for (int i = 0 ; i &lt; n; i++)
+		{
+			if (rem_bt[i] &gt; 0)
+			{
+				done = false; // There is a pending process
+
+				if (rem_bt[i] &gt; quantum)
+				{
+					t += quantum;
+
+					rem_bt[i] -= quantum;
+				}
+
+				else
+				{
+					t = t + rem_bt[i];
+
+					wt[i] = t - bt[i];
+
+					rem_bt[i] = 0;
+				}
+			}
+		}
+		if (done == true)
+		break;
+	}
+}
+
+void findTurnAroundTime(int processes[], int n,
+						int bt[], int wt[], int tat[])
+{
+	for (int i = 0; i &lt; n ; i++)
+		tat[i] = bt[i] + wt[i];
+}
+
+void findavgTime(int processes[], int n, int bt[],
+									int quantum)
+{
+	int wt[n], tat[n];
+    float total_wt = 0, total_tat = 0;
+
+	findWaitingTime(processes, n, bt, wt, quantum);
+
+	findTurnAroundTime(processes, n, bt, wt, tat);
+
+    printf(&quot;Processes | Burst time | Waiting time | Turn around time\n&quot;);
+    for (int i=0; i&lt;n; i++)
+    {
+        total_wt = total_wt + wt[i];
+        total_tat = total_tat + tat[i];
+        printf(&quot; %d \t    &quot;,(i+1));
+        printf(&quot; %d \t          &quot;, bt[i] );
+        printf(&quot; %d \t     &quot;,wt[i] );
+        printf(&quot; %d \t     \n&quot;,tat[i] );
+    }
+    total_tat /= n;
+    total_wt /= n;
+    printf(&quot;Average waiting time = %f \n&quot;, total_wt);
+    printf(&quot;Average turn around time = %f \n&quot;, total_tat);
+
+
+}
+
+// Driver code
+int main()
+{
+	printf(&quot;Enter the number of processes: &quot;);
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    int processes[n];
+    int burst_time[n];
+    printf(&quot;Enter the burst time of processes: &quot;);
+    for (int i = 0; i &lt; n; i++)
+    {
+        scanf(&quot;%d&quot;, &amp;burst_time[i]);
+        processes[i] = i+1;
+    }
+	int quantum = 2;
+    // ask for quantum
+    printf(&quot;Enter the quantum: &quot;);
+    scanf(&quot;%d&quot;, &amp;quantum);
+    
+	findavgTime(processes, n, burst_time, quantum);
+	return 0;
+}</code></pre></div></article></body></html>

@@ -666,4 +666,37 @@ blockquote {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style></head><body><article id="65210997-f57b-4724-a4c7-6ded4ca96701" class="page sans"><header><h1 class="page-title">Without Arrival Time</h1></header><div class="page-body"></div></article></body></html>
+</style></head><body><article id="65210997-f57b-4724-a4c7-6ded4ca96701" class="page sans"><header><h1 class="page-title">Without Arrival Time</h1></header><div class="page-body"><pre id="fd19679f-d68e-4c49-bd14-8779e7b40123" class="code"><code>#include &lt;stdio.h&gt;
+
+int main()
+{
+    int n;
+    printf(&quot;Enter the number of processes: &quot;);
+    scanf(&quot;%d&quot;, &amp;n);
+    int bt[n], wt[n], tat[n];
+    float avg_wt = 0, avg_tat = 0;
+    printf(&quot;Enter the burst time of processes: &quot;);
+    for (int i = 0; i &lt; n; i++)
+    {
+        scanf(&quot;%d&quot;, &amp;bt[i]);
+    }
+    wt[0] = 0;
+    for (int i = 1; i &lt; n; i++)
+    {
+        wt[i] = wt[i - 1] + bt[i - 1];
+    }
+    for (int i = 0; i &lt; n; i++)
+    {
+        tat[i] = wt[i] + bt[i];
+    }
+    for (int i = 0; i &lt; n; i++)
+    {
+        avg_wt += wt[i];
+        avg_tat += tat[i];
+    }
+    avg_wt /= n;
+    avg_tat /= n;
+    printf(&quot;Average waiting time: %f\n&quot;, avg_wt);
+    printf(&quot;Average turn around time: %f\n&quot;, avg_tat);
+    return 0;
+}</code></pre></div></article></body></html>
