@@ -666,4 +666,79 @@ blockquote {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style></head><body><article id="0986b7f5-011e-4d84-b7db-068b210d1bcd" class="page sans"><header><h1 class="page-title">Worst-Fit</h1></header><div class="page-body"></div></article></body></html>
+</style></head><body><article id="0986b7f5-011e-4d84-b7db-068b210d1bcd" class="page sans"><header><h1 class="page-title">Worst-Fit</h1></header><div class="page-body"><pre id="c10cb1a4-cdd9-4860-a1f6-78c2ef14c227" class="code"><code>// C++ implementation of Worst - Fit algorithm
+#include&lt;stdio.h&gt;
+
+void worstFit(int blockSize[], int m, int processSize[],
+                                                 int n)
+{
+    // Stores block id of the block allocated to a
+    // process
+    int allocation[n];
+ 
+    // Initially no block is assigned to any process
+    memset(allocation, -1, sizeof(allocation));
+ 
+    // pick each process and find suitable blocks
+    // according to its size ad assign to it
+    for (int i=0; i&lt;n; i++)
+    {
+        // Find the best fit block for current process
+        int wstIdx = -1;
+        for (int j=0; j&lt;m; j++)
+        {
+            if (blockSize[j] &gt;= processSize[i])
+            {
+                if (wstIdx == -1)
+                    wstIdx = j;
+                else if (blockSize[wstIdx] &lt; blockSize[j])
+                    wstIdx = j;
+            }
+        }
+ 
+        // If we could find a block for current process
+        if (wstIdx != -1)
+        {
+            // allocate block j to p[i] process
+            allocation[i] = wstIdx;
+ 
+            // Reduce available memory in this block.
+            blockSize[wstIdx] -= processSize[i];
+        }
+    }
+ 
+    printf(&quot;\nProcess No.\tProcess Size\tBlock no.\n&quot;);
+    for(int i = 0; i &lt; n; i++){
+        printf(&quot; %d \t\t %d \t\t &quot;, i+1, processSize[i]);
+        if(allocation[i] != -1){
+            printf(&quot;%d  &quot;, allocation[i]+1);
+        }
+        else 
+            printf(&quot;Not Allocated&quot;);
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main()
+{
+	int m; //number of blocks in the memory
+	int n; //number of processes in the input queue
+    printf(&quot;Enter the number of blocks: &quot;);
+    scanf(&quot;%d&quot;, &amp;m);
+    printf(&quot;Enter the number of processes: &quot;);
+    scanf(&quot;%d&quot;, &amp;n);
+    int blockSize[m], processSize[n];
+    printf(&quot;Enter the block sizes: &quot;);
+    for(int i = 0; i &lt; m; i++){
+        scanf(&quot;%d&quot;, &amp;blockSize[i]);
+    }
+    printf(&quot;Enter the process sizes: &quot;);
+    for(int i = 0; i &lt; n; i++){
+        scanf(&quot;%d&quot;, &amp;processSize[i]);
+    }
+
+	bestFit(blockSize, m, processSize, n);
+
+
+	return 0 ;
+}</code></pre></div></article></body></html>

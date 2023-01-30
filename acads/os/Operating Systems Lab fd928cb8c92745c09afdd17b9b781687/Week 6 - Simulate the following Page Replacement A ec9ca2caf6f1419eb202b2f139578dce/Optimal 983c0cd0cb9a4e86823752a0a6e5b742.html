@@ -666,4 +666,92 @@ blockquote {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style></head><body><article id="983c0cd0-cb9a-4e86-8237-52a0a6e5b742" class="page sans"><header><h1 class="page-title">Optimal</h1></header><div class="page-body"></div></article></body></html>
+</style></head><body><article id="983c0cd0-cb9a-4e86-8237-52a0a6e5b742" class="page sans"><header><h1 class="page-title">Optimal</h1></header><div class="page-body"><pre id="cc0f28ae-16f6-446a-b305-2eb5c1cd8728" class="code"><code>#include&lt;stdio.h&gt;
+int main()
+{
+    int no_of_frames, no_of_pages, frames[10], pages[30], temp[10], flag1, flag2, flag3, i, j, k, pos, max, faults = 0;
+    printf(&quot;Enter number of frames: &quot;);
+    scanf(&quot;%d&quot;, &amp;no_of_frames);
+    
+    printf(&quot;Enter number of pages: &quot;);
+    scanf(&quot;%d&quot;, &amp;no_of_pages);
+    
+    printf(&quot;Enter page reference string: &quot;);
+    
+    for(i = 0; i &lt; no_of_pages; ++i){
+        scanf(&quot;%d&quot;, &amp;pages[i]);
+    }
+    
+    for(i = 0; i &lt; no_of_frames; ++i){
+        frames[i] = -1;
+    }
+    
+    for(i = 0; i &lt; no_of_pages; ++i){
+        flag1 = flag2 = 0;
+        
+        for(j = 0; j &lt; no_of_frames; ++j){
+            if(frames[j] == pages[i]){
+                   flag1 = flag2 = 1;
+                   break;
+               }
+        }
+        
+        if(flag1 == 0){
+            for(j = 0; j &lt; no_of_frames; ++j){
+                if(frames[j] == -1){
+                    faults++;
+                    frames[j] = pages[i];
+                    flag2 = 1;
+                    break;
+                }
+            }    
+        }
+        
+        if(flag2 == 0){
+         flag3 =0;
+        
+            for(j = 0; j &lt; no_of_frames; ++j){
+             temp[j] = -1;
+            
+             for(k = i + 1; k &lt; no_of_pages; ++k){
+             if(frames[j] == pages[k]){
+             temp[j] = k;
+             break;
+             }
+             }
+            }
+            
+            for(j = 0; j &lt; no_of_frames; ++j){
+             if(temp[j] == -1){
+             pos = j;
+             flag3 = 1;
+             break;
+             }
+            }
+            
+            if(flag3 ==0){
+             max = temp[0];
+             pos = 0;
+            
+             for(j = 1; j &lt; no_of_frames; ++j){
+             if(temp[j] &gt; max){
+             max = temp[j];
+             pos = j;
+             }
+             }            
+            }
+frames[pos] = pages[i];
+faults++;
+        }
+        
+        printf(&quot;\n&quot;);
+        
+        for(j = 0; j &lt; no_of_frames; ++j){
+            printf(&quot;%d\t&quot;, frames[j]);
+        }
+    }
+    
+    printf(&quot;\n\nTotal Page Faults = %d\n&quot;, faults);
+    
+    return 0;
+}</code></pre></div></article></body></html>
