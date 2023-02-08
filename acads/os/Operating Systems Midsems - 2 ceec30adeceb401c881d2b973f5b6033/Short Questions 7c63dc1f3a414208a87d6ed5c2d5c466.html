@@ -1,0 +1,678 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Short Questions</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="7c63dc1f-3a41-4208-a87d-6ed5c2d5c466" class="page sans"><header><h1 class="page-title">Short Questions</h1></header><div class="page-body"><p id="3de92218-30b5-4384-9ea7-7b625952afdd" class="">1. <strong>What is synchronisation and define deadlock?</strong><div class="indented"><p id="e1ef676d-0ffc-46c6-a994-5b9cafc8aaf8" class="">Synchronization is a technique used in operating systems to ensure that multiple threads or processes running concurrently do not interfere with each other and access shared resources in a controlled and predictable manner. This is achieved by using synchronization primitives such as semaphores, locks, and monitors.</p><p id="c9ea04b7-f6e7-4760-bbfd-99555746d64f" class="">A deadlock is a situation in operating systems where two or more processes are blocked because each process is waiting for a resource that the other process has, and neither process can proceed. This creates a circular wait and results in all processes being blocked indefinitely. Deadlocks can occur in systems with multiple processors or in systems with a single processor. They can be prevented by using various synchronization techniques such as locking, timeouts, and ordering of resource requests.</p><hr id="83b669ba-4142-445c-8aea-859928cb4009"/></div></p><ol type="1" id="7f00e87c-8e7e-48f5-afba-0304258a9c53" class="numbered-list" start="2"><li><strong>Define directory? Explain different types of file directories?</strong><p id="d23dbe29-6e01-4ba4-9ba3-36f543c774a0" class="">A directory, also known as a folder, is a container for organizing and storing files and other directories in a file system. Directories can contain files, other directories, or a combination of both. The structure of a directory tree is used to organize and store files in a hierarchical manner.</p><p id="ec0be773-90df-4f1a-a975-94dbe622b13a" class="">There are several types of file directories:</p><ol type="1" id="c8b82cdb-ca37-4e88-94da-d6c67f719697" class="numbered-list" start="1"><li>Root Directory: The top-most directory in a file system hierarchy. It contains all other directories and files in the file system.</li></ol><ol type="1" id="375ff415-938f-4c6b-849d-57ccdbef3ca6" class="numbered-list" start="2"><li>Home Directory: A directory that is specific to a user account and contains all of the files and subdirectories associated with that user.</li></ol><ol type="1" id="fea702be-c20e-4ea0-83f8-950326b7f0de" class="numbered-list" start="3"><li>Current Directory: The directory that is currently being used by a user or program.</li></ol><ol type="1" id="6666fe9b-8849-4abb-b952-2493a0e4621c" class="numbered-list" start="4"><li>Working Directory: The directory in which a user or program is currently working.</li></ol><ol type="1" id="25a218a8-2b3f-4f92-a9b4-c87321f3c19c" class="numbered-list" start="5"><li>System Directory: A directory that contains system files, libraries, and other important components that are used by the operating system.</li></ol><ol type="1" id="9c8d0eff-613b-4ac5-a976-3fb6ca2fec63" class="numbered-list" start="6"><li>Hidden Directory: A directory that is not displayed by default in a file manager but can be accessed by entering the full path or by changing the file manager&#x27;s settings.</li></ol><ol type="1" id="edb3a130-8886-4d85-b8ee-055c4480706d" class="numbered-list" start="7"><li>Shared Directory: A directory that is accessible to multiple users on a network and can be used for sharing files and resources.</li></ol><hr id="6dfa6b44-5c02-4972-bed9-7537cf672c36"/></li></ol><ol type="1" id="2e3cb614-ba62-47a9-a09c-8381c343afdf" class="numbered-list" start="3"><li><strong>What is semaphore, types of semaphore?</strong><p id="d7c9479c-7c05-400f-b4b4-0ea0eb02e1df" class="">A semaphore is a synchronization primitive used in operating systems to control access to shared resources. It is a variable that is used to signal the status of a shared resource and provides a mechanism for coordinating access to the resource among multiple processes or threads.</p><p id="c8016981-f0d6-478e-b272-71c8ce1b650d" class="">There are two types of semaphores:</p><ol type="1" id="6046f4bd-8272-4952-ae36-647402270ab5" class="numbered-list" start="1"><li>Binary Semaphore: A binary semaphore is used to control access to a single shared resource. It has only two states: &quot;locked&quot; or &quot;unlocked&quot;. A binary semaphore can be used to implement mutual exclusion, where only one process or thread can access a shared resource at a time.</li></ol><ol type="1" id="26908990-900f-4e43-b613-d899222b4e38" class="numbered-list" start="2"><li>Counting Semaphore: A counting semaphore is used to control access to multiple instances of a shared resource. It has an integer value that represents the number of available resources. A counting semaphore can be used to manage resources that have a limited availability, such as memory buffers or printers.</li></ol><p id="f7bd3cdf-537d-4b7b-a781-b8803d3ed3c9" class="">Semaphores are used to solve synchronization problems and to prevent race conditions and deadlocks in systems with multiple processes</p><hr id="90e8ff13-7176-48e7-bcd8-e5e60efaad3d"/></li></ol><ol type="1" id="2f687e57-2192-4846-a9b7-ccb4e077b446" class="numbered-list" start="4"><li><strong>What is a Critical section problem? what are the solutions for critical section problem?</strong><p id="fa8fa451-bb68-499b-a593-db7ca5b99026" class="">The critical section problem refers to the problem of coordinating access to a shared resource among multiple processes or threads in a computer system. The critical section is a section of code that accesses a shared resource and must be executed by only one process or thread at a time, to ensure that the shared resource remains in a consistent state.</p><p id="30fdda5c-cd91-4ecb-a635-017e096ba84d" class="">Solutions for the critical section problem include:</p><ol type="1" id="6b2f6732-71c3-4ede-91d0-690ca6d8a0c0" class="numbered-list" start="1"><li>Mutual Exclusion: One solution to the critical section problem is to enforce mutual exclusion, which ensures that only one process or thread can enter the critical section at a time. This can be achieved using synchronization primitives such as semaphores, locks, or monitors.</li></ol><ol type="1" id="2821dcc7-28dc-42f4-9952-41172abb831d" class="numbered-list" start="2"><li>Progress: Another solution is to ensure that if a process or thread is blocked waiting for a resource, it does not prevent other processes or threads from accessing that resource. This is called making progress, and can be ensured by using synchronization primitives such as semaphores or monitors.</li></ol><ol type="1" id="c7cf991c-c576-4fe1-b524-caaa61c83758" class="numbered-list" start="3"><li>Bounded Waiting: A solution to the critical section problem must also ensure that waiting processes or threads are released in a predictable order, to prevent indefinite blocking. This is called bounded waiting, and can be ensured by using synchronization primitives such as semaphores or monitors.</li></ol><ol type="1" id="f22c82f0-3b20-4f1f-b0fc-6fe7705c4a66" class="numbered-list" start="4"><li>Starvation-free: The solution should not allow a process or thread to be blocked indefinitely, even if it is waiting for a resource that is not currently available. This is called starvation-free, and can be ensured by using synchronization primitives such as semaphores or monitors.</li></ol><hr id="402d4209-7f60-4d13-a208-fb47896b9101"/></li></ol><ol type="1" id="dbbb1d85-344f-43f0-b1bf-83654698ca9e" class="numbered-list" start="5"><li><strong>What is Resource allocation Graph? Explain with example?</strong><p id="367a66d1-4736-49f7-bfa0-7240076fefc2" class="">A resource allocation graph is a graphical representation of the allocation of resources among multiple processes or threads in an operating system. It is used to model the allocation and utilization of shared resources in a system and to detect and resolve synchronization problems such as deadlocks.</p><p id="83b63b27-b7b6-4aae-86a0-612b5970ca99" class="">In a resource allocation graph, each process or thread is represented by a node, and each resource is represented by an edge. The allocation of a resource to a process or thread is represented by a directed edge from the resource to the process or thread.</p><p id="ed8b4ae8-f93e-4463-9ffc-9e2de0369dbd" class="">For example, consider a system with two processes P1 and P2, and two resources R1 and R2. If process P1 has been allocated resource R1, and process P2 has been allocated resource R2, the resource allocation graph would look like this:</p><pre id="0007c657-74b6-45c8-805d-ff027858a805" class="code code-wrap"><code>
+    R1   R2
+     \   /
+      P1 P2</code></pre><p id="cab37eff-9bab-4f06-a0cc-0919828a0525" class="">If process P1 requests resource R2 and process P2 requests resource R1, the resource allocation graph would change to:</p><pre id="3d97094a-036a-4c0a-ae98-61d488d4d712" class="code code-wrap"><code> 
+    R1   R2
+     \   /
+      P2 P1
+      |  |
+      v  v</code></pre><p id="90dfb9b1-7e91-43af-83ac-c674c5df465a" class="">In this case, the resource allocation graph forms a cycle, indicating a potential deadlock situation. To prevent deadlocks, the operating system must detect such cycles and resolve the deadlock by releasing one of the resources.</p><hr id="6878d0f6-8a03-43d7-a562-44ff41045e45"/></li></ol><ol type="1" id="7cd698fb-fa04-4958-8a97-d91f795e7049" class="numbered-list" start="6"><li><strong>What is Virtual Memory ? Explain difference between Logical &amp; Physical Address space?</strong><p id="4e3a96e3-57a0-40e2-adde-14157f1af0b7" class="">Virtual memory is a technique used by operating systems to provide an illusion of having more memory than is physically available in the system. This is accomplished by temporarily transferring data from a computer&#x27;s RAM to its hard disk.</p><p id="6815c82e-cb95-4ca4-837b-282608cbb488" class="">A logical address space is the address space seen by a process, and it is the address space within which a process executes. The logical address space is the virtual memory seen by the process, and it is independent of the physical memory.</p><p id="fecd343e-0982-4ce4-925c-b81d731075f8" class="">A physical address space is the actual memory space available in the computer, and it is the memory space that is addressed by the hardware. The physical address space is the real memory available to the operating system, and it is used to store the data and code of running processes.</p><p id="493c2007-63ec-4aed-b0de-40dde4d549af" class="">The difference between the logical address space and the physical address space is that the logical address space is a virtual memory space, while the physical address space is the actual memory space. The logical address space can be larger than the physical address space, because the operating system can temporarily transfer data from the RAM to the hard disk, providing an illusion of having more memory than is physically available.</p><hr id="8666d6f2-e095-4c61-9968-83e9334124aa"/></li></ol><ol type="1" id="c4eb79e0-63f1-4978-8c56-994fd30433e1" class="numbered-list" start="7"><li><strong>Explain different types of File Attributes?</strong><p id="0d26836d-3b71-4921-aab3-7d62094b1bb3" class="">File attributes are metadata associated with a file that provides additional information about the file and controls the way it can be accessed, modified, or executed. The types of file attributes vary between operating systems, but some common file attributes include:</p><ol type="1" id="15997e45-fdbc-44d1-a10f-4c52664119cc" class="numbered-list" start="1"><li>Read-Only: The read-only attribute prevents a file from being modified, deleted, or renamed. This attribute is often used to protect important system files and configuration files from accidental modification.</li></ol><ol type="1" id="c3868992-5de8-4064-ba6b-10c999d65369" class="numbered-list" start="2"><li>Hidden: The hidden attribute makes a file invisible in the file explorer, and it is not displayed unless the user has chosen to show hidden files.</li></ol><ol type="1" id="686ae94a-205e-44c3-a398-ef60e8c0ca6a" class="numbered-list" start="3"><li>Archive: The archive attribute is used by backup software to track which files have been backed up and which files need to be backed up.</li></ol><ol type="1" id="cd5d2664-2761-4d78-bc4b-473485832926" class="numbered-list" start="4"><li>System: The system attribute indicates that the file is used by the operating system or an essential system component, and it is not intended to be modified by the user.</li></ol><ol type="1" id="96352337-04db-42f6-aec0-57042c178838" class="numbered-list" start="5"><li>Executable: The executable attribute indicates that the file is a program that can be run, and it is usually associated with files that have the .exe or .com file extension.</li></ol><ol type="1" id="b3db705a-aeb0-4273-b79c-b2d8c941fda9" class="numbered-list" start="6"><li>Compressed: The compressed attribute indicates that the file has been compressed to save disk space, and it is used by the operating system&#x27;s file compression utility.</li></ol><ol type="1" id="529ce15a-4a5d-450f-a178-7572ae351c30" class="numbered-list" start="7"><li>Encrypted: The encrypted attribute indicates that the file&#x27;s contents have been encrypted for security, and it is used by encryption software to protect sensitive data.</li></ol><p id="5747aca9-7db8-4e34-9bce-8b6d74e44a3a" class="">These are some of the most common file attributes, and the exact set of file attributes available may vary depending on the operating system.</p><hr id="bda56aa1-ef6e-43c3-a065-668d528ad190"/></li></ol><ol type="1" id="b97f56be-3974-4c60-ae0f-16b8bad42e91" class="numbered-list" start="8"><li><strong>Explain open(),read(),write(),lseek(),close() System calls</strong>?<ol type="a" id="36832365-973e-4499-8291-ff2024e0a4ba" class="numbered-list" start="1"><li>open(): The open system call is used to open a file for reading, writing, or both. It takes the name of the file and the mode of access as its arguments, and returns a file descriptor, which is a non-negative integer used to refer to the opened file in subsequent system calls.</li></ol><ol type="a" id="8c61703a-c87c-4878-a4da-0e911f575487" class="numbered-list" start="2"><li>read(): The read system call is used to read data from an open file. It takes the file descriptor, a pointer to a buffer where the data will be stored, and the number of bytes to read as its arguments. It returns the number of bytes actually read, or a negative value in case of an error.</li></ol><ol type="a" id="8c6d1dbd-5352-44f7-9bff-ca12f22187e6" class="numbered-list" start="3"><li>write(): The write system call is used to write data to an open file. It takes the file descriptor, a pointer to the buffer containing the data to be written, and the number of bytes to write as its arguments. It returns the number of bytes actually written, or a negative value in case of an error.</li></ol><ol type="a" id="472554b8-9922-49be-ab1c-aba27bb79ff2" class="numbered-list" start="4"><li>lseek(): The lseek system call is used to change the position of the file pointer within a file. It takes the file descriptor, the offset to move the file pointer, and a reference point as its arguments. It returns the new position of the file pointer, or a negative value in case of an error.</li></ol><ol type="a" id="cc25e143-6c59-4357-96bf-7a53cd7fb12d" class="numbered-list" start="5"><li>close(): The close system call is used to close an open file. It takes the file descriptor of the file to be closed as its argument, and it returns zero on success or a negative value in case of an error.</li></ol><p id="478b22f7-97be-4767-b48a-092c3e4b3122" class="">These system calls form the basic interface for reading from and writing to files in most operating systems. They are used to implement higher-level file I/O functions, such as fopen, fread, fwrite, fseek, and fclose in the C standard library.</p><hr id="d8a5daa1-809d-4b4e-98d1-7cfb8a06e83b"/></li></ol><ol type="1" id="8bf6de97-7e78-4815-865b-515e55b81933" class="numbered-list" start="9"><li><strong>What is a race condition?</strong><p id="52a86064-c9f5-4376-87bd-9c73767e09d4" class="">A race condition is a situation in computer programming where the outcome of a program is dependent on the timing or interleaving of multiple threads or processes. In a race condition, a program may produce incorrect results because two or more threads or processes access shared data concurrently, leading to unexpected interactions.</p><p id="4217cdb2-9420-4e72-8f99-7b8d77ade831" class="">For example, consider a program with two threads that increment a shared variable. If both threads access the variable at the same time, one of the updates may be lost, and the result will be incorrect. This is an example of a race condition.</p><p id="f2eeca23-6297-4528-9af4-1327b3031755" class="">Race conditions are a common source of bugs in concurrent or parallel programs, and they can be difficult to detect and reproduce. To avoid race conditions, it is important to use proper synchronization techniques, such as locks, semaphores, or atomic operations, to ensure that only one thread or process can access shared data at a time.</p><hr id="75df8cdb-d725-424c-aa54-c33c6f751a4d"/></li></ol><ol type="1" id="73103a4d-1f8d-44e3-9101-1e63554986cd" class="numbered-list" start="10"><li><strong>What are the Deadlock necessary conditions? Explain?</strong><p id="85b0c292-045f-4fec-87ef-563a1023c0f5" class="">A deadlock is a situation in computer programming where two or more processes are unable to continue executing because each is waiting for a resource that is held by the other. To occur, four necessary conditions must be met:</p><ol type="1" id="d113fffe-d96a-48c3-b937-cdee06ec6054" class="numbered-list" start="1"><li>Mutual Exclusion: The resources being requested by the processes must be non-sharable, meaning that only one process can use the resource at a time.</li></ol><ol type="1" id="626a65ba-3ee6-4495-ad39-960cb9ca85d2" class="numbered-list" start="2"><li>Hold and Wait: At least one process must be holding a resource and waiting for another resource that is currently held by another process.</li></ol><ol type="1" id="427427bf-1f16-44fc-9042-433ed40b5b4a" class="numbered-list" start="3"><li>No Preemption: Resources cannot be taken away from a process once they have been acquired. A process must release its resources voluntarily.</li></ol><ol type="1" id="4aaf5d1e-e69c-4476-8e7b-f0bc1e4109a9" class="numbered-list" start="4"><li>Circular Wait: There must be a circular chain of processes waiting for resources, such that each process is waiting for a resource held by another process in the chain.</li></ol><p id="cdb473e1-7293-4121-a20d-fb1874714611" class="">These four conditions are known as the &quot;deadlock necessary conditions&quot; and are often used to diagnose and prevent deadlocks in concurrent or parallel programs. To avoid deadlocks, it is important to design algorithms and systems that limit the occurrence of these conditions. For example, by avoiding circular waits, or by allowing resources to be preempted in some cases.</p><p id="167cd9b0-d0ab-4a0e-8289-e1fd93dbc27c" class="">
+</p></li></ol></div></article></body></html>
