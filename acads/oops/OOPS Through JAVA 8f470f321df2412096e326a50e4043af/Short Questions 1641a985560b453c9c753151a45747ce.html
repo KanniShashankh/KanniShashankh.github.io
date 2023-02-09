@@ -1,0 +1,686 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Short Questions</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1641a985-560b-453c-9c75-3151a45747ce" class="page sans"><header><h1 class="page-title">Short Questions</h1></header><div class="page-body"><ol type="1" id="8529e0c9-d0a3-4fa2-a994-6049e08e0b1f" class="numbered-list" start="1"><li><strong>What are the two ways to iterate the elements of a collection?</strong><p id="ff310e21-c483-465d-b3ad-9d2fdc9e6fd8" class="">There are two main ways to iterate the elements of a collection:</p><ol type="1" id="439d48f6-34ee-4367-a75e-e39a575de58b" class="numbered-list" start="1"><li>Using a for loop: This is the most commonly used method to iterate the elements of a collection. A for loop is a control structure that allows you to repeat a block of code a specified number of times. You can use a for loop to iterate through the elements of a collection by using the index of each element.</li></ol><ol type="1" id="d3d4b214-ca20-41dd-813f-151141496bd3" class="numbered-list" start="2"><li>Using an enhanced for loop: This is also known as a &quot;for each&quot; loop, and it is specifically designed to iterate the elements of a collection. It is more concise than a regular for loop, and it allows you to avoid using an index to access the elements of the collection. Instead, you can directly access each element of the collection one by one.</li></ol><p id="559d335f-1739-4ed5-99a5-a8e706c1adfb" class="">Both of these methods can be used to iterate the elements of any type of collection, including arrays, lists, sets, and maps. The choice of which method to use depends on your specific use case and personal preference.</p></li></ol><ol type="1" id="410a489a-c65a-47cb-b709-229533c0a540" class="numbered-list" start="2"><li><strong>What are the 4 types of JDBC Drivers?</strong><p id="4e929cea-d946-4878-8099-16f8f1a91eb5" class="">There are four types of JDBC drivers in Java:</p><ol type="1" id="0fdc7dc7-caa0-4a11-b85a-b055076a4051" class="numbered-list" start="1"><li>Type 1 Driver (JDBC-ODBC Bridge Driver): This type of driver uses an ODBC (Open Database Connectivity) driver to connect to the database. It is not very efficient, as it adds an additional layer of translation between JDBC and the database. It is generally used for prototyping and testing, but not for production systems.</li></ol><ol type="1" id="7eea13c4-46c2-4c27-9cc1-31e5df43049f" class="numbered-list" start="2"><li>Type 2 Driver (Native API Driver): This type of driver uses the database-specific APIs to communicate with the database. It is faster than a Type 1 driver, as it eliminates the need for an additional layer of translation. However, it is not portable, as the driver is specific to a particular database management system.</li></ol><ol type="1" id="371a6e74-e130-4914-963c-00d731e0955c" class="numbered-list" start="3"><li>Type 3 Driver (Network Protocol Driver): This type of driver uses a middleware component to communicate with the database. The middleware component acts as an intermediary between JDBC and the database, and it is responsible for handling the communication between the two. This type of driver is more portable than a Type 2 driver, as it can be used with different databases, but it requires more resources and is slower than a Type 2 driver.</li></ol><ol type="1" id="106ad552-ffa2-412b-b927-699ce5e58c10" class="numbered-list" start="4"><li>Type 4 Driver (Native Protocol Driver or Thin Driver): This type of driver is a pure Java driver that communicates directly with the database using the database-specific network protocol. It is the most efficient type of JDBC driver, as it eliminates the need for an additional layer of translation, and it is also more portable than a Type 2 or Type 3 driver. The Type 4 driver is often the preferred choice for production systems, as it provides the best combination of performance and portability.</li></ol><p id="da7c5cd6-69ab-4f39-868e-9036e7b86262" class="">Each type of JDBC driver has its own advantages and disadvantages, and the choice of which type of driver to use depends on your specific requirements, such as performance, portability, and ease of use.</p></li></ol><ol type="1" id="3feb23f3-c65d-4ac9-a071-09453b68db8f" class="numbered-list" start="3"><li><strong>What File Output Stream?</strong><p id="78fd047a-93ad-40e8-9944-e00e4505fb92" class="">FileOutputStream is a class in Java that provides an output stream for writing data to a file. It is a subclass of the OutputStream class and is used to write data to a file in a binary format. The data can be written to a file either as raw binary data or as text using a character encoding.</p><p id="3d6df9e5-cb2e-44d7-8354-17bd201feb9f" class="">FileOutputStream provides several constructors for creating an output stream to a file, such as:</p><ol type="1" id="fea32dc6-ccfc-4da9-b8bc-6f3911907ed4" class="numbered-list" start="1"><li>FileOutputStream(String name) - creates an output stream to write to the file with the specified name.</li></ol><ol type="1" id="3a28bbfb-2929-4e18-876a-3f1addd1aa93" class="numbered-list" start="2"><li>FileOutputStream(File file) - creates an output stream to write to the specified file.</li></ol><ol type="1" id="6f67fd52-313f-428e-b48e-3759e3db05f5" class="numbered-list" start="3"><li>FileOutputStream(String name, boolean append) - creates an output stream to write to the file with the specified name, and if append is true, the data will be appended to the end of the file, rather than overwriting the existing data.</li></ol><p id="3b996a1e-d629-4c18-8a55-cdc060f5b1b9" class="">Once you have created an instance of the FileOutputStream class, you can use its write() method to write data to the file. For example, the following code writes the string &quot;Hello, World!&quot; to a file named &quot;output.txt&quot;:</p><pre id="5f19a73a-7c5c-4d17-a69b-ddbcdb5deec4" class="code code-wrap"><code>try {
+  FileOutputStream fos = new FileOutputStream(&quot;output.txt&quot;);
+  fos.write(&quot;Hello, World!&quot;.getBytes());
+  fos.close();
+} catch (IOException e) {
+  System.out.println(&quot;An error occurred while writing to the file.&quot;);
+}</code></pre><p id="0721ea61-41ba-4847-8098-b76550965108" class="">Note that it&#x27;s important to close the FileOutputStream after you have finished writing to the file, to ensure that the data is properly flushed to the file and to release any system resources associated with the stream.</p></li></ol><ol type="1" id="3f440e16-3e61-4d67-9893-03a1a8d82019" class="numbered-list" start="4"><li><strong>What are the five steps to connect any java application with the database using JDBC?</strong><p id="04ec1a6a-7a41-43d6-9a20-6138f07778b3" class="">The five steps to connect a Java application with a database using JDBC are:</p><ol type="a" id="6f73849d-10f9-4f80-b539-e568343e9745" class="numbered-list" start="1"><li>Load the JDBC Driver: You need to load the JDBC driver for the database you want to connect to. This is usually done using the Class.forName() method. For example, if you are using the MySQL database, you would load the MySQL JDBC driver as follows:</li></ol><pre id="aab21be1-662c-4373-89e7-057b6024b4fe" class="code code-wrap"><code>Class.forName(&quot;com.mysql.cj.jdbc.Driver&quot;)</code></pre><p id="7a3c46ae-6011-4afb-b5a9-1df58bea05a5" class="">b. Establish a Connection: After loading the JDBC driver, you need to establish a connection to the database. This is done using the DriverManager.getConnection() method, which takes the URL of the database, the username, and the password as parameters. For example, to connect to a MySQL database, you would use the following code:</p><pre id="713d0518-bb54-46d1-ab82-669be5d84815" class="code code-wrap"><code>Connection connection = DriverManager.getConnection(
+  &quot;jdbc:mysql://localhost:3306/databaseName&quot;, &quot;username&quot;, &quot;password&quot;);</code></pre><p id="0c1f6f52-35a4-410f-b200-c7cac79cd9d8" class="">c. Create a Statement: Once you have established a connection to the database, you need to create a Statement object, which will be used to execute SQL commands. This is done using the Connection.createStatement() method. For example:</p><pre id="e038f44a-7a59-4ba4-8b35-bf4ca9303e29" class="code code-wrap"><code>Statement statement = connection.createStatement();</code></pre><p id="d422ac64-b2ad-4bbb-8e9a-f80e6dfb8abc" class="">d. Execute a Query: With a Statement object in place, you can now execute a SQL query to retrieve data from the database. This is done using the Statement.executeQuery() method. For example, the following code executes a SELECT statement to retrieve all the records from a table named &quot;students&quot;:</p><pre id="f8ea11d0-ebcd-4f55-bb27-7d5278a13726" class="code code-wrap"><code>ResultSet resultSet = statement.executeQuery(&quot;SELECT * FROM students&quot;)</code></pre><p id="664f6ba9-5d89-4bf8-909f-9e03a7fd27fa" class="">e. Process the Result: After executing the query, you need to process the result to retrieve the data from the ResultSet object. This can be done by calling the ResultSet.next() method to iterate through the result, and then using the various getter methods (e.g. getInt(), getString(), etc.) to retrieve the data for each column. For example:</p><pre id="f739e33d-9fc5-4038-b28f-170f8d79280a" class="code code-wrap"><code>		while (resultSet.next()) {
+  int id = resultSet.getInt(&quot;id&quot;);
+  String name = resultSet.getString(&quot;name&quot;);
+  System.out.println(&quot;ID: &quot; + id + &quot;, Name: &quot; + name);
+}</code></pre><p id="db2cd3d6-89f2-4081-840d-7498c3fe226a" class="">These are the basic steps to connect a Java application with a database using JDBC. Depending on your specific requirements, you may need to perform additional tasks, such as closing the connection and statement objects, handling exceptions, etc.</p></li></ol><ol type="1" id="18ad6b4f-145d-480c-939b-e255ac769bc0" class="numbered-list" start="5"><li><strong>What is string tokenizer?</strong><p id="036b6d58-010c-461d-b2d5-97ad56ec54e0" class="">The <code><strong>StringTokenizer</strong></code> class is a legacy class in Java that is used to tokenize strings into individual elements or &quot;tokens.&quot; A token is defined as a sequence of characters that are separated by a specified delimiter. The <code><strong>StringTokenizer</strong></code> class provides methods for breaking a string into tokens, counting the number of tokens, and retrieving the individual tokens.</p><p id="7502bd7e-9fcb-4160-9b5a-30cf412e85c1" class="">Here is an example of using the <code><strong>StringTokenizer</strong></code> class to tokenize a string:</p><pre id="9da36748-fa1e-43e0-a6d6-917f5af03575" class="code code-wrap"><code>String input = &quot;This is a sample string&quot;;
+String delimiter = &quot; &quot;;
+StringTokenizer tokenizer = new StringTokenizer(input, delimiter);
+
+while (tokenizer.hasMoreTokens()) {
+  System.out.println(tokenizer.nextToken());
+}</code></pre><p id="7107c04e-648c-4ce6-b588-9b2ae7421960" class="">In this example, the <code><strong>StringTokenizer</strong></code> is created with the input string and the delimiter &quot; &quot;. The <code><strong>hasMoreTokens()</strong></code> method is used to check if there are any more tokens, and the <code><strong>nextToken()</strong></code> method is used to retrieve the next token.</p><p id="9f19bcd8-b9a1-47b5-85c1-e23e5459ce1f" class="">Note that the <code><strong>StringTokenizer</strong></code> class was introduced in Java 1.0 and is considered to be outdated and less flexible compared to more modern alternatives such as the <code><strong>split()</strong></code> method of the <code><strong>String</strong></code> class or the <code><strong>Scanner</strong></code> class. In most cases, it&#x27;s recommended to use these more modern alternatives instead of the <code><strong>StringTokenizer</strong></code> class.</p></li></ol><ol type="1" id="240c31eb-28c9-43c0-9c34-e9c76ae691a8" class="numbered-list" start="6"><li><strong>What is Java Collection Framework?</strong><p id="f36b3f6c-f5a8-49c6-9801-6ea7885b77d5" class="">The Java Collection Framework is a set of classes and interfaces that provide a standard way of organizing and manipulating collections of objects in the Java programming language. It was introduced in Java 1.2 and has since become one of the most fundamental and important parts of the Java API.</p><p id="a7255702-7681-4122-85f1-98297fe9eb6c" class="">The Java Collection Framework provides a unified architecture for representing and manipulating collections of objects, which includes:</p><ul id="fd83a54c-1820-489c-8b41-e8ba4ebbf961" class="bulleted-list"><li style="list-style-type:disc">Interfaces: The Java Collection Framework defines a set of standard interfaces, such as <code><strong>List</strong></code>, <code><strong>Set</strong></code>, <code><strong>Map</strong></code>, etc., which represent different types of collections and provide a common set of methods for adding, removing, searching, and manipulating elements.</li></ul><ul id="38ab4859-d457-41ff-8629-8361b52586d7" class="bulleted-list"><li style="list-style-type:disc">Classes: The Java Collection Framework also provides a set of standard classes that implement these interfaces, such as <code><strong>ArrayList</strong></code>, <code><strong>HashSet</strong></code>, <code><strong>TreeMap</strong></code>, etc. These classes provide concrete implementations of the methods defined in the interfaces and can be used to create instances of collections.</li></ul><ul id="ce8d9e7d-9764-4ed6-ad21-810d86fb4dd3" class="bulleted-list"><li style="list-style-type:disc">Algorithms: The Java Collection Framework provides a set of algorithms that can be used to perform common operations on collections, such as sorting, searching, and transforming elements. These algorithms are defined in the <code><strong>Collections</strong></code> class and can be used on any collection that implements the appropriate interface.</li></ul><p id="550a1b53-bf5d-4823-b847-d6ad9d2bbc5f" class="">The Java Collection Framework provides a rich and flexible infrastructure for working with collections of objects in Java. It makes it easier to write code that is robust, flexible, and scalable, by providing a standard set of interfaces and classes that can be used to manipulate collections of objects in a consistent and predictable manner.</p></li></ol></div></article></body></html>

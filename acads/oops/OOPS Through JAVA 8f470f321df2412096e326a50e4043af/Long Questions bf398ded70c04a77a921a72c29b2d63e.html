@@ -1,0 +1,893 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Long Questions</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="bf398ded-70c0-4a77-a921-a72c29b2d63e" class="page sans"><header><h1 class="page-title">Long Questions</h1></header><div class="page-body"><ol type="1" id="5749ab7b-2318-4e19-8c41-e5dd11fe0bca" class="numbered-list" start="1"><li><strong>What is Buffered Output Stream Class ?  Explain with a program.</strong><p id="e5f98c02-30ce-4629-a0e1-85afce3a02fa" class="">The <code><strong>BufferedOutputStream</strong></code> class in Java is a subclass of the <code><strong>OutputStream</strong></code> class and provides buffered output streams. It is used to write data to an output stream in a buffered manner, which means that data is stored in a buffer and written to the underlying stream in chunks, rather than writing one byte at a time.</p><p id="b9d53ef5-62a5-4e46-ade7-5080d1437d58" class="">Using a buffered output stream can improve the performance of writing data to a stream, as it reduces the number of write operations performed on the underlying stream and can also help to minimize the cost of accessing the underlying I/O resources.</p><p id="79863c2c-93a7-4e8a-82ef-7bb91d04a6a6" class="">Here is an example program that demonstrates how to use the <code><strong>BufferedOutputStream</strong></code> class:</p><pre id="1f9303df-7d69-4c35-9bb3-03394f18fb5e" class="code code-wrap"><code>import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class BufferedOutputStreamExample {
+  public static void main(String[] args) {
+    try (FileOutputStream fos = new FileOutputStream(&quot;output.txt&quot;);
+         BufferedOutputStream bos = new BufferedOutputStream(fos)) {
+      bos.write(&quot;Hello World!&quot;.getBytes());
+    } catch (IOException e) {
+      System.out.println(&quot;An I/O error occurred: &quot; + e.getMessage());
+    }
+  }
+}</code></pre><p id="433ce1f6-dd94-4068-8efb-2966669271bc" class="">In this example, a <code><strong>FileOutputStream</strong></code> is created to write data to a file named &quot;output.txt&quot;. The <code><strong>FileOutputStream</strong></code> is then passed as an argument to the constructor of a <code><strong>BufferedOutputStream</strong></code>, which is used to buffer the data before writing it to the file. The program writes the string &quot;Hello World!&quot; to the file using the <code><strong>write()</strong></code> method of the <code><strong>BufferedOutputStream</strong></code>.</p><p id="bf19a2bc-aa2b-4657-9930-8e4e110704b0" class="">Note that the <code><strong>try-with-resources</strong></code> statement is used to automatically close the streams when they are no longer needed, which helps to ensure that resources are properly released and prevents potential resource leaks.</p></li></ol><ol type="1" id="1989fa37-959b-4c2e-9d26-52b735f16331" class="numbered-list" start="2"><li><strong>Distinguish between Output Stream and Input Stream.</strong><p id="12390420-1021-4ad9-90f7-5a59f87e9290" class=""><code><strong>OutputStream</strong></code> and <code><strong>InputStream</strong></code> are two fundamental classes in the Java I/O API that are used to read and write data, respectively. The main difference between them is the direction of data flow:</p><ul id="0747b5d4-aa4a-4536-91db-fd9af039263f" class="bulleted-list"><li style="list-style-type:disc"><code><strong>OutputStream</strong></code> is used to write data to an output destination, such as a file, network socket, or in-memory buffer. It provides methods for writing bytes, arrays of bytes, and other data types to an output stream.</li></ul><ul id="cf33e838-7293-46d7-8881-fe16a2d07b15" class="bulleted-list"><li style="list-style-type:disc"><code><strong>InputStream</strong></code> is used to read data from an input source, such as a file, network socket, or in-memory buffer. It provides methods for reading bytes, arrays of bytes, and other data types from an input stream.</li></ul><p id="3ba45837-5fc1-453b-b7d7-c730bd02b207" class="">Another important difference between <code><strong>OutputStream</strong></code> and <code><strong>InputStream</strong></code> is that <code><strong>OutputStream</strong></code> is write-only, while <code><strong>InputStream</strong></code> is read-only. This means that once data is written to an <code><strong>OutputStream</strong></code>, it cannot be read back or modified. On the other hand, an <code><strong>InputStream</strong></code> can only be used to read data and cannot be used to write data.</p><p id="35616479-9c14-41c4-8f56-4f7abeee25de" class="">It is also worth noting that the Java I/O API provides several subclasses of <code><strong>OutputStream</strong></code> and <code><strong>InputStream</strong></code> that are specialized for different purposes, such as <code><strong>FileOutputStream</strong></code>, <code><strong>FileInputStream</strong></code>, <code><strong>BufferedOutputStream</strong></code>, <code><strong>BufferedInputStream</strong></code>, etc. These subclasses provide additional functionality, such as buffered I/O, file I/O, and network I/O, that can be used to implement more complex I/O operations.</p></li></ol><ol type="1" id="dc0a3218-9165-4b6b-a88a-95aff3965c99" class="numbered-list" start="3"><li><strong>What is Array List . Write a program to store elements in the Array List and access the elements from the Array List.</strong><p id="e02683b9-54c5-422b-94b6-a0ca113d4fde" class=""><code><strong>ArrayList</strong></code> is a class in the Java Collection Framework that implements the <code><strong>List</strong></code> interface. It provides a dynamic array implementation of a list data structure, which means that the size of an <code><strong>ArrayList</strong></code> can grow or shrink dynamically as elements are added or removed.</p><p id="7c08bf86-bb41-4157-860a-1de43486b7cd" class="">Here is an example program that demonstrates how to store elements in an <code><strong>ArrayList</strong></code> and access the elements from the <code><strong>ArrayList</strong></code>:</p><pre id="ae96fe30-f428-431e-97a4-507f3a367897" class="code"><code>import java.util.ArrayList;
+import java.util.List;
+
+public class ArrayListExample {
+  public static void main(String[] args) {
+    List&lt;String&gt; names = new ArrayList&lt;&gt;();
+
+    // Add elements to the ArrayList
+    names.add(&quot;John&quot;);
+    names.add(&quot;Jane&quot;);
+    names.add(&quot;Jim&quot;);
+
+    // Access elements from the ArrayList
+    System.out.println(&quot;The first element in the ArrayList is: &quot; + names.get(0));
+    System.out.println(&quot;The second element in the ArrayList is: &quot; + names.get(1));
+    System.out.println(&quot;The third element in the ArrayList is: &quot; + names.get(2));
+  }
+}</code></pre><p id="017a7c59-dee5-4633-b703-477019b622e3" class=""> </p><p id="60be4579-7e08-4990-97a0-cf66f6182c0d" class="">In this example, an <code><strong>ArrayList</strong></code> of strings is created using the following line of code:</p><pre id="3c9ddf33-c4ac-4658-8715-bff7b84b4da8" class="code code-wrap"><code> List&lt;String&gt; names = new ArrayList&lt;&gt;();</code></pre><p id="9808d307-947f-4bb7-8c77-bcc7de9f9e44" class="">The <code><strong>ArrayList</strong></code> is declared using the <code><strong>List</strong></code> interface, which is the top-level interface in the Collection Framework and provides a common set of methods for all collection classes. This allows the <code><strong>ArrayList</strong></code> to be used interchangeably with other collection classes that implement the <code><strong>List</strong></code> interface.</p><p id="264fbb41-894f-435b-a9f6-c3ce6d4454bb" class="">The program then adds three elements to the <code><strong>ArrayList</strong></code> using the <code><strong>add()</strong></code> method.</p><p id="782be3bf-897d-48e1-b97d-83cac412d016" class="">Finally, the elements in the <code><strong>ArrayList</strong></code> are accessed using the <code><strong>get()</strong></code> method, which returns the element at the specified index.</p></li></ol><ol type="1" id="b3eb953b-0288-498f-87ef-913a2f3cced3" class="numbered-list" start="4"><li><strong>What is a Map Interface . Write a program to insert and retrieve elements from a Map.</strong><p id="92803fe9-004b-45b6-954f-9d02f7a91932" class=""><code><strong>Map</strong></code> is an interface in the Java Collection Framework that provides a key-value mapping. It allows you to store elements as key-value pairs and retrieve the value associated with a key. The key is used to look up the value, similar to a dictionary.</p><p id="b5b8e105-a263-4195-b5e5-849fbf8e3ee5" class="">Here is an example program that demonstrates how to insert and retrieve elements from a <code><strong>Map</strong></code>:</p><pre id="fd78c560-2b47-4336-84e2-8cc7523b07e2" class="code code-wrap"><code>import java.util.HashMap;
+import java.util.Map;
+
+public class MapExample {
+  public static void main(String[] args) {
+    Map&lt;String, Integer&gt; grades = new HashMap&lt;&gt;();
+
+    // Insert elements into the Map
+    grades.put(&quot;John&quot;, 85);
+    grades.put(&quot;Jane&quot;, 90);
+    grades.put(&quot;Jim&quot;, 95);
+
+    // Retrieve elements from the Map
+    System.out.println(&quot;John&#x27;s grade is: &quot; + grades.get(&quot;John&quot;));
+    System.out.println(&quot;Jane&#x27;s grade is: &quot; + grades.get(&quot;Jane&quot;));
+    System.out.println(&quot;Jim&#x27;s grade is: &quot; + grades.get(&quot;Jim&quot;));
+  }
+}</code></pre><p id="236ef300-90dd-4889-b753-872106dc0849" class="">In this example, a <code><strong>Map</strong></code> of strings and integers is created using the following line of code:</p><pre id="8e09ecae-154f-4892-b308-a82255368833" class="code code-wrap"><code>Map&lt;String, Integer&gt; grades = new HashMap&lt;&gt;();</code></pre><p id="985ffea8-d30f-4942-bc03-e1813ad75205" class="">The <code><strong>Map</strong></code> is declared using the <code><strong>Map</strong></code> interface, which provides the basic key-value mapping functionality. The concrete implementation used in this example is the <code><strong>HashMap</strong></code> class, which provides an implementation of the <code><strong>Map</strong></code> interface based on a hash table data structure.</p><p id="0a42f519-bdee-4fb5-a8ea-370472ec9324" class="">The program then inserts three elements into the <code><strong>Map</strong></code> using the <code><strong>put()</strong></code> method:</p><pre id="f917ae20-d553-4b81-8910-6feb99a8634a" class="code code-wrap"><code>grades.put(&quot;John&quot;, 85);
+grades.put(&quot;Jane&quot;, 90);
+grades.put(&quot;Jim&quot;, 95);</code></pre><p id="5db8cb26-d1d4-4782-abcc-6a806a472172" class="">Finally, the elements in the <code><strong>Map</strong></code> are retrieved using the <code><strong>get()</strong></code> method, which returns the value associated with the specified key:</p><pre id="e0c1daa4-f2d7-4046-a177-010caa559978" class="code code-wrap"><code>System.out.println(&quot;John&#x27;s grade is: &quot; + grades.get(&quot;John&quot;));
+System.out.println(&quot;Jane&#x27;s grade is: &quot; + grades.get(&quot;Jane&quot;));
+System.out.println(&quot;Jim&#x27;s grade is: &quot; + grades.get(&quot;Jim&quot;));</code></pre><p id="4bc8e012-62a5-49a8-b676-6e250bfdec53" class="">This program will output the following:</p><pre id="246b1e45-9968-4d86-b6cd-a9e0ed26f097" class="code code-wrap"><code>John&#x27;s grade is: 85
+Jane&#x27;s grade is: 90
+Jim&#x27;s grade is: 9</code></pre></li></ol><ol type="1" id="77737f7b-d649-415e-8e26-fd6628c8509f" class="numbered-list" start="5"><li><strong>What is Java Collection Frame Work . Explain the Hierarchy of Java Collection Frame Work with diagram</strong><p id="47f43e58-8943-42fc-bacb-9a127428100c" class="">The Java Collection Framework is a set of classes and interfaces that provide a standardized way of representing and manipulating collections of objects. It provides a hierarchy of interfaces and classes that define various types of collections, including lists, sets, and maps.</p><p id="771ad92f-3893-4d03-b0e8-46fccbd55abf" class="">Here is a diagram that shows the hierarchy of the Java Collection Framework:</p><pre id="b58cddff-2af6-4d98-8286-27b7b02b200a" class="code code-wrap"><code>graph TD
+  Object --&gt; Collection
+  Object --&gt; Map
+  Collection --&gt; List
+  Collection --&gt; Set
+  Collection --&gt; Queue
+  Collection --&gt; Deque
+  List --&gt; ArrayList
+  List --&gt; LinkedList</code></pre><p id="6c55a6fc-7ca4-4dce-a2ed-8ebb95d18dec" class="">At the top of the hierarchy is the <code><strong>Object</strong></code> class, which is the superclass of all classes in Java.</p><p id="fad4cd0c-cb8c-44b0-a770-8cfe40f593c6" class="">Below the <code><strong>Object</strong></code> class are two main interfaces: <code><strong>Collection</strong></code> and <code><strong>Map</strong></code>.</p><p id="cc1b671d-5003-4689-89d5-c04d79e0ca9f" class="">The <code><strong>Collection</strong></code> interface defines the basic operations that all collections should have, such as adding and removing elements, and checking the size of the collection.</p><p id="682e5072-502f-4c76-b8b7-f672ee507c62" class="">The <code><strong>List</strong></code> and <code><strong>Set</strong></code> interfaces are subinterfaces of the <code><strong>Collection</strong></code> interface. The <code><strong>List</strong></code> interface represents an ordered collection of elements, while the <code><strong>Set</strong></code> interface represents a collection of unique elements.</p><p id="abd51b8c-70e7-4dcf-b911-93c5e732bac0" class="">The <code><strong>ArrayList</strong></code> and <code><strong>LinkedList</strong></code> classes are concrete implementations of the <code><strong>List</strong></code> interface. The <code><strong>ArrayList</strong></code> class provides a resizable array implementation of a list, while the <code><strong>LinkedList</strong></code> class provides a linked-list implementation of a list.</p><p id="12db09f9-6423-47d4-a25a-6e0db3a25c5d" class="">The <code><strong>Map</strong></code> interface represents a mapping of unique keys to values, and it is not considered a true collection since it does not extend the <code><strong>Collection</strong></code> interface.</p><p id="f6eb649a-911d-412e-835d-e6f1f49dd582" class="">Overall, the Java Collection Framework provides a flexible and efficient way to manage collections of objects in your Java programs. It provides a large number of ready-made implementations, so you can choose the one that best suits your needs, and it also allows you to create your own custom collections if necessary.</p></li></ol><ol type="1" id="ffdb55a2-8c27-4a16-bc72-35835118d9cf" class="numbered-list" start="6"><li><strong>Write a program to connect to the Oracle database and getting data from the emp table . Here system and oracle are the username and password of the Oracle Database.</strong><p id="93caaaf2-fc25-4bc5-b53a-8ade3b858b8e" class=""> Here is a Java program that connects to an Oracle database, retrieves data from the <code><strong>emp</strong></code>
+ table, and prints the results:</p><pre id="fa17f3fb-c349-408b-94d8-22d57a555bc4" class="code"><code>import java.sql.*;
+
+public class OracleConnect {
+   static final String JDBC_DRIVER = &quot;oracle.jdbc.OracleDriver&quot;;  
+   static final String DB_URL = &quot;jdbc:oracle:thin:@localhost:1521:orcl&quot;;
+
+   // Database credentials
+   static final String USER = &quot;system&quot;;
+   static final String PASS = &quot;oracle&quot;;
+   
+   public static void main(String[] args) {
+      Connection conn = null;
+      Statement stmt = null;
+      try {
+         // Register JDBC driver
+         Class.forName(&quot;oracle.jdbc.OracleDriver&quot;);
+
+         // Open a connection
+         System.out.println(&quot;Connecting to database...&quot;);
+         conn = DriverManager.getConnection(DB_URL, USER, PASS);
+
+         // Execute a query
+         System.out.println(&quot;Creating statement...&quot;);
+         stmt = conn.createStatement();
+         String sql;
+         sql = &quot;SELECT * FROM emp&quot;;
+         ResultSet rs = stmt.executeQuery(sql);
+
+         // Extract data from result set
+         while (rs.next()) {
+            int id = rs.getInt(&quot;EMPNO&quot;);
+            String name = rs.getString(&quot;ENAME&quot;);
+            String job = rs.getString(&quot;JOB&quot;);
+            int mgr = rs.getInt(&quot;MGR&quot;);
+            String hiredate = rs.getString(&quot;HIREDATE&quot;);
+            float sal = rs.getFloat(&quot;SAL&quot;);
+            float comm = rs.getFloat(&quot;COMM&quot;);
+            int deptno = rs.getInt(&quot;DEPTNO&quot;);
+            
+            // Display values
+            System.out.println(&quot;ID: &quot; + id);
+            System.out.println(&quot;Name: &quot; + name);
+            System.out.println(&quot;Job: &quot; + job);
+            System.out.println(&quot;Manager: &quot; + mgr);
+            System.out.println(&quot;Hire Date: &quot; + hiredate);
+            System.out.println(&quot;Salary: &quot; + sal);
+            System.out.println(&quot;Commission: &quot; + comm);
+            System.out.println(&quot;Department Number: &quot; + deptno);
+         }
+         // Clean up environment
+         rs.close();
+         stmt.close();
+         conn.close();
+      } catch (SQLException se) {
+         // Handle errors for JDBC
+         se.printStackTrace();
+      } catch (Exception e) {
+         // Handle errors for Class.forName
+         e.printStackTrace();
+      } finally {
+         // Finally block used to close resources
+         try {
+            if (stmt != null)
+               stmt.close();
+         } catch (SQLException se2) {
+         } // Nothing we can do
+         try {
+            if (conn != null)
+               conn.close();
+         } catch (SQLException se) {
+            se.printStackTrace();
+         } // End finally try
+      } // End try
+      System.out.println(&quot;Goodbye!&quot;);
+   }
+}</code></pre></li></ol><ol type="1" id="275c3025-e142-4fa4-a591-3e9d9fdb62b2" class="numbered-list" start="7"><li><strong>What are the Layout managers explain in detail.</strong><p id="65fc524b-d428-4415-b42c-372db69561cf" class="">In Java, Layout Managers are used to arrange components in a particular manner within a container such as a JFrame, JPanel, or other type of container.</p><p id="b60fade7-4c9b-495c-9904-91b63523f442" class="">There are several types of Layout Managers in Java:</p><ol type="1" id="52eade8a-49e9-4e44-b442-6b8b8958a1bf" class="numbered-list" start="1"><li>BorderLayout: This layout manager divides the container into five regions: North, South, East, West, and Center. Components can be added to any of these regions and they will be resized accordingly.</li></ol><ol type="1" id="5357fb8b-5381-44cb-8ba0-45815a1f6593" class="numbered-list" start="2"><li>FlowLayout: This layout manager arranges components in a left-to-right, top-to-bottom manner, much like a word processor. If the container is resized, the components will be rearranged to fit the new size.</li></ol><ol type="1" id="14f7512a-ea85-4e04-be1c-34acc3dbfbdc" class="numbered-list" start="3"><li>GridLayout: This layout manager divides the container into a grid of equally sized rectangles, with one component placed in each rectangle. The number of rows and columns can be specified.</li></ol><ol type="1" id="4f5df5a8-ef81-486a-a4e5-3fe6d59b0274" class="numbered-list" start="4"><li>BoxLayout: This layout manager arranges components along a single axis, either horizontally or vertically. The components are packed together and given the maximum amount of space along the specified axis.</li></ol><ol type="1" id="4492307b-21b7-40ec-8bd5-4dedbbcd5f81" class="numbered-list" start="5"><li>CardLayout: This layout manager provides a stack of components, with only one component visible at a time. Components can be added or removed from the stack, or the currently visible component can be changed.</li></ol><ol type="1" id="8d84b195-f555-454d-bc29-1c08ab38fc0b" class="numbered-list" start="6"><li>GridBagLayout: This is the most flexible layout manager in Java. It allows components to be placed in a grid with specified row and column spans, and with specified weights for how much space the components should occupy in the grid.</li></ol><p id="e0838ffb-3fd0-4662-90f3-c6d41d505d7a" class="">Each layout manager has its own strengths and weaknesses, and choosing the appropriate layout manager for a particular task depends on the specific requirements of the application.</p></li></ol><ol type="1" id="00e522e9-071b-4f70-917e-6d6aa66c6d39" class="numbered-list" start="8"><li><strong>Write a program using swing to create one button and adding it on the JFrame.</strong><p id="16d7d50e-cdae-42ce-846c-87aaa0dddc5c" class="">Here&#x27;s an example program that creates a JFrame and adds a button to it using the Swing library in Java:</p><pre id="c28f48e6-f777-40bb-8588-212c588e333b" class="code code-wrap"><code>import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class DivNum {
+	public static void main(String[] args)
+	{
+		JFrame f=new JFrame();
+		JButton b=new JButton(&quot;Button&quot;);
+		b.setBounds(150,200,75,40);
+		f.add(b);
+		b.addActionListener( new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				f.setBackground(Color.BLACK);
+			}
+		});
+		f.setSize(400,400);
+		f.setLayout(null);
+		f.setVisible(true);		
+	}
+}</code></pre><p id="0b18c469-63dd-4b92-bf30-836f7371027e" class="">In this example, we create a JFrame and a JButton. The button is added to the content pane of the JFrame using the <code><strong>add</strong></code> method. The <code><strong>pack</strong></code> method is used to resize the JFrame to fit the button. Finally, the JFrame is set to be visible using the <code><strong>setVisible</strong></code> method.</p></li></ol><ol type="1" id="5873e410-4086-49f2-8358-d02030107e7b" class="numbered-list" start="9"><li><strong>Write a program to read and write data into the file</strong><p id="0590c6b6-eb11-4995-8730-7645b42266f0" class="">Here&#x27;s an example program that demonstrates how to read and write data into a file in Java:</p><pre id="4a4d6af3-a1ba-4f71-8bbb-98e3240053de" class="code code-wrap"><code>import java.io.*;
+import java.util.*;
+
+public class ReadWriteFileExample {
+  public static void main(String[] args) {
+    String fileName = &quot;example.txt&quot;;
+
+    // Writing to a file
+    try (FileWriter fileWriter = new FileWriter(fileName)) {
+      fileWriter.write(&quot;This is some example data.\n&quot;);
+      fileWriter.write(&quot;It can be anything you want.\n&quot;);
+      fileWriter.write(&quot;This is just a demonstration.\n&quot;);
+    } catch (IOException e) {
+      System.out.println(&quot;Error writing to file: &quot; + e.getMessage());
+    }
+
+    // Reading from a file
+    try (Scanner fileScanner = new Scanner(new File(fileName))) {
+      while (fileScanner.hasNextLine()) {
+        System.out.println(fileScanner.nextLine());
+      }
+    } catch (FileNotFoundException e) {
+      System.out.println(&quot;Error reading from file: &quot; + e.getMessage());
+    }
+  }
+}</code></pre><p id="c9eefb88-3a2c-4b06-ba36-cf82baadaaf2" class="">In this example, we create a <code><strong>FileWriter</strong></code> object and write some example data to a file named &quot;example.txt&quot;. The data is written using the <code><strong>write</strong></code> method. After writing to the file, we create a <code><strong>Scanner</strong></code> object and read the data from the file. The data is read line by line using the <code><strong>nextLine</strong></code> method and printed to the console.</p></li></ol><ol type="1" id="a718c6c7-717e-4897-8ac9-5f96927524a0" class="numbered-list" start="10"><li><strong>Write a program to insert and retrieve elements from the Linked List.</strong><p id="05d2c60d-43c6-42bd-9edc-3a9c8150e88c" class="">Here&#x27;s an example program that demonstrates how to insert and retrieve elements from a linked list in Java:</p><pre id="48bfb0a3-ccf2-420b-8bdf-e9db8aee3552" class="code code-wrap"><code>import java.util.*;
+
+public class LinkedListExample {
+  public static void main(String[] args) {
+    LinkedList&lt;String&gt; list = new LinkedList&lt;&gt;();
+
+    // Inserting elements into the linked list
+    list.add(&quot;Apple&quot;);
+    list.add(&quot;Banana&quot;);
+    list.add(&quot;Cherry&quot;);
+
+    // Retrieving elements from the linked list
+    System.out.println(&quot;First element: &quot; + list.getFirst());
+    System.out.println(&quot;Last element: &quot; + list.getLast());
+
+    for (String fruit : list) {
+      System.out.println(&quot;Fruit: &quot; + fruit);
+    }
+  }
+}</code></pre><p id="ff47434b-8107-48f1-89b5-658910e19fc8" class="">In this example, we create a linked list of type <code><strong>String</strong></code> using the <code><strong>LinkedList</strong></code> class. We insert three elements into the linked list using the <code><strong>add</strong></code> method. We then retrieve the first and last elements from the linked list using the <code><strong>getFirst</strong></code> and <code><strong>getLast</strong></code> methods. Finally, we use a for-each loop to print all the elements in the linked list.</p></li></ol><ol type="1" id="96924d6c-c8c6-4634-8307-4c7370bd6a5d" class="numbered-list" start="11"><li><strong>What is Java File Output Stream? Explain with a program.</strong><p id="2451a7c7-02a9-45e5-95ec-88ceb50c3097" class="">The <code><strong>FileOutputStream</strong></code> class in Java is used to write data to a file. The data can be written in binary or text format, depending on the mode in which the stream is opened.</p><p id="fd31338e-be74-40af-92a4-e1c655ea42c0" class="">Here&#x27;s a simple program that demonstrates how to write data to a file using the <code><strong>FileOutputStream</strong></code> class:</p><pre id="a9523145-7653-4d75-8a39-fe51ddd8c129" class="code code-wrap"><code>import java.io.*;
+
+public class FileOutputStreamExample {
+  public static void main(String[] args) {
+    try {
+      // Create a FileOutputStream object
+      FileOutputStream fos = new FileOutputStream(&quot;output.txt&quot;);
+
+      // Write data to the file
+      String data = &quot;Hello World!&quot;;
+      fos.write(data.getBytes());
+
+      // Close the stream
+      fos.close();
+
+      System.out.println(&quot;Data written to file successfully.&quot;);
+    } catch (IOException e) {
+      System.out.println(&quot;An error occurred while writing to file: &quot; + e.getMessage());
+    }
+  }
+}</code></pre><p id="48c8b83d-6089-4f26-940f-dfee9fc88065" class="">In this example, we create a <code><strong>FileOutputStream</strong></code> object and use the <code><strong>write</strong></code> method to write the string <code><strong>&quot;Hello World!&quot;</strong></code> to a file named <code><strong>&quot;output.txt&quot;</strong></code>. We then close the stream using the <code><strong>close</strong></code> method. If any errors occur while writing to the file, they are caught by the <code><strong>try-catch</strong></code> block and the error message is printed.</p><p id="b0214837-50db-445d-bbc6-97c3ad3f1ea8" class="">
+</p></li></ol></div></article></body></html>
