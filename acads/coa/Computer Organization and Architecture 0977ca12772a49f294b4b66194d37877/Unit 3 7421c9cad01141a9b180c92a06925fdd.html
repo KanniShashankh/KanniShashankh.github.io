@@ -1,0 +1,758 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Unit 3</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="7421c9ca-d011-41a9-b180-c92a06925fdd" class="page sans"><header><h1 class="page-title">Unit 3</h1></header><div class="page-body"><ol type="1" id="b60393b8-c250-4d88-b5cb-0629461a57a6" class="numbered-list" start="1"><li><strong>EXPLAIN 8086 ARCHITECTURE?</strong><ul id="6edfe3e6-c660-4e94-b87e-99e4f30510a8" class="bulleted-list"><li style="list-style-type:disc"><strong>8086 has two blocks BIU (BUS INTERFACE UNIT) and EU (EXECUTION UNIT)</strong><figure id="3e781b19-b3ef-4829-bde0-9c0309469652" class="image"><a href="Unit%203%207421c9cad01141a9b180c92a06925fdd/Untitled.png"><img style="width:600px" src="Unit%203%207421c9cad01141a9b180c92a06925fdd/Untitled.png"/></a></figure></li></ul><ul id="daae8503-823c-4361-baa6-5786e5e41723" class="bulleted-list"><li style="list-style-type:disc">The BIU performs all bus operations such as instruction fetching, reading and writing operands for memory and calculating the addresses of the memory operands. The instruction bytes are transferred to the instruction queue.</li></ul><ul id="dccdd5e4-0094-4bbb-aef7-723385cd92d7" class="bulleted-list"><li style="list-style-type:disc">EU executes instructions from the instruction system byte queue.</li></ul><ul id="04dbf04c-cd4a-4688-b3f8-de93951fa34c" class="bulleted-list"><li style="list-style-type:disc">Both units operate asynchronously to give the 8086 an overlapping instruction fetch and execution mechanism which is called as Pipelining. This results in efficient use of the system bus and system performance.</li></ul><ul id="fc9a10fe-bb48-460b-a545-ec3d5f81628e" class="bulleted-list"><li style="list-style-type:disc">BIU contains Instruction queue, Segment registers, Instruction pointer, and Address adder.</li></ul><ul id="82056db6-5b27-44c8-b290-e553ef827e1c" class="bulleted-list"><li style="list-style-type:disc">EU contains Control circuitry, Instruction decoder, ALU, Pointer and Index register, Flag register.</li></ul><p id="735b7085-95a5-4073-aed5-b730bcff823a" class=""><strong>1. BUS INTERFACE UNIT:</strong></p><ul id="06a8c078-78ed-4cc2-a4a7-ab173d28b58f" class="bulleted-list"><li style="list-style-type:disc">It provides a full 16 bit bidirectional data bus and 20 bit address bus.</li></ul><ul id="c2740a76-0af7-4656-b700-66b4171181d4" class="bulleted-list"><li style="list-style-type:disc">The bus interface unit is responsible for performing all external bus operations</li></ul><ul id="827d4692-b6fa-4546-ab67-4ba803d56892" class="bulleted-list"><li style="list-style-type:disc">Instruction fetch, Instruction queuing, Operand fetch and storage, Address relocation and Bus control.</li></ul><ul id="058ac226-fb33-49a0-b053-8115fe147487" class="bulleted-list"><li style="list-style-type:disc">The BIU uses a mechanism known as an instruction stream queue to implement a pipeline architecture.</li></ul><ul id="394c19e3-aa60-4b92-b954-f5cd5b80aadb" class="bulleted-list"><li style="list-style-type:disc">This queue permits prefetch of up to six bytes of instruction code. Whenever the queue of the BIU is not full, it has room for at least two more bytes and at the same time the EU is not requesting it to read or write operands from memory, the BIU is free to look ahead in the program by prefetching the next sequential instruction.</li></ul><ul id="f8a9f53f-4e5d-4ab0-a43e-25b5922b85c6" class="bulleted-list"><li style="list-style-type:disc">These prefetching instructions are held in its FIFO queue. With its 16 bit data bus, the BIU fetches two instruction bytes in a single memory cycle</li></ul><ul id="25851eb9-ea30-4694-818f-f4b3b0959836" class="bulleted-list"><li style="list-style-type:disc">The BIU is also responsible for Generating bus control signals such as those for memory read or write and I/O read or write.</li></ul><p id="a83d0432-c326-4ea2-9ae9-e18deaf40e9c" class=""><strong>2. EXECUTION UNIT</strong></p><p id="705eef37-63a0-45ac-a4a6-8d8c1697ed11" class="">· The Execution unit is responsible for decoding and executing all instructions.</p><p id="2394af7f-13f5-4192-b136-9edb65be0d35" class="">· The EU extracts instructions from the top of the queue in the BIU, decodes them, generates operands if necessary, passes them to the BIU and requests it to perform the read or write bys cycles to memory or I/O and perform the operation specified by the instruction on the operands.</p><p id="9bfe6786-a1de-46de-b2d6-1f4fea23fb08" class="">· During the execution of the instruction, the EU tests the status and control flags and updates them based on the results of executing the instruction.</p><p id="098530f5-19c0-4932-8d1a-2e80a1b11423" class="">· If the queue is empty, the EU waits for the next instruction byte to be fetched and shifted to top of the queue.</p><p id="ac95c58d-50d6-47aa-b3f7-167ddf63957b" class="">· When the EU executes a branch or jump instruction, it transfers control to a location corresponding to another set of sequential instructions.</p><p id="6bc48a74-5424-4172-9f7a-d7eb837f7eba" class="">· Whenever this happens, the BIU automatically resets the queue and then begins to fetch instructions from this new location to refill the queue.</p><p id="387aab24-e63f-44f5-b1d0-4b3e8e080be6" class="">
+</p><p id="92bb01f0-ee51-474a-9776-b373b9227e67" class="">
+</p></li></ol><ol type="1" id="22c76a92-e9cb-4fce-8a7f-ae843df61066" class="numbered-list" start="2"><li><strong>INTRODUCTION TO CONTROL UNIT AND ITS DESIGN ?</strong><p id="6bd1d7c5-b8d0-473f-981d-ca11423ee61d" class="">The Control Unit is classified into two major categories:</p><ol type="a" id="b0f3fb32-ae7e-488e-8035-d337e5a5b64e" class="numbered-list" start="1"><li>Hardwired Control<p id="8ac2822a-0fd8-4d89-abb7-3b944a960dd7" class="">The Hardwired Control organization involves the control logic to be implemented with gates, flip-flops, decoders, and other digital circuits.The following image shows the block diagram of a Hardwired Control organization.</p><figure id="7958538f-6d79-4571-b60e-647ac3b7509c" class="image"><a href="Unit%203%207421c9cad01141a9b180c92a06925fdd/Untitled%201.png"><img style="width:825px" src="Unit%203%207421c9cad01141a9b180c92a06925fdd/Untitled%201.png"/></a></figure><ul id="6edcc06a-c2fa-402d-b543-4ea288ef719f" class="bulleted-list"><li style="list-style-type:disc">A Hard-wired Control consists of two decoders, a sequence counter, and a number of logic gates.</li></ul><ul id="620f0e93-511c-4306-8770-ca46d2fb8bb0" class="bulleted-list"><li style="list-style-type:disc">An instruction fetched from the memory unit is placed in the instruction register (IR).</li></ul><ul id="18c7ea7a-3725-441e-9ab6-56b7c8bd3c7c" class="bulleted-list"><li style="list-style-type:disc">The component of an instruction register includes; I bit, the operation code, and bits 0 through 11.</li></ul><ul id="f7197bb2-fd9d-4d56-9229-0ae104c85231" class="bulleted-list"><li style="list-style-type:disc">The operation code in bits 12 through 14 are coded with a 3 x 8 decoder.</li></ul><ul id="92acea0e-d9c5-4348-96ef-a7463a9614ed" class="bulleted-list"><li style="list-style-type:disc">The outputs of the decoder are designated by the symbols D0 through D7.</li></ul><ul id="d8d708db-76c3-4229-96b2-466ebbf7e0e5" class="bulleted-list"><li style="list-style-type:disc">The operation code at bit 15 is transferred to a flip-flop designated by the symbol I.</li></ul><ul id="49bbb026-b305-4adb-8c31-f50517cf4d47" class="bulleted-list"><li style="list-style-type:disc">The operation codes from Bits 0 through 11 are applied to the control logic gates.</li></ul><ul id="674bc13d-2602-4fcb-b08e-3bcf61da644d" class="bulleted-list"><li style="list-style-type:disc">The Sequence counter (SC) can count in binary from 0 through 15.</li></ul></li></ol><ol type="a" id="20d7ef79-91d0-41e5-a715-2be85f390be5" class="numbered-list" start="2"><li>Microprogrammed Control<p id="ffeea74a-f53b-42b3-ba9d-12afcb4980e1" class="">The Microprogrammed Control organization is implemented by using the programming approach.
+In Microprogrammed Control, the micro-operations are performed by executing a program consisting of micro-instructions.
+The following image shows the block diagram of a Microprogrammed Control organization.</p><figure id="7c34a01e-e58a-4b6a-b5e9-6fc69515def3" class="image"><a href="Unit%203%207421c9cad01141a9b180c92a06925fdd/Untitled%202.png"><img style="width:1046px" src="Unit%203%207421c9cad01141a9b180c92a06925fdd/Untitled%202.png"/></a></figure><ul id="b6a88d40-cb11-4162-bb6c-b5af18ef34cc" class="bulleted-list"><li style="list-style-type:disc">The Control memory address register specifies the address of the micro-instruction.</li></ul><ul id="a589215f-21c1-46ae-b36e-3846b8bff94c" class="bulleted-list"><li style="list-style-type:disc">The Control memory is assumed to be a ROM, within which all control information is permanently stored.</li></ul><ul id="101fd73d-333d-45da-993c-e3928ad97528" class="bulleted-list"><li style="list-style-type:disc">The control register holds the microinstruction fetched from the memory.</li></ul><ul id="043727a4-c061-48ae-914d-2959d00e0ac7" class="bulleted-list"><li style="list-style-type:disc">The micro-instruction contains a control word that specifies one or more micro-operations for the data processor.</li></ul><ul id="6ae009e8-5656-40fd-a287-217c876d11ac" class="bulleted-list"><li style="list-style-type:disc">While the micro-operations are being executed, the next address is computed in the next address generator circuit and then transferred into the control address register to read the next microinstruction.</li></ul><ul id="8e7c3dd9-9520-49a4-b9a3-ee728bfde9e4" class="bulleted-list"><li style="list-style-type:disc">The next address generator is often referred to as a micro-program sequencer, as it determines the address sequence that is read from control memory.</li></ul><p id="2b97c394-469f-4cd4-a609-be2734c928ad" class="">
+</p><p id="5534127d-98da-4c7d-b7ce-9cf347f23fe3" class="">
+</p><p id="76000967-540e-47b1-a5cb-f28c433f0069" class="">
+</p></li></ol></li></ol><ol type="1" id="2a9e61cb-aaa3-4527-ab07-d01c2e007a79" class="numbered-list" start="3"><li><strong>EXPLAIN ABOUT PERIPHERAL DEVICES?</strong><ol type="a" id="d6cd5769-ede2-4505-8b57-3ba2949d06e9" class="numbered-list" start="1"><li>The input-output subsystem of a computer, referred to as 110,
+provides an efficient mode of communication between the
+central system and the outside environment.</li></ol><ol type="a" id="b6d661e9-34a9-46cc-9ce0-8d688481f8b1" class="numbered-list" start="2"><li>Programs and data must be entered into computer memory
+for processing and results obtained from computations must
+be recorded and displayed for the user.</li></ol><ol type="a" id="d6bc1f4d-d884-436d-a7e3-15b98f0d248d" class="numbered-list" start="3"><li>A computer serves no useful purpose without the ability
+to receive information from an outside source and to transmit</li></ol><ol type="a" id="111e8bd2-122c-455f-bb06-adb3c4dd511c" class="numbered-list" start="4"><li>The most familiar means of entering information into a
+computer is through a typewrite&quot;&#x27; like keyboard that allows a
+person to enter alphanumeric information directly.</li></ol><ol type="a" id="60bd7a31-a1f3-4f50-a900-f6ae0287532b" class="numbered-list" start="5"><li>Every time a key is depressed, the terminal sends a
+binary coded character to the computer.</li></ol><ol type="a" id="832020c5-7554-43b0-8f6d-6d426dc1f56c" class="numbered-list" start="6"><li>The fastest possible speed for entering Information this way depends persons typing speed.</li></ol><ol type="a" id="38b7c9c1-148d-4cd4-a8cd-8c414d75984f" class="numbered-list" start="7"><li>On the other hand, the central processing unit is an
+extremely fast device capable of performing operations
+at very high speed.</li></ol><ol type="a" id="1b95d7d9-c4bc-4486-a21f-aa5c225d14d5" class="numbered-list" start="8"><li>When input information is transferred to the processor
+via a slow keyboard, the processor will be idle most of
+the time while waiting for the information to arrive.<figure id="aa546a35-ce2c-4ac4-ac86-de0c36c17202" class="image"><a href="Unit%203%207421c9cad01141a9b180c92a06925fdd/Screenshot_2023-02-09_at_9.44.23_PM.png"><img style="width:2940px" src="Unit%203%207421c9cad01141a9b180c92a06925fdd/Screenshot_2023-02-09_at_9.44.23_PM.png"/></a></figure><figure id="c4d5ce7c-a350-4596-833b-127850fbc75f" class="image"><a href="Unit%203%207421c9cad01141a9b180c92a06925fdd/Screenshot_2023-02-09_at_9.44.30_PM.png"><img style="width:2940px" src="Unit%203%207421c9cad01141a9b180c92a06925fdd/Screenshot_2023-02-09_at_9.44.30_PM.png"/></a></figure><figure id="a80c7464-c2ae-4733-9dd4-456e24592b7f" class="image"><a href="Unit%203%207421c9cad01141a9b180c92a06925fdd/Screenshot_2023-02-09_at_9.44.39_PM.png"><img style="width:2940px" src="Unit%203%207421c9cad01141a9b180c92a06925fdd/Screenshot_2023-02-09_at_9.44.39_PM.png"/></a></figure><figure id="1a5e78c7-d109-420a-a866-dbb9f56a2fa4" class="image"><a href="Unit%203%207421c9cad01141a9b180c92a06925fdd/Screenshot_2023-02-09_at_9.44.50_PM.png"><img style="width:2940px" src="Unit%203%207421c9cad01141a9b180c92a06925fdd/Screenshot_2023-02-09_at_9.44.50_PM.png"/></a></figure><p id="6ab6ff4d-c026-4e31-8002-fe1aa8d66997" class="">
+</p><p id="0e27dd6c-807f-4f8a-ba22-a608e10f98b6" class="">
+</p><p id="6505fd8e-8209-46d6-a30e-076ba121fa91" class="">
+</p></li></ol></li></ol><ol type="1" id="f97dcb3d-b0a9-49a2-a903-2e619e206908" class="numbered-list" start="4"><li><strong>INPUT OUTPUT INTERFACE</strong><ul id="8b4d1097-d425-4a99-8b53-8737cf7f6531" class="bulleted-list"><li style="list-style-type:disc">Input-output interface provides a method for transferring information between
+internal storage and external I/0 devices.</li></ul><ul id="7658d805-cca8-40e0-968f-60b1484464c9" class="bulleted-list"><li style="list-style-type:disc">Peripherals connected to a computer need special communication links for
+interfacing them with the central processing unit.</li></ul><ul id="f247658e-1d63-4b6f-8f1a-725829966a80" class="bulleted-list"><li style="list-style-type:disc">The purpose of the communication link is to resolve the differences that exist
+between the central computer and each peripheral.</li></ul><ul id="70b96bf9-1ec3-43f1-a5a1-0421d65ec52f" class="bulleted-list"><li style="list-style-type:disc">The major differences are:<p id="e79e51bb-102e-41a1-a916-350cce5df0f2" class=""><strong>1) Peripherals are electromechanical and electromagnetic devices and
+their manner of operation is different from the operation of the CPU and
+memory, which are electronic devices.</strong></p><p id="4ad060dc-3a77-49f5-a21f-2cc96a45ef76" class=""><strong>Therefore, a conversion of signal values may be required.</strong></p><p id="06144537-6d90-40ac-91eb-713806efd65f" class=""><strong>2). The data transfer rate of peripherals is usually slower than the transfer
+rate of the CPU, and consequently, a synchronization mechanism may be needed.</strong></p><p id="9b948d3f-1994-4e72-90f7-47e12ba5d438" class=""><strong>3). Data codes and formats in peripherals differ from the word format in
+the CPU and memory.</strong></p><p id="9247330a-dea0-4181-bc36-6b7f6fce9d4e" class=""><strong>4). The operating modes of peripherals are different from each other and
+each must be controlled so as not to disturb the operation of other peripherals
+connected to the CPU.</strong></p><figure id="bedcfcea-afce-4ce0-bf97-4fdf8c84d9a6" class="image"><a href="Unit%203%207421c9cad01141a9b180c92a06925fdd/Screenshot_2023-02-09_at_9.45.34_PM.png"><img style="width:2940px" src="Unit%203%207421c9cad01141a9b180c92a06925fdd/Screenshot_2023-02-09_at_9.45.34_PM.png"/></a></figure><figure id="04164636-0d7c-417c-b17d-2999af778e76" class="image"><a href="Unit%203%207421c9cad01141a9b180c92a06925fdd/Untitled%203.png"><img style="width:646px" src="Unit%203%207421c9cad01141a9b180c92a06925fdd/Untitled%203.png"/></a></figure></li></ul></li></ol><ol type="1" id="37be6c65-e458-4803-81b8-9dabb46951fe" class="numbered-list" start="5"><li><strong>EXPLAIN ABOUT ISOLATED I/O VS MEMORY MAPPED I/O?</strong><figure id="044b650a-a5dc-4fbc-9387-ea3089be642c" class="image"><a href="Unit%203%207421c9cad01141a9b180c92a06925fdd/Screenshot_2023-02-09_at_9.48.56_PM.png"><img style="width:2940px" src="Unit%203%207421c9cad01141a9b180c92a06925fdd/Screenshot_2023-02-09_at_9.48.56_PM.png"/></a></figure><figure id="16ac4cee-4638-41af-9442-8df5fc7cfedd" class="image"><a href="Unit%203%207421c9cad01141a9b180c92a06925fdd/Screenshot_2023-02-09_at_9.49.04_PM.png"><img style="width:2940px" src="Unit%203%207421c9cad01141a9b180c92a06925fdd/Screenshot_2023-02-09_at_9.49.04_PM.png"/></a></figure></li></ol><ol type="1" id="abe24182-5113-463e-b70a-49a1ffdab422" class="numbered-list" start="6"><li><strong>EXPLAIN MODES OF TRANSFER? PROGRAMMED I/O, INTERRUPT INITIATED I/O, DIRECT MEMORY ACCESS (DMA)?</strong><ul id="cdbd9bca-17ce-444c-88d9-a8fc1d68444a" class="bulleted-list"><li style="list-style-type:disc">Binary information received from an external device is usually stored
+in memory for later processing.</li></ul><ul id="65629944-7a22-4a11-988e-73365082c09e" class="bulleted-list"><li style="list-style-type:disc">Information transferred from the central computer into an external
+device originates in the memory unit.</li></ul><ul id="6401a759-364d-4649-ab38-0cd013ae9ac9" class="bulleted-list"><li style="list-style-type:disc">The CPU merely executes the i/o instructions and may accept the
+data temporarily, but the ultimate source or destination is the
+memory unit.</li></ul><ul id="c8774e6d-aea3-4a1f-ba92-0fccd5d58164" class="bulleted-list"><li style="list-style-type:disc">Data transfer between the central computer and i/o devices may be
+handled in a variety of modes.</li></ul><ul id="3b92a398-df6d-499f-89a6-0c4c7012ce80" class="bulleted-list"><li style="list-style-type:disc">Some modes use the CPU as an intermediate path; others transfer
+the data directly to and from the memory unit.</li></ul><ul id="8494722b-6894-49a7-8d19-e4bde480e734" class="bulleted-list"><li style="list-style-type:disc">Data transfer to and from peripherals may be handled in one of
+three possible modes:</li></ul><ol type="1" id="ab5f0528-e13e-4db6-8474-0ec4b7c9e4d7" class="numbered-list" start="1"><li>Programmed I/O<figure id="c1ad47d5-b937-458d-9f8d-ae123a1aa4c3" class="image"><a href="Unit%203%207421c9cad01141a9b180c92a06925fdd/Screenshot_2023-02-09_at_9.50.58_PM.png"><img style="width:2940px" src="Unit%203%207421c9cad01141a9b180c92a06925fdd/Screenshot_2023-02-09_at_9.50.58_PM.png"/></a></figure><figure id="a6a2e162-7de0-4fe2-b499-ccb670e3ca47" class="image"><a href="Unit%203%207421c9cad01141a9b180c92a06925fdd/Screenshot_2023-02-09_at_9.52.06_PM.png"><img style="width:2940px" src="Unit%203%207421c9cad01141a9b180c92a06925fdd/Screenshot_2023-02-09_at_9.52.06_PM.png"/></a></figure><figure id="8d2f6b24-edb8-4055-be1c-fc7086c4f2ff" class="image"><a href="Unit%203%207421c9cad01141a9b180c92a06925fdd/Screenshot_2023-02-09_at_9.52.16_PM.png"><img style="width:2940px" src="Unit%203%207421c9cad01141a9b180c92a06925fdd/Screenshot_2023-02-09_at_9.52.16_PM.png"/></a></figure></li></ol><ol type="1" id="075646f7-9e33-4c70-a6da-4a19a18eb5dd" class="numbered-list" start="2"><li>Interrupt Initiated I/O<ul id="a4aee7b8-7d4b-4832-ba3f-8de9c2a3e8c1" class="bulleted-list"><li style="list-style-type:disc">In the programmed 1/0 method, the CPU stays in a program loop
+until the 110 unit indicates that it is ready for data transfer.</li></ul><ul id="d3bc471b-dcd1-429f-a5fe-c0bd37d7fe28" class="bulleted-list"><li style="list-style-type:disc">This is a time-consuming process since it keeps the processor busy
+needlessly.</li></ul><ul id="a225ab2c-e27c-4a51-9d84-01543085e39e" class="bulleted-list"><li style="list-style-type:disc">It can be avoided by using an interrupt facility and special
+commands to inform the interface to issue an interrupt request
+signal when the data are available from the device.</li></ul><ul id="962a124d-1678-4e19-a02d-477b4594a8bb" class="bulleted-list"><li style="list-style-type:disc">In the meantime the CPU can proceed to execute another program.</li></ul><ul id="f8bf1b8b-af72-4456-b2ee-6deefd9da718" class="bulleted-list"><li style="list-style-type:disc">The interface meanwhile keeps monitoring the device.</li></ul><ul id="41853c98-d174-4c8b-b1b2-e28f7a4bdc1f" class="bulleted-list"><li style="list-style-type:disc">When the interface determines that the device is ready for data
+transfer, it generates an interrupt request to the computer.</li></ul><ul id="9836c2c6-7dd1-4377-b2c1-a281d911d834" class="bulleted-list"><li style="list-style-type:disc">Upon detecting the external interrupt signal, the CPU momentarily
+stops the task it is processing, branches to a service program to
+process the i/o transfer, and then returns to the task it was
+originally performing.<p id="27c1ff1d-cc7d-4924-961c-662ad8e10698" class=""><strong>Vectored interrupt and Nonvectored interrupt:</strong></p><ul id="a889af13-e210-46dc-afdf-f47cfb88f892" class="bulleted-list"><li style="list-style-type:circle">The CPU responds to the interrupt signal by storing the return address from
+the program counter into a memory stack and then control branches to a
+service routine that processes the required i/o transfer.</li></ul><ul id="0d9d65a3-dd97-495d-85f7-6d432c38258b" class="bulleted-list"><li style="list-style-type:circle">The way that the processor chooses the branch address of the service
+routine varies from one unit to another. In principle, there are two methods
+for accomplishing this.</li></ul><ul id="7c8ff4fe-5475-4180-8b3c-5bafc140b7aa" class="bulleted-list"><li style="list-style-type:circle">One is called <strong>vectored interrupt </strong>and the other, <strong>nonvectored interrupt</strong>.</li></ul><ul id="ff26185b-3535-46c5-91a1-e51d0ccf0d5f" class="bulleted-list"><li style="list-style-type:circle">In a non vectored interrupt, the branch address is assigned to a fixed<p id="a3e3cc4a-4eb8-4fe6-aad6-7e607c704414" class="">location in memory.</p></li></ul><ul id="5f6a4d12-7212-4b19-9b56-66a4d99bb59f" class="bulleted-list"><li style="list-style-type:circle">In a vectored interrupt, the source that interrupts supplies the branch
+information to the computer. This information is called the interrupt vector.</li></ul><ul id="b210e785-0929-4f23-8dd1-a6e6e2ee2bc7" class="bulleted-list"><li style="list-style-type:circle">In some computers the interrupt vector is the first address of the VO service
+routine.</li></ul></li></ul></li></ol><ol type="1" id="4c4f06c8-144a-4078-b3c7-d21a12837273" class="numbered-list" start="3"><li>Direct Memory Access<ul id="e4302641-2c89-435b-beca-3270a5c8c4c6" class="bulleted-list"><li style="list-style-type:disc"><strong>Direct Memory Access</strong>: The data transfer between a fast storage media
+such as magnetic disk and memory unit is limited by the speed of the CPU.</li></ul><ul id="fd26670f-6973-40dc-85dc-4a5c79b15d40" class="bulleted-list"><li style="list-style-type:disc">Thus we can allow the peripherals directly communicate with each other
+using the memory buses, removing the intervention of the CPU.</li></ul><ul id="1c8b03a4-9231-446e-b86e-8facad7e9643" class="bulleted-list"><li style="list-style-type:disc">This type of data transfer technique is known as DMA or direct memory
+access.</li></ul><ul id="754f449c-366c-42a7-88de-b2301383c4f2" class="bulleted-list"><li style="list-style-type:disc">During DMA the CPU is idle and it has no control over the memory buses.</li></ul><ul id="def55f39-d2cc-4f63-834f-d5c5f2f7d150" class="bulleted-list"><li style="list-style-type:disc">The DMA controller takes over the buses to manage the transfer directly
+between the I/O devices and the memory unit.</li></ul><figure id="3f1e2984-b74f-4945-bca6-bf1d3b2d6656" class="image"><a href="Unit%203%207421c9cad01141a9b180c92a06925fdd/Screenshot_2023-02-09_at_9.54.10_PM.png"><img style="width:1684px" src="Unit%203%207421c9cad01141a9b180c92a06925fdd/Screenshot_2023-02-09_at_9.54.10_PM.png"/></a></figure></li></ol><ul id="66c57344-db47-4c2f-bed9-5584b8a8c038" class="bulleted-list"><li style="list-style-type:disc"><strong>Bus Request : </strong>It is used by the DMA controller
+to request the CPU to relinquish the control of
+the buses.</li></ul><ul id="4a5e56b9-859c-44e0-aba9-5524a9abaa34" class="bulleted-list"><li style="list-style-type:disc"><strong>Bus Grant : </strong>It is activated by the CPU to Inform
+the external DMA controller that the buses are
+in high impedance state and the requesting
+DMA can take control of the buses. Once the
+DMA has taken the control of the buses it
+transfers the data. This transfer can take place
+in many ways.</li></ul><ul id="232a32cd-9bc6-4a5d-9d14-8ee0132022be" class="bulleted-list"><li style="list-style-type:disc">The CPU activates the Bus grant (BG) output to
+inform the external DMA that the buses are in
+the high -impedance state.</li></ul><ul id="346b3358-848c-467c-8879-cfff4144d5ca" class="bulleted-list"><li style="list-style-type:disc">The DMA that originated the bus request can
+now take control of the buses to conduct
+memory transfers without processor
+intervention.</li></ul><ul id="d7aea788-3620-48a0-9238-a7969fc1b627" class="bulleted-list"><li style="list-style-type:disc">When the DMA terminates the transfer, it
+disables the bus request line.</li></ul><ul id="d9b74fe0-4778-4f5a-93ba-2e5c0a8aa567" class="bulleted-list"><li style="list-style-type:disc">The CPU disables the bus grant, takes control of
+the buses, and returns to its normal operation.<figure id="9dc87121-d774-4a95-ae42-d5e11015e014" class="image"><a href="Unit%203%207421c9cad01141a9b180c92a06925fdd/Untitled%204.png"><img style="width:480px" src="Unit%203%207421c9cad01141a9b180c92a06925fdd/Untitled%204.png"/></a></figure></li></ul></li></ol><ol type="1" id="db66474e-dec5-4088-be6b-5f72132278a6" class="numbered-list" start="7"><li><strong>EXPLAIN PRIVILEGED AND NON-PRIVILEGED INSTRUCTIONS?</strong><p id="8fa95dc2-5ce1-4c26-a86b-abe1f2241ea0" class="">Instructions are divided into two categories:
+b. privileged instructions.
+</p><ol type="1" id="06e5213c-a461-4cc6-ba16-1fa04b96bc66" class="numbered-list" start="1"><li>Non Privileged Instructions<p id="d8154ea4-91a7-4a51-b698-cf0aeef896d3" class="">A non-privileged instruction is an instruction that any application or user can execute.</p><figure id="9b70508a-5971-44e9-8070-91152cf499d6" class="image"><a href="Unit%203%207421c9cad01141a9b180c92a06925fdd/Screenshot_2023-02-09_at_9.56.36_PM.png"><img style="width:1650px" src="Unit%203%207421c9cad01141a9b180c92a06925fdd/Screenshot_2023-02-09_at_9.56.36_PM.png"/></a></figure></li></ol><ol type="1" id="59732822-2af3-4de6-a8e2-3a19570857fd" class="numbered-list" start="2"><li>Priviledged Instructions<p id="2b7c1fe9-cd1d-4f94-9fa2-f1ca7a41aa4d" class="">A privileged instruction, on the other hand, is an instruction that can only be executed in kernel mode. Instructions are divided in this manner because privileged instructions could harm the kernel.</p><figure id="2a5092f1-dbba-4b88-9238-5dfa811b0b24" class="image"><a href="Unit%203%207421c9cad01141a9b180c92a06925fdd/Screenshot_2023-02-09_at_9.57.44_PM.png"><img style="width:1724px" src="Unit%203%207421c9cad01141a9b180c92a06925fdd/Screenshot_2023-02-09_at_9.57.44_PM.png"/></a></figure></li></ol></li></ol><ol type="1" id="fabc738e-23eb-4055-a1ba-0e9e8dc1cb84" class="numbered-list" start="8"><li><strong>EXPLAIN SOFTWARE INTERRUPT AND SOFTWARE EXCEPTION?</strong><p id="33f54488-2729-4ad4-bae2-0539f98b1669" class="">Exceptions and interrupts are unexpected events that disrupt the normal flow of instruction execution. An exception is an unexpected event from within the processor. An interrupt is an unexpected event from outside the processor. You are to implement exception and interrupt handling in your multicycle CPU design.External interrupts come from input input (I/O) devices, from a timing device, from a circuit monitoring the power supply, or from any other external source. Examples that cause external interrupts are l/0 device requesting transfer of data, l/0 device finished transfer of data, elapsed time of an event, or power failure. Internal interrupts arise from illegal or erroneous use of an instruction or data. Internal interrupts are also called traps. Examples of interrupts caused by internal error conditions are register overflow, attempt to divide by zero, an invalid operation code, stack overflow, and protection violation. External and internal interrupts are initiated from signals that occur in the hardware of the CPU. A software interrupt is initiated by executing an instruction.</p><p id="afa800ad-56dc-48d9-bbe6-c90c28ea383e" class="">a. <strong>Software interrupt</strong> is a special call instruction that behaves like an interrupt rather than a subroutine call. It can be used by the programmer to initiate an interrupt procedure at any desired point in the program. The most common use of software interrupt is associated with a supervisor call instruction. This instruction provides means for switching from a CPU user mode to the supervisor mode. Certain operations in the computer may be assigned to the supervisor mode only, as for example, a complex input or output transfer
+procedure.</p><p id="54c12a17-b792-41a5-bce6-5f1589ff305d" class="">b. <strong><strong><strong>Software Exceptions</strong></strong></strong></p><figure id="dda062a7-e6d3-41a2-878b-507402ba5933" class="image"><a href="Unit%203%207421c9cad01141a9b180c92a06925fdd/Screenshot_2023-02-09_at_9.59.45_PM.png"><img style="width:2940px" src="Unit%203%207421c9cad01141a9b180c92a06925fdd/Screenshot_2023-02-09_at_9.59.45_PM.png"/></a></figure><figure id="7dba00cb-f3d7-417f-99a6-91b66bfcf7fa" class="image"><a href="Unit%203%207421c9cad01141a9b180c92a06925fdd/Screenshot_2023-02-09_at_10.00.18_PM.png"><img style="width:2940px" src="Unit%203%207421c9cad01141a9b180c92a06925fdd/Screenshot_2023-02-09_at_10.00.18_PM.png"/></a></figure></li></ol><ol type="1" id="ea60a3c2-33ad-402b-9f26-430b3a954b88" class="numbered-list" start="9"><li><strong>DEFINE A PROCESS? EXPLAIN DIFFERENT PROCESS STATES?</strong><ul id="4d23790f-13d8-4821-a43a-d4e0885d40eb" class="bulleted-list"><li style="list-style-type:disc">A program in execution – A process has its own address space consisting of:</li></ul><ul id="f2468ad3-cf6b-4366-bd06-929a9c108351" class="bulleted-list"><li style="list-style-type:disc">Text region: – Stores the code that the processor executes</li></ul><ul id="197faf20-00e7-42c3-85d1-52d1ec0ffe6b" class="bulleted-list"><li style="list-style-type:disc">Data region: – Stores variables and dynamically allocated memory</li></ul><ul id="2bf1df86-9b46-43f9-82d3-9d149950c9ae" class="bulleted-list"><li style="list-style-type:disc">Stack region: – Stores instructions and local variables for active procedure calls<p id="5ccdf652-4266-4dca-8883-2d0f61206a1d" class=""> <strong>Process States: Life Cycle of a Process</strong></p><ol type="a" id="7e126369-2bc2-4231-9e2b-76f7b7bc6d2c" class="numbered-list" start="1"><li>A process moves through a series of discrete process states: – Running state</li></ol><ol type="a" id="0c3a5b41-f396-4677-93a6-b8516bfd1e3f" class="numbered-list" start="2"><li>The process is executing on a processor – Ready state</li></ol><ol type="a" id="138afbba-2787-4bc6-b92a-f16d37c5fe6e" class="numbered-list" start="3"><li>The process could execute on a processor if one were available – Blocked state</li></ol><ol type="a" id="972ea6ed-1c84-4cbb-adf8-c9d474b976e5" class="numbered-list" start="4"><li>The process is waiting for some event to happen before it can proceed</li></ol><ol type="a" id="8557a6b1-1a8a-4720-8653-ccd0e2e516d5" class="numbered-list" start="5"><li>The OS maintains a ready list and a blocked list to store references to processes not running</li></ol></li></ul><p id="1292078c-426e-4419-a472-ac1e87dbef10" class="">Operating systems provide fundamental services to processes including: –</p><ul id="f4c993e7-4afb-4091-9420-9311583f8d5b" class="bulleted-list"><li style="list-style-type:disc">Creating processes</li></ul><ul id="bed3c022-fe78-4451-b4c7-0237a1722111" class="bulleted-list"><li style="list-style-type:disc">Destroying processes</li></ul><ul id="93aabd38-7d44-40c8-89c7-ad1042cc6c41" class="bulleted-list"><li style="list-style-type:disc">Suspending processes</li></ul><ul id="c961bb87-c486-43a0-8051-097337415e6a" class="bulleted-list"><li style="list-style-type:disc">Resuming processes</li></ul><ul id="5b092667-7d43-489d-adba-da9d49c48916" class="bulleted-list"><li style="list-style-type:disc">Changing a process’s priority</li></ul><ul id="b6d90c36-21d8-4e9d-b61d-9ad3525a17fe" class="bulleted-list"><li style="list-style-type:disc">Blocking processes</li></ul><ul id="6769f297-1214-4659-b528-e721282284fd" class="bulleted-list"><li style="list-style-type:disc">Waking up processes</li></ul><ul id="8aec9b18-05b8-4bac-bfad-e96a8f6facad" class="bulleted-list"><li style="list-style-type:disc">Dispatching processes</li></ul><ul id="17025418-56e0-4da2-929b-997a91970abe" class="bulleted-list"><li style="list-style-type:disc">Interprocess communication (IPC)</li></ul><p id="41609a1f-0225-4f72-942f-85f47494edfe" class=""><strong>Process states: </strong>–
+The act of assigning a processor to the first process on the ready list is called <strong>dispatching</strong></p><p id="76b1d65f-cf53-4a01-8cda-6b310eb3c1d4" class="">The OS may use an interval timer to allow a process to run for a specific time interval or quantum Cooperative multitasking lets each process run to completion
+<strong>State Transitions: </strong>–</p><p id="fec4af93-0d8f-47b3-8b00-d41ecace2864" class="">At this point, there are four possible state transitions
+When a process is dispatched, it transitions from ready to running .
+When the quantum expires, it transitions from running to ready.
+When a process blocks, it transitions from running to blocked.
+When the event occurs, it transitions from blocked to ready.</p></li></ol><ol type="1" id="7c1b4cf0-9eda-4f3b-b588-1ac6732074e1" class="numbered-list" start="10"><li><strong>WRITE ABOUT USB?</strong><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="738e3d85-53d1-45bb-8760-8950493322b4"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><strong>The USB has been designed to meet several key objectives </strong>‹</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="db02f32f-c1c5-4118-b78d-46136c05cf4b"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Provide a simple, low-cost, and easy to use interconnection
+system that overcomes the difficulties due to the limited
+number of I/O ports available on a computer ‹</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2a585644-788f-4c30-aa08-df94c31b6cb3"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Accommodate a wide range of data transfer characteristics
+for I/O devices, including telephone and Internet
+connections ‹</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="ae82389e-51f7-48bd-af11-0a3c62c64fbe"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Enhance user convenience through a “plug-and-play” mode
+of operation</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="6583fee0-5213-4eae-8b89-0eaaa26d043d"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">A serial transmission format has been chosen for the USB
+because a serial bus satisfies the low-cost and flexibility
+requirements</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="335364de-ab26-4a12-a97b-df643d39dc20"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">To accommodate a large number of devices that can be added
+or removed at any time, the USB has the tree structure</div></figure><p id="c8f6a3b6-3bd4-4b11-aa79-cc5b7c4b8442" class="">
+</p><p id="e1ee6bc0-b8bf-4288-a8f2-cd57d657b9c2" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>USB Protocols</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="418fbe39-35f2-4fd1-9f5d-74f7dc1c1290"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">All information transferred over the USB is organized in packets, where a packet consists of one or more bytes of information.</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="cf925928-9465-4a66-8034-ce720a81217e"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">The information transferred on the USB can be divided into two broad categories: control and data. ‹ Control packets perform such tasks as addressing a device to initiate data transfer, acknowledging that data have been received correctly, or indicating an error. Data packets carry information that is delivered to a device. For example, input and output data are transferred inside data packets</div></figure></li></ol></div></article></body></html>
