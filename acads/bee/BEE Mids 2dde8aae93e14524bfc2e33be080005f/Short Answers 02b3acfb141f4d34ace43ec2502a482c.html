@@ -1,0 +1,674 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Short Answers</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="02b3acfb-141f-4d34-ace4-3ec2502a482c" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/nasa_space_shuttle_challenger.jpg" style="object-position:center 6.9100000000000055%"/><h1 class="page-title">Short Answers</h1></header><div class="page-body"><ol type="1" id="4236a68c-4774-495f-bd88-9a4bc66f5f18" class="numbered-list" start="1"><li><strong>State Principle of DC Motor. [L2]</strong><p id="f5d7b470-6ae1-49db-ad8b-dbd9827f8c6f" class="">A DC motor works based on Faraday&#x27;s Law of Electromagnetic Induction, which states that a voltage is generated in a conductor that moves within a magnetic field.</p><h3 id="dec892e9-c5f3-48e7-8f1d-4a77ecc6ff74" class=""><strong>Components</strong></h3><ul id="d95e7da4-57db-447d-9310-d0fef7c1cd5d" class="bulleted-list"><li style="list-style-type:disc">Rotating armature: Typically made of a coil of wire, placed within a magnetic field created by permanent magnets or an electromagnet.</li></ul><h3 id="2e5cc8a4-417c-434b-84dd-441af521b257" class=""><strong>Operation</strong></h3><ul id="d024570e-9969-42e8-bf0b-5398b7539eba" class="bulleted-list"><li style="list-style-type:disc">When a current flows through the armature, it creates a magnetic field that interacts with the magnetic field of the magnets, causing the armature to rotate.</li></ul><ul id="42b1130b-ab4f-4920-9d67-e87275a17862" class="bulleted-list"><li style="list-style-type:disc">The direction of the current in the armature can be reversed to change the direction of rotation.</li></ul><ul id="73a60bc0-fd8d-4d20-8423-e99132503c25" class="bulleted-list"><li style="list-style-type:disc">The speed of the motor can be controlled by adjusting the strength of the current, typically done using a controller.</li></ul><h3 id="e41979fa-d99f-45b6-9d5c-3d1b79e99519" class=""><strong>Summary</strong></h3><p id="b26a489e-871e-4c6f-9797-147ddea5e2f7" class="">The basic principle of a DC motor is that a voltage is generated in a conductor that moves within a magnetic field, causing the conductor to rotate. The direction and speed of the rotation can be controlled by adjusting the strength and direction of the current flowing through the conductor.</p><hr id="b86479de-9742-4026-ad33-768c7210ecc5"/></li></ol><ol type="1" id="9e99a4b4-7845-4122-a871-53a3ee5f76dd" class="numbered-list" start="2"><li><strong>What are the different losses in a Transformer. [L1]</strong><p id="8350c7e4-23ec-45ee-884b-85a6f2f652e8" class="">In a transformer, there are several types of losses that can occur, including:</p><h3 id="b6382bd7-8e6f-41db-b285-e5b24dc7cce3" class=""><strong>1. Copper Loss</strong></h3><ul id="70b5503f-c37b-4b90-9569-2632903c3ba9" class="bulleted-list"><li style="list-style-type:disc">Occurs due to resistance of the winding wires, causing a portion of the electrical energy to be lost as heat.</li></ul><h3 id="8693e011-00fd-45f4-9d95-7fb6b1ee0692" class=""><strong>2. Eddy Current Loss</strong></h3><ul id="5f2d0f2a-3898-4bd9-8122-e88850d35d96" class="bulleted-list"><li style="list-style-type:disc">Occurs due to circulating currents induced in the core, causing energy to be lost as heat.</li></ul><h3 id="7cb0d896-b9a1-4e55-8c1a-923eddb2b7ea" class=""><strong>3. Hysteresis Loss</strong></h3><ul id="27804022-4d3f-49e1-82e9-0d3429c99fb5" class="bulleted-list"><li style="list-style-type:disc">Occurs due to the continuous reversal of magnetic polarization in the core, causing energy to be lost as heat.</li></ul><h3 id="4f096519-f9e1-454d-80b5-01f956caf467" class=""><strong>4. Leakage Inductance Loss</strong></h3><ul id="91483271-620e-4b2f-9994-6d73a0bf7394" class="bulleted-list"><li style="list-style-type:disc">Occurs due to the imperfect magnetic coupling between the windings, causing energy to be lost as heat.</li></ul><h3 id="1cbbf21d-43a5-45c2-b263-ad7833830ae8" class=""><strong>5. Iron Loss</strong></h3><ul id="0e8ec627-476b-49fd-a0c4-8ed3bd52fe66" class="bulleted-list"><li style="list-style-type:disc">Occurs due to the heating of the core, causing energy to be lost as heat.</li></ul><p id="1642bbef-41b2-4ec8-8a31-aeaedc78c406" class="">In summary, these losses can cause a reduction in the efficiency of a transformer and result in a portion of the electrical energy being lost as heat. It is important to minimize these losses to ensure that the transformer operates at maximum efficiency.</p><hr id="15a64b75-a452-47db-8ab9-d4f3d5e5ce12"/></li></ol><ol type="1" id="078da420-b783-4c0d-a30c-d53e22da2b76" class="numbered-list" start="3"><li><strong>Define Primary Winding &amp; Secondary Winding of a Transformer. [L1]</strong><p id="559a8469-f4d8-477f-8daf-20b12b7e9395" class="">In a transformer, the primary winding and secondary winding play important roles in the transformation of electrical energy from one circuit to another.</p><h3 id="d7619dcd-ea7c-42e8-8a39-e9361601f301" class=""><strong>Primary Winding</strong></h3><ul id="34ca662c-dc7f-4f6f-a419-9de9299b463a" class="bulleted-list"><li style="list-style-type:disc">The primary winding is the coil of wire that is connected to the input voltage source in a transformer.</li></ul><ul id="1a4b9f63-640d-443f-a1a7-4ace82f86fff" class="bulleted-list"><li style="list-style-type:disc">The alternating current in the primary winding creates a changing magnetic field in the core of the transformer.</li></ul><h3 id="3dbd5e1b-b688-4a04-b187-2e14c380adb9" class=""><strong>Secondary Winding</strong></h3><ul id="ec36fadd-9797-48a1-a791-5dc95e9fb01c" class="bulleted-list"><li style="list-style-type:disc">The secondary winding is the coil of wire that is wound around the same core as the primary winding.</li></ul><ul id="cc653109-2434-4919-9fca-cc27757867c6" class="bulleted-list"><li style="list-style-type:disc">The changing magnetic field in the core induces an alternating voltage in the secondary winding.</li></ul><ul id="f7eb01bc-9d4a-4fe5-af58-f3e371ba4b6e" class="bulleted-list"><li style="list-style-type:disc">The voltage in the secondary winding can be transformed to a different value than the voltage in the primary winding, depending on the turns ratio of the windings.</li></ul><p id="f65ef41e-6bad-4761-bdd5-64522190ac3f" class="">In summary, the primary winding is connected to the input voltage source and creates the magnetic field in the transformer, while the secondary winding receives the transformed voltage from the magnetic field.</p><hr id="d10ad96b-f4c1-4d24-bebc-ba0b604921c5"/></li></ol><ol type="1" id="347c7194-620f-491a-bea9-096bede0dab0" class="numbered-list" start="4"><li><strong>Write the working principle of Alternator. [L1]</strong><p id="06491cee-4bd5-487d-b53a-e3766cc84683" class="">An alternator is an electrical generator that converts mechanical energy into alternating current (AC) electrical energy.</p><h3 id="5f2b1f20-1374-4067-8159-426577e12f4e" class=""><strong>Operation</strong></h3><ul id="bde581ee-fbfb-4e59-b96b-f76fe0ea525d" class="bulleted-list"><li style="list-style-type:disc">The alternator consists of a rotating magnetic field and a stationary set of coils (stator).</li></ul><ul id="033692ef-f6a3-4ba6-bfe3-2f86921b73d9" class="bulleted-list"><li style="list-style-type:disc">The rotating magnetic field is created by an electromagnet powered by a DC source.</li></ul><ul id="04d377a8-1d87-4700-86cb-cfad52f0038e" class="bulleted-list"><li style="list-style-type:disc">As the magnetic field rotates, it induces alternating current (AC) in the stator windings.</li></ul><ul id="784810a5-1dcf-4b4d-8d32-b34c326a918c" class="bulleted-list"><li style="list-style-type:disc">The induced AC is then rectified to direct current (DC) using a rectifier, and can then be used to power electrical loads.</li></ul><h3 id="a2f96261-fa2c-4ed0-87b2-9859b5967d42" class=""><strong>Key Components</strong></h3><ul id="6fd06144-0dd4-4e44-b450-6f6c0e9ed0f3" class="bulleted-list"><li style="list-style-type:disc">Rotating magnetic field: Created by an electromagnet powered by a DC source.</li></ul><ul id="54aa7178-6562-4fb0-86fe-66cf59ae76b6" class="bulleted-list"><li style="list-style-type:disc">Stator: Stationary set of coils that receive the induced AC from the rotating magnetic field.</li></ul><ul id="b4db9c55-acdd-4bab-a2c4-f35b42de6971" class="bulleted-list"><li style="list-style-type:disc">Rectifier: Converts the induced AC to DC.</li></ul><p id="73da6922-4bcf-493b-89b5-8f0b8436dce0" class="">In summary, the working principle of an alternator involves a rotating magnetic field inducing AC in the stator, which is then rectified to DC for use as electrical energy.</p><hr id="ee67b8a5-ccd0-4574-a68d-fbdcb4275bf3"/></li></ol><ol type="1" id="890e6b49-486d-487f-a74f-2219bd59ab33" class="numbered-list" start="5"><li><strong>Define the slip of an Induction Motor. [L1]</strong><p id="39218aac-6857-431c-9542-7c6a5a1095d6" class="">Slip is a measure of the difference between the synchronous speed of a rotating magnetic field in an induction motor and the actual speed of the rotor.</p><h3 id="c4097df1-8817-44f6-8ca3-47ccbd884d0a" class=""><strong>Calculation</strong></h3><p id="bb74fafc-1b27-4267-9895-78f2d55453de" class="">Slip is calculated as a percentage of the synchronous speed, using the following formula:</p><pre id="f0a3848c-6b25-400c-921e-eca6e5401544" class="code code-wrap"><code>Slip = (Synchronous speed - Rotor speed) / Synchronous speed * 100%</code></pre><h3 id="3ccb56ba-e22f-4fd6-9f6c-87ff4f0a7dd4" class=""><strong>Significance</strong></h3><ul id="f723ff95-7ffe-4a1a-b504-969d147ddc84" class="bulleted-list"><li style="list-style-type:disc">Slip is an important factor in the operation of an induction motor, as it determines the amount of torque produced by the motor.</li></ul><ul id="08babfac-1d64-4b95-800d-0ea65f01f895" class="bulleted-list"><li style="list-style-type:disc">A small amount of slip is necessary for the motor to produce torque, as it allows the magnetic field to rotate slightly faster than the rotor, inducing a current in the rotor and producing torque.</li></ul><p id="c78f243e-9a23-4b6f-851d-36cb10493033" class="">In summary, slip is a measure of the difference between the synchronous speed of a rotating magnetic field in an induction motor and the actual speed of the rotor, and is important in determining the torque produced by the motor.</p><hr id="29d2904e-152f-47b2-a6d8-cecd66205da7"/></li></ol><ol type="1" id="6d83c5be-3362-4e96-afdd-cadd637ad653" class="numbered-list" start="6"><li><strong>What is mean by Voltage Regulation of a Transformer. [L1]</strong><p id="9628db69-ca4f-47ff-be62-f20746adea6c" class="">Voltage regulation in a transformer refers to the stability of the output voltage under varying load conditions.</p><h3 id="5a2c0416-39ac-4fac-87e3-a988fa22e6de" class=""><strong>Calculation</strong></h3><p id="78a64ab5-5552-43d4-852f-da4a51c20858" class="">Voltage regulation is calculated as the difference between the no-load voltage and the full-load voltage, expressed as a percentage of the full-load voltage, using the following formula:</p><pre id="ba18ea54-9835-41ab-afde-c4eddfae5eef" class="code code-wrap"><code>Voltage regulation = (No-load voltage - Full-load voltage) 
+																					/ Full-load voltage * 100%</code></pre><h3 id="3956604b-89db-4690-add9-9d3cca80e256" class=""><strong>Significance</strong></h3><ul id="6a4ef255-3713-4330-8a2b-ec0d7eeefeba" class="bulleted-list"><li style="list-style-type:disc">The voltage regulation of a transformer is an important factor in determining its performance, as it affects the stability and accuracy of the output voltage.</li></ul><ul id="6bdd96e5-a6e6-41d3-98a3-493ebd9323a9" class="bulleted-list"><li style="list-style-type:disc">A low voltage regulation indicates that the output voltage is stable and does not vary significantly under varying load conditions.</li></ul><ul id="e1e2f9f3-0e5e-4294-bf82-16e33fe19684" class="bulleted-list"><li style="list-style-type:disc">A high voltage regulation indicates that the output voltage is not stable and may vary significantly under varying load conditions, causing problems in power systems and affecting the operation of connected devices.</li></ul><p id="4b619910-9700-4e6c-aaa6-a939aa81e0c3" class="">In summary, voltage regulation in a transformer refers to the stability of the output voltage under varying load conditions, and is an important factor in determining the performance and accuracy of the transformer.</p></li></ol><ol type="1" id="5d3431e6-6151-4599-9bec-decdf2d83443" class="numbered-list" start="7"><li><strong>Write the testing of Transformer. [L1]</strong><p id="5e8445e8-d87e-4525-ac35-deb1e5f74d17" class="">Transformers are tested to ensure that they meet design specifications and perform reliably in their intended applications.</p><h3 id="aa8fafee-b9f9-442f-a7b2-c33e21ab3413" class=""><strong>Types of Tests</strong></h3><ul id="9a5a92ab-0330-42e1-b3b1-829afc31ef64" class="bulleted-list"><li style="list-style-type:disc">Open-circuit test</li></ul><ul id="b46dc2e1-9668-40e4-ba6a-6fd3304bea6f" class="bulleted-list"><li style="list-style-type:disc">Short-circuit test</li></ul><ul id="cb48b245-8ab9-4ece-b7ca-0aa1539bf9e9" class="bulleted-list"><li style="list-style-type:disc">Load test</li></ul><ul id="a828c1f7-cb36-47e4-bd85-646d6578582b" class="bulleted-list"><li style="list-style-type:disc">Excitation test</li></ul><ul id="ebc42412-9e46-4fad-a966-6c93b8853eea" class="bulleted-list"><li style="list-style-type:disc">Insulation resistance test</li></ul><ul id="10af8a0f-3947-4d2e-89c9-5b0ff02dc2d4" class="bulleted-list"><li style="list-style-type:disc">Ratio test</li></ul><ul id="60a7de18-4d1d-4e6f-8471-0558b54fc483" class="bulleted-list"><li style="list-style-type:disc">Phase angle test</li></ul><ul id="439f0d54-64f0-42f2-8143-ab6029cb2683" class="bulleted-list"><li style="list-style-type:disc">No-load current test</li></ul><ul id="fc0c7b1d-c791-4916-a5e9-f58067e6ef12" class="bulleted-list"><li style="list-style-type:disc">Short-circuit impedance test</li></ul><h3 id="d59b711a-b5b1-4a83-840d-0aeeb374f81c" class=""><strong>Open-circuit Test</strong></h3><ul id="922fbe46-49a0-4966-8244-67bdd52b6d79" class="bulleted-list"><li style="list-style-type:disc">Purpose: To determine the no-load voltage of the transformer.</li></ul><ul id="65478455-50dd-4ec9-9efa-5bbdce48e49a" class="bulleted-list"><li style="list-style-type:disc">Procedure: The primary winding is energized with rated voltage, and the secondary winding is left open. The no-load voltage is measured.</li></ul><h3 id="9e3f3982-f733-4035-ba3a-6ff9b6814e1b" class=""><strong>Short-circuit Test</strong></h3><ul id="3925c078-413e-4110-898e-9f6970d08222" class="bulleted-list"><li style="list-style-type:disc">Purpose: To determine the short-circuit current and impedance of the transformer.</li></ul><ul id="f7786d14-f0b0-47a2-b294-e9ce57fd4971" class="bulleted-list"><li style="list-style-type:disc">Procedure: The secondary winding is short-circuited, and the primary winding is energized with rated voltage. The short-circuit current and impedance are measured.</li></ul><h3 id="821c23d7-e0ea-439f-b6b9-0f46f553ae94" class=""><strong>Load Test</strong></h3><ul id="2913b563-9ad5-42b2-94dc-72f56830e3c5" class="bulleted-list"><li style="list-style-type:disc">Purpose: To determine the full-load voltage and current of the transformer.</li></ul><ul id="655ed4ce-a239-4582-82d8-07e6c610175c" class="bulleted-list"><li style="list-style-type:disc">Procedure: The primary winding is energized with rated voltage, and the secondary winding is loaded to its rated capacity. The full-load voltage and current are measured.</li></ul><h3 id="ebf4c9cd-885d-4868-a529-4ba256e5912d" class=""><strong>Excitation Test</strong></h3><ul id="09a554eb-d36f-4e38-a3b8-90112a1538e2" class="bulleted-list"><li style="list-style-type:disc">Purpose: To determine the excitation current required to produce rated voltage at the no-load condition.</li></ul><ul id="3595b825-d98e-43d3-a0ff-61e513f86577" class="bulleted-list"><li style="list-style-type:disc">Procedure: The primary winding is energized with increasing voltage, and the excitation current is measured.</li></ul><h3 id="35dc8aea-b135-4f86-b4e7-d18166f128a5" class=""><strong>Insulation Resistance Test</strong></h3><ul id="1f307ae3-9fa4-4c9c-8315-ee9dbad1d900" class="bulleted-list"><li style="list-style-type:disc">Purpose: To measure the resistance of the insulation between the windings and ground.</li></ul><ul id="979a2408-10fc-4496-8700-58615e74d72d" class="bulleted-list"><li style="list-style-type:disc">Procedure: The insulation resistance is measured using a high-resistance meter.</li></ul><h3 id="9397a298-c8ba-44d1-a459-516562bfd137" class=""><strong>Ratio Test</strong></h3><ul id="4bb9e09e-b9fe-4dd7-89b5-ee3851435697" class="bulleted-list"><li style="list-style-type:disc">Purpose: To determine the turns ratio of the primary to secondary winding.</li></ul><ul id="c9797557-44be-4f8a-824d-4a9d5410d2be" class="bulleted-list"><li style="list-style-type:disc">Procedure: The primary winding is energized with a known voltage, and the secondary winding voltage is measured. The turns ratio is calculated as the ratio of the primary to secondary voltage.</li></ul><h3 id="5beae1be-a1be-4a91-abac-d1383cdaa696" class=""><strong>Phase Angle Test</strong></h3><ul id="8dbbd22e-e32f-485f-86ee-6185ae8f08ce" class="bulleted-list"><li style="list-style-type:disc">Purpose: To determine the phase relationship between the primary and secondary voltage.</li></ul><ul id="41dbd111-460a-43ad-bf27-5f67d76d331a" class="bulleted-list"><li style="list-style-type:disc">Procedure: The phase angle between the primary and secondary voltage is measured using a phase meter.</li></ul><h3 id="76ade2f0-ee48-474a-b5b5-fb885387f5fb" class=""><strong>No-load Current Test</strong></h3><ul id="01447f13-69f0-4554-a044-8f2028d1ad18" class="bulleted-list"><li style="list-style-type:disc">Purpose: To determine the no-load current of the transformer.</li></ul><ul id="7a5ed8c2-bb1d-402d-9d5c-9ddebb48de44" class="bulleted-list"><li style="list-style-type:disc">Procedure: The primary winding is energized with rated voltage, and the no-load current is measured.</li></ul><h3 id="0a599ff2-0d94-4a18-b203-e5f572727b6c" class=""><strong>Short-circuit Impedance Test</strong></h3><ul id="194646c1-d400-4fe5-9c74-50355862756a" class="bulleted-list"><li style="list-style-type:disc">Purpose: To determine the short-circuit impedance of the transformer.</li></ul><ul id="d575154f-575d-4a62-8e5b-9c5eede0a7ce" class="bulleted-list"><li style="list-style-type:disc">Procedure: The short-circuit impedance is measured using a low-resistance meter.</li></ul><p id="1314b5ba-4ef6-4dad-a0cc-d334c8ce3ee7" class="">In summary, transformers are tested to ensure that they meet design specifications and perform reliably in their intended applications. Tests include open-circuit, short-circuit, load, excitation, insulation resistance, ratio, phase angle, no-load current, and short-circuit impedance tests.</p></li></ol><ol type="1" id="1f07944f-e6a5-42f1-9f36-85f01d5ece26" class="numbered-list" start="8"><li><strong>Compare squarral cage and slip ring induction motor. [L2]</strong><h2 id="4a732f4b-8ea6-4e24-92c2-249fd0f6481e" class=""><strong>Squirrel Cage Induction Motor</strong></h2><ul id="21fc431d-1540-49fa-98fc-5d4dbe0a0a0f" class="bulleted-list"><li style="list-style-type:disc">The squirrel cage induction motor is a type of induction motor that has a rotor made of short-circuited bars of copper or aluminum.</li></ul><ul id="d050de6d-c7b0-4aab-b0dc-917efe20fbac" class="bulleted-list"><li style="list-style-type:disc">The rotor bars are surrounded by a laminated iron core.</li></ul><ul id="b3dccb60-fb21-431e-89df-c1121c9c68a2" class="bulleted-list"><li style="list-style-type:disc">The rotor is not connected to any external electrical device, and rotates due to the interaction between the magnetic field of the stator and the magnetic field induced in the rotor.</li></ul><ul id="d565bb29-64a8-4106-8f73-c1829096c7bd" class="bulleted-list"><li style="list-style-type:disc">Advantages: Simple and rugged construction, low maintenance, and high efficiency.</li></ul><h2 id="f31033b4-b825-4e94-bc24-0e6f42f99659" class=""><strong>Slip Ring Induction Motor</strong></h2><ul id="91cbde06-aab6-4120-a984-58f5d5879425" class="bulleted-list"><li style="list-style-type:disc">The slip ring induction motor is a type of induction motor that has a rotor with a winding that is connected to a set of slip rings.</li></ul><ul id="271288dd-8d84-4c35-91ce-7dd24a21111d" class="bulleted-list"><li style="list-style-type:disc">The slip rings are connected to a resistance that is used to control the speed of the motor.</li></ul><ul id="ea4c0030-c634-4c98-9448-1bab05c43b77" class="bulleted-list"><li style="list-style-type:disc">The slip rings allow for a separate electrical connection to the rotor winding, which allows for the control of the speed of the motor.</li></ul><ul id="11a8e587-df08-49b8-8ba5-633f1709e251" class="bulleted-list"><li style="list-style-type:disc">Advantages: High starting torque, adjustable speed, and ability to handle large loads.</li></ul><h2 id="5d10b68b-d6a2-4513-9ab3-6f1385d39089" class=""><strong>Comparison</strong></h2><ul id="7595081d-5aed-483f-8a08-08875c806b61" class="bulleted-list"><li style="list-style-type:disc">Construction: The squirrel cage induction motor has a simple and rugged construction, while the slip ring induction motor has a more complex construction with slip rings and a separate electrical connection to the rotor winding.</li></ul><ul id="a5330716-092b-4240-a753-6f687b959fe4" class="bulleted-list"><li style="list-style-type:disc">Maintenance: The squirrel cage induction motor requires low maintenance, while the slip ring induction motor requires more maintenance due to its complex construction.</li></ul><ul id="9a6e1d63-1c34-46c6-bc59-b6f04ce61997" class="bulleted-list"><li style="list-style-type:disc">Efficiency: The squirrel cage induction motor has high efficiency, while the slip ring induction motor has lower efficiency due to losses in the slip rings.</li></ul><ul id="f2cd2f1a-65fc-4abe-b6d6-6eebcacc5559" class="bulleted-list"><li style="list-style-type:disc">Starting Torque: The slip ring induction motor has high starting torque, while the squirrel cage induction motor has lower starting torque.</li></ul><ul id="1fcffd41-449f-4ab9-b103-5c92f637ec7d" class="bulleted-list"><li style="list-style-type:disc">Speed Control: The slip ring induction motor has adjustable speed, while the squirrel cage induction motor has fixed speed.</li></ul><p id="362dff7f-e8ff-4daf-b54c-8a2f6e542340" class="">In summary, squirrel cage and slip ring induction motors are two types of induction motors that differ in construction, maintenance, efficiency, starting torque, and speed control. The squirrel cage induction motor is simple and rugged with high efficiency, while the slip ring induction motor has high starting torque, adjustable speed, and the ability to handle large loads.</p><p id="e6929e75-b602-4bb6-8f57-9ad59d89e27d" class="">
+</p><p id="dd62254d-4007-4a49-a26e-fdbb2f3f84de" class="">
+</p><p id="292213fc-c8e6-4a14-9f90-6b8500496d64" class="">
+</p><p id="73a159d1-4181-4a5e-b1f3-3fb4b1d4ae25" class="">
+</p></li></ol></div></article></body></html>
