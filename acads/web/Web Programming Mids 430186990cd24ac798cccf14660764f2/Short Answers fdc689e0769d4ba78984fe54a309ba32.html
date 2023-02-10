@@ -1,0 +1,866 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Short Answers</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="fdc689e0-769d-4ba7-8984-fe54a309ba32" class="page sans"><header><h1 class="page-title">Short Answers</h1></header><div class="page-body"><ol type="1" id="4663f599-9c05-4a44-829e-f17464e0a3bc" class="numbered-list" start="1"><li><strong>XML Syntax with Syntax Rules</strong><p id="edfe6d9a-8412-49eb-9935-0fda907e0048" class="">The syntax rules of XML are very simple and logical. The rules are easy to learn, and easy to use.</p><p id="c8301e6b-9a54-4d5f-b2c6-902749755a7a" class="">XML Documents Must Have a Root Element</p><p id="13091099-ae9d-4c5f-98cf-9e319371bc73" class="">XML documents must contain one root element that is the parent of all other elements:</p><pre id="e47dd183-5fd0-4df8-ab45-022a23d38592" class="code"><code>&lt;root&gt;
+&lt;child&gt;
+&lt;subchild&gt;.....&lt;/subchild&gt;
+&lt;/child&gt;
+&lt;/root&gt;</code></pre><p id="c1f491cd-9c8d-4c50-9b1c-e93b5f1d7d11" class="">In this example &lt;note&gt; is the root element:</p><pre id="ec4c5c50-e583-4e4b-b6e3-837c9e736639" class="code"><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;note&gt;
+&lt;to&gt;Tove&lt;/to&gt;
+&lt;from&gt;Jani&lt;/from&gt;
+&lt;heading&gt;Reminder&lt;/heading&gt;
+&lt;body&gt;Don&#x27;t forget me this weekend!&lt;/body&gt;
+&lt;/note&gt;</code></pre><p id="40e0082a-7ad3-4042-952a-fbf1f174777a" class="">
+</p><p id="9cc30fd2-0436-4fea-92e4-7081fce4fce3" class=""><strong>The XML Prolog</strong></p><p id="49df3fe1-9009-4140-8544-15ab5def81eb" class="">This line is called the XML prolog:</p><pre id="dddef7cc-6738-4a37-8451-fdf31c1ce62e" class="code"><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</code></pre><p id="65db6721-ee94-43ae-ae73-0ae58f326eeb" class="">The XML prolog is optional. If it exists, it must come first in the document.</p><p id="875499c5-54fc-4288-b193-e5b6c9a4bb51" class="">XML documents can contain international characters, like Norwegian øæå or French êèé.</p><p id="ee5a5b62-3f99-4de3-b948-5bc0913a3ae0" class="">To avoid errors, you should specify the encoding used, or save your XML files as UTF-8.</p><p id="276fafb8-a889-4043-b083-cf2f07b5afc5" class="">UTF-8 is the default character encoding for XML documents.</p><p id="6cca3526-97a7-436a-9881-6ee84fd8710c" class=""><strong>All XML Elements Must Have a Closing Tag</strong></p><p id="a9975ce5-5497-4b28-8e42-f090348f148f" class="">In XML, it is illegal to omit the closing tag. All elements must have a closing tag:</p><pre id="bd184bc4-fa98-4e98-a974-abc85e5708e7" class="code"><code>&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;br /&gt;</code></pre><p id="6446a6f4-77be-4f1d-8b22-27afa6af112b" class="">
+</p><p id="a89f2c2c-5133-4783-ab53-5a4748771728" class=""><strong>Note: </strong>The XML prolog does not have a closing tag! This is not an error. The prolog is not a part of the XML document.</p><p id="e48cb577-06cc-4aba-82e3-482dfcd9ee79" class=""><strong>XML Tags are Case Sensitive</strong></p><p id="0a41ae5d-417b-4f68-b15d-04c266e66e88" class="">XML tags are case sensitive. The tag &lt;Letter&gt; is different from the tag &lt;letter&gt;.</p><p id="9fa252da-0205-4316-a8a0-fd2852cb2b60" class="">Opening and closing tags must be written with the same case:</p><pre id="b73c44ed-6635-4c84-be0e-37bcd002986b" class="code"><code>&lt;message&gt;This is correct&lt;/message&gt;</code></pre><p id="0bbe69c5-7eba-498f-999a-8ce299225849" class="">
+</p><p id="2a1f3cff-40fd-4166-b5be-1e898c366a02" class="">&quot;Opening and closing tags&quot; are often referred to as &quot;Start and end tags&quot;. Use whatever you prefer. It is exactly the same thing.</p><p id="dfd260d1-ae56-4e68-96c3-e043af3622cd" class=""><strong>XML Elements Must be Properly Nested</strong></p><p id="5e6a3fcf-d134-493b-9b21-d1801b3ccc59" class="">In HTML, you might see improperly nested elements:</p><pre id="fc279604-238a-4d61-b18e-73dfad769aa4" class="code"><code>&lt;b&gt;&lt;i&gt;This text is bold and italic&lt;/b&gt;&lt;/i&gt; // WRONG</code></pre><p id="73a3f840-266d-4105-bc02-f1a7b0e95d6d" class="">In XML, all elements must be properly nested within each other:</p><pre id="67c740dc-14b4-4c76-aa8f-881f8bc74765" class="code"><code>&lt;b&gt;&lt;i&gt;This text is bold and italic&lt;/i&gt;&lt;/b&gt; // CORRECT</code></pre><p id="ebb29deb-6bc7-4182-9e35-a1df4c773636" class="">In the example above, &quot;Properly nested&quot; simply means that since the &lt;i&gt; element is opened inside the &lt;b&gt; element, it must be closed inside the &lt;b&gt; element.</p><p id="3a3332f9-2861-4b63-883f-71593f20ddf6" class=""><strong>XML Attribute Values Must Always be Quoted</strong></p><p id="5cfbd261-d737-492c-90c3-3809c40c7768" class="">XML elements can have attributes in name/value pairs just like in HTML.</p><p id="facddbf1-1a3c-47d5-b2e5-6498248f6eb4" class="">In XML, the attribute values must always be quoted:</p><pre id="989a9eb5-db0a-40d0-b116-65b936467a9d" class="code"><code>&lt;note date=&quot;12/11/2007&quot;&gt;
+&lt;to&gt;Tove&lt;/to&gt;
+&lt;from&gt;Jani&lt;/from&gt;
+&lt;/note&gt;</code></pre></li></ol><ol type="1" id="0294d496-eda8-47fb-88d2-1d0ab9274ba4" class="numbered-list" start="2"><li><strong>JavaScript Control Statements with Syntax</strong><p id="b4e9a33b-a260-4cf3-b676-b9fc0926952a" class="">Conditional statements are used to perform different actions based on different conditions.</p><p id="b9a3832c-d8f8-4d40-b662-2a6efc503c79" class="">Conditional Statements</p><p id="e3bf0790-c819-487c-882e-c666e9e67fe7" class="">Very often when you write code, you want to perform different actions for different decisions.</p><p id="2d7d3049-6250-4d16-892c-900be37bbc58" class="">You can use conditional statements in your code to do this.</p><p id="4e285782-6261-49a2-b7d3-7d4657a64926" class="">In JavaScript we have the following conditional statements:<div class="indented"><p id="8d8f1dc2-36d8-41b0-822d-38810a5e47d0" class="">Use <strong>if</strong> to specify a block of code to be executed, if a specified condition is true</p><p id="25f62380-a15d-4c43-9a44-eb0a9c855dff" class="">Use <strong>else</strong> to specify a block of code to be executed, if the same condition is false</p><p id="2520d7b3-121a-456c-9f52-be9a39b7e7a0" class="">Use <strong>else if</strong> to specify a new condition to test, if the first condition is false</p><p id="0ed49419-d5cd-4028-9300-a398801f97a2" class="">Use <strong>switch </strong>to specify many alternative blocks of code to be executed</p></div></p><pre id="c60b19eb-6c88-406e-9a26-6a27f670d808" class="code"><code>The if Statement
+Use the if statement to specify a block of JavaScript code to be executed if a condition is true.
+
+Syntax
+if (condition) {
+  //  block of code to be executed if the condition is true
+}
+Example
+Make a &quot;Good day&quot; greeting if the hour is less than 18:00:
+if (hour &lt; 18) {
+  greeting = &quot;Good day&quot;;
+}
+The result of greeting will be:
+Good day</code></pre><pre id="29bfe929-d61d-4b25-b516-237507b208e3" class="code"><code>The else Statement
+Use the else statement to specify a block of code to be executed if the condition is false.
+if (condition) {
+  //  block of code to be executed if the condition is true
+} else {
+  //  block of code to be executed if the condition is false
+}
+Example
+If the hour is less than 18, create a &quot;Good day&quot; greeting, otherwise &quot;Good evening&quot;:
+if (hour &lt; 18) {
+  greeting = &quot;Good day&quot;;
+} else {
+  greeting = &quot;Good evening&quot;;
+}
+The result of greeting will be:
+Good day</code></pre><pre id="28ed62e5-51d5-4d63-94dc-27bd4829c6c3" class="code"><code>The else if Statement
+Use the else if statement to specify a new condition if the first condition is false.
+Syntax
+if (condition1) {
+  //  block of code to be executed if condition1 is true
+} else if (condition2) {
+  //  block of code to be executed if the condition1 is false and condition2 is true
+} else {
+  //  block of code to be executed if the condition1 is false and condition2 is false
+}
+Example
+If time is less than 10:00, create a &quot;Good morning&quot; greeting, if not, but time is less than 20:00, create a &quot;Good day&quot; greeting, otherwise a &quot;Good evening&quot;:
+if (time &lt; 10) {
+  greeting = &quot;Good morning&quot;;
+} else if (time &lt; 20) {
+  greeting = &quot;Good day&quot;;
+} else {
+  greeting = &quot;Good evening&quot;;
+}
+The result of greeting will be:
+Good day</code></pre></li></ol><ol type="1" id="d835b685-2023-4950-8475-ffcdaa4ce3b5" class="numbered-list" start="3"><li><strong>XML HTTP Request Object</strong><p id="1af12bcb-48c9-4b84-9e70-b1c9296a48c8" class="">XMLHttpRequest is a request type widely used for sending a request to Ajax pages. You can also call it with a different name: Asynchronous HTTP request. It plays a vital role in the implementation of Ajax techniques for web development.</p><p id="eec7b374-1fab-4123-8ed0-048bad0358b4" class="">XMLHttpRequest transfers and manipulates the XML data to and from a web service using HTTP. Its purpose is to establish an independent connection between the webpage’s client-side and server.</p><ul id="14f11c65-05fb-42b4-899e-470f6b810797" class="bulleted-list"><li style="list-style-type:disc">All modern browsers support the XMLHttpRequest object.</li></ul><ul id="2597368e-91ae-4c49-a18c-eb6855753a55" class="bulleted-list"><li style="list-style-type:disc">The XMLHttpRequest object can be used to exchange data with a server behind the scenes. This means that it is possible to update parts of a web page, without reloading the whole page.</li></ul><ul id="71f26cb4-bdce-4d10-860c-07be1cf100ae" class="bulleted-list"><li style="list-style-type:disc">Create an XMLHttpRequest Object</li></ul><ul id="e92ee903-926c-48b1-a568-b6c4c29af874" class="bulleted-list"><li style="list-style-type:disc">All modern browsers (Chrome, Firefox, Edge (and IE7+), Safari, Opera) have a built-in XMLHttpRequest object.</li></ul><p id="d2d2d6a1-3e29-4fed-a711-53971422cbd9" class=""><strong>Syntax for creating an XMLHttpRequest object:</strong><div class="indented"><pre id="7117ff41-fcb8-4723-8688-281736f54d6d" class="code"><code>Example
+var xhttp = new XMLHttpRequest();
+
+Example program for XMLHttpRequestObject:
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+&lt;h1&gt;The XMLHttpRequest Object&lt;/h1&gt;
+&lt;p id=&quot;demo&quot;&gt;Let AJAX change this text.&lt;/p&gt;
+&lt;button type=&quot;button&quot; onclick=&quot;loadDoc()&quot;&gt;Change Content&lt;/button&gt;
+&lt;script&gt;
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 &amp;&amp; this.status == 200) {
+      document.getElementById(&quot;demo&quot;).innerHTML = this.responseText;
+    }
+  };
+  xhttp.open(&quot;GET&quot;, &quot;ajax_info.txt&quot;, true);
+  xhttp.send();
+}
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+Output:
+The XMLHttpRequest Object
+Let AJAX change this text.
+Change Content</code></pre></div></p></li></ol><ol type="1" id="37302ab1-6ec8-4965-8491-22e3e96d7af7" class="numbered-list" start="4"><li><strong>XML Namespaces</strong><ul id="06a25abd-7329-40ce-9fa3-b39a8284cd1a" class="bulleted-list"><li style="list-style-type:disc">XML Namespaces provide a method to avoid element name conflicts.</li></ul><ul id="e73a93be-993a-4da4-a988-9f3dab2e7aca" class="bulleted-list"><li style="list-style-type:disc">Name Conflicts</li></ul><ul id="b0fe7694-4d6f-4d31-a3ba-062e36135637" class="bulleted-list"><li style="list-style-type:disc">In XML, element names are defined by the developer. This often results in a conflict when trying to mix XML documents from different XML applications.<pre id="65b40140-8c40-40ed-8050-b68dd47d5528" class="code"><code>This XML carries HTML table information:
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Apples&lt;/td&gt;
+    &lt;td&gt;Bananas&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+This XML carries information about a table (a piece of furniture):
+&lt;table&gt;
+  &lt;name&gt;African Coffee Table&lt;/name&gt;
+  &lt;width&gt;80&lt;/width&gt;
+  &lt;length&gt;120&lt;/length&gt;
+&lt;/table&gt;
+If these XML fragments were added together, there would be a name conflict. Both contain a &lt;table&gt; element, but the elements have different content and meaning.
+
+A user or an XML application will not know how to handle these differences.</code></pre></li></ul><p id="676b109f-b58e-42db-acb3-aa8596c6889a" class=""><strong>Solving the Name Conflict Using a Prefix</strong></p><ul id="ea9a21c7-c340-4e52-949e-79ba1dc1c890" class="bulleted-list"><li style="list-style-type:disc">Name conflicts in XML can easily be avoided using a name prefix.</li></ul><ul id="77adad32-b916-4f92-af26-82b3996e561c" class="bulleted-list"><li style="list-style-type:disc">This XML carries information about an HTML table, and a piece of furniture:</li></ul><pre id="619b2b82-e0d1-4be1-b4bd-b0f71d428090" class="code"><code>&lt;h:table&gt;
+  &lt;h:tr&gt;
+    &lt;h:td&gt;Apples&lt;/h:td&gt;
+    &lt;h:td&gt;Bananas&lt;/h:td&gt;
+  &lt;/h:tr&gt;
+&lt;/h:table&gt;
+
+&lt;f:table&gt;
+  &lt;f:name&gt;African Coffee Table&lt;/f:name&gt;
+  &lt;f:width&gt;80&lt;/f:width&gt;
+  &lt;f:length&gt;120&lt;/f:length&gt;
+&lt;/f:table&gt;</code></pre></li></ol><ol type="1" id="46c0cce1-589e-4415-ab4f-e6ec7f6501bb" class="numbered-list" start="5"><li><strong>Javascript Operators</strong><p id="4455d534-a1c5-4034-90f1-5b5437c31239" class=""><strong>Types of JavaScript Operators</strong><div class="indented"><p id="06f44d41-8edb-4e02-8afa-bd68b1022f62" class="">There are different types of JavaScript operators:<div class="indented"><ul id="cd409f15-e4c8-466f-a1e3-b205dcecbcdc" class="bulleted-list"><li style="list-style-type:disc">Arithmetic Operators<pre id="18633ef8-171e-4834-87b0-32b5f07e96f2" class="code"><code>Arithmetic Operators are used to perform arithmetic on numbers:
+Arithmetic Operators Example
+let a = 3;
+let x = (100 + 50) * a;
+Operator	Description
++	Addition
+-	Subtraction
+*	Multiplication
+**	Exponentiation (ES2016)
+/	Division
+%	Modulus (Division Remainder)
+++	Increment
+--	Decrement</code></pre></li></ul><ul id="ae8fb0de-a3f1-4c7e-9c07-a885dff422d8" class="bulleted-list"><li style="list-style-type:disc">Assignment Operators<pre id="ba55ee53-ef7c-4aa8-8d70-65e61a0777be" class="code"><code>Assignment operators assign values to JavaScript variables.
+
+The Addition Assignment Operator (+=) adds a value to a variable.
+
+Operand Example	 Same As
+	=	  x =  y		x = y
+	+=	x += y		x = x + y
+	-=	x -= y		x = x - y
+	*=	x *= y		x = x * y
+	/=	x /= y		x = x / y
+	%=	x %= y		x = x % y
+	**=	x **= y		x = x ** y</code></pre></li></ul><ul id="4b44df84-2ce7-48e8-8fe1-bc44c6a572ea" class="bulleted-list"><li style="list-style-type:disc">Comparison Operators<pre id="59971453-d91a-4c3a-be7d-546582144be6" class="code"><code>Operator	Description
+==		equal to
+===		equal value and equal type
+!=		not equal
+!==		not equal value or not equal type
+&gt;		greater than
+&lt;		less than
+&gt;=		greater than or equal to
+&lt;=		less than or equal to
+?		ternary operator</code></pre></li></ul><ul id="f73abecd-941b-497e-8483-19fe79cd2766" class="bulleted-list"><li style="list-style-type:disc">Logical Operators<pre id="14baf357-c839-4a8f-9bd0-9fc2214c2e1c" class="code"><code>Operator	Description
+&amp;&amp;		logical and
+||		logical or
+!		logical not</code></pre></li></ul><ul id="43a8fa53-3320-4699-98da-d6d7c968f048" class="bulleted-list"><li style="list-style-type:disc">Conditional Operators (<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Ternary Operator)</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></li></ul><ul id="e2f68aa3-cb5f-43a2-bba1-4eb8208e7efd" class="bulleted-list"><li style="list-style-type:disc">Type Operators</li></ul><pre id="5aa4de90-9ec5-48cc-9975-93d9c9e4644a" class="code"><code>Operator	Description
+typeof		Returns the type of a variable
+instanceof	Returns true if an object is an instance of an object type</code></pre><ul id="56dcb215-ee59-46c1-9ce4-de132d454247" class="bulleted-list"><li style="list-style-type:disc">Bitwise Operators<pre id="09429a00-b908-4ccd-8872-70e1810a6abd" class="code"><code>JavaScript Bitwise Operators
+Bit operators work on 32 bits numbers.
+Any numeric operand in the operation is converted into a 32 bit number. 
+The result is converted back to a JavaScript number.
+Operator	Description		Example	Same as	Result	    Decimal
+ 	&amp;	AND			5 &amp; 1		0101 &amp; 0001	0001	 	1
+	|	OR			5 | 1		0101 | 0001	0101	 	5
+	~	NOT			~ 5	 	~0101		1010	 	10
+	^	XOR			5 ^ 1		0101 ^ 0001	0100	 	4
+	&lt;&lt;	left shift		5 &lt;&lt; 1		0101 &lt;&lt; 1	1010	 	10
+	&gt;&gt;	right shift		5 &gt;&gt; 1		0101 &gt;&gt; 1	0010	  	2
+	&gt;&gt;&gt;	unsigned right shift	5 &gt;&gt;&gt; 1		0101 &gt;&gt;&gt; 1	0010	 	 2
+__________________________________________________________________________________</code></pre></li></ul></div></p></div></p></li></ol><ol type="1" id="7fe22f17-2c3c-4273-badf-8a12ca5ea34d" class="numbered-list" start="6"><li><strong>Javascript Function with Syntax</strong><p id="07cef13f-9b0f-4e6f-82a3-0f105f1aa178" class="">A JavaScript function is a block of code designed to perform a particular task.</p><p id="f0b08290-47d4-4709-888a-6b2858d3dea6" class="">A JavaScript function is executed when &quot;something&quot; invokes it (calls it).</p><pre id="a9cd09f9-93e3-4397-b151-38b4edf9ea8a" class="code"><code>Example
+// Function to compute the product of p1 and p2
+function myFunction(p1, p2) {
+  return p1 * p2;
+}</code></pre><pre id="74865475-87c0-40c9-a882-4952bae63772" class="code"><code>Example Program:
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+&lt;h2&gt;JavaScript Functions&lt;/h2&gt;
+&lt;p&gt;This example calls a function which performs a calculation, and returns the result:&lt;/p&gt;
+&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;
+&lt;script&gt;
+function myFunction(p1, p2) {
+  return p1 * p2;
+}
+document.getElementById(&quot;demo&quot;).innerHTML = myFunction(4, 3);
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+Output:
+JavaScript Functions
+This example calls a function which performs a calculation, and returns the result:
+12</code></pre><p id="abe54b62-e3fe-47a4-b924-df958f170b67" class="">A JavaScript function is defined with the function keyword, followed by a name, followed by parentheses ().</p><p id="6efb1241-f3cf-4f29-968b-4ba3cf6bf562" class="">Function names can contain letters, digits, underscores, and dollar signs (same rules as variables).</p><p id="8ab80f38-71cc-4647-a48f-a09bc7621e73" class="">The parentheses may include parameter names separated by commas:</p><pre id="0934aaf5-bda6-404b-9e8d-e29a06d27702" class="code"><code>(parameter1, parameter2, ...)
+The code to be executed, by the function, is placed inside curly brackets: {}
+function name(parameter1, parameter2, parameter3) {
+// code to be executed
+}</code></pre><p id="3d797af2-802c-47a9-ae6b-ddec445bf3ac" class="">Function parameters are listed inside the parentheses () in the function definition.</p><p id="ca04ef58-6ec6-4938-bdb5-254f043d0bb3" class="">Function arguments are the values received by the function when it is invoked.</p><p id="465ca669-72c5-4a1a-98a7-99efb2c16a00" class="">Inside the function, the arguments (the parameters) behave as local variables.</p></li></ol><ol type="1" id="7aa80fd7-5de4-4b75-a963-b51df535827e" class="numbered-list" start="7"><li><strong>What is AJAX, advantages of AJAX</strong><p id="15e8c517-7eaa-4c6e-84be-0a5b2c0364e9" class="">AJAX = Asynchronous JavaScript And XML.</p><p id="7cc8bbab-14a0-4a10-bd22-0e2a99ea1ddb" class="">AJAX is not a programming language.</p><p id="52360647-b6eb-4cdc-8ebc-056a43be1978" class="">AJAX just uses a combination of:</p><ul id="0fe1d7fb-8a01-443f-9b18-fcba08da8dae" class="bulleted-list"><li style="list-style-type:disc">A browser built-in XMLHttpRequest object (to request data from a web server)</li></ul><ul id="897bcce5-5e30-4b37-aa31-d2aa15502295" class="bulleted-list"><li style="list-style-type:disc">JavaScript and HTML DOM (to display or use the data)</li></ul><ul id="d887e429-829c-4010-a0df-cc41482463b3" class="bulleted-list"><li style="list-style-type:disc">AJAX is a misleading name. AJAX applications might use XML to transport data, but it is equally common to transport data as plain text or JSON text.</li></ul><ul id="d076d7e5-610e-46b8-8bae-859c890c6e7e" class="bulleted-list"><li style="list-style-type:disc">AJAX allows web pages to be updated asynchronously by exchanging data with a web server behind the scenes. This means that it is possible to update parts of a web page, without reloading the whole page.</li></ul><p id="5e6d7b57-f338-4aad-9f5a-d1cbc01e3e27" class=""><strong>How AJAX Works</strong></p><ol type="a" id="b576221a-63ec-40fc-82ed-1763bb5185ef" class="numbered-list" start="1"><li> An event occurs in a web page (the page is loaded, a button is clicked)</li></ol><ol type="a" id="295d82be-f757-4f97-80b3-2bd73be9c59b" class="numbered-list" start="2"><li>An XMLHttpRequest object is created by JavaScript</li></ol><ol type="a" id="cd32455c-ddb0-4a28-881a-10365f1b820d" class="numbered-list" start="3"><li>The XMLHttpRequest object sends a request to a web server</li></ol><ol type="a" id="edd72818-8de6-455e-9a4f-ce11059bd557" class="numbered-list" start="4"><li>The server processes the request</li></ol><ol type="a" id="88c80b03-84e5-4a2c-8626-0fd5bd192182" class="numbered-list" start="5"><li>The server sends a response back to the web page</li></ol><ol type="a" id="797f1233-4030-42a8-b87e-a2998ecf232f" class="numbered-list" start="6"><li>The response is read by JavaScript</li></ol><ol type="a" id="8c7670ed-e79d-4553-820b-5306f31c7778" class="numbered-list" start="7"><li>Proper action (like page update) is performed by JavaScript</li></ol><p id="122fe65c-ba18-42d8-92ab-62745fe9f315" class=""><strong>Advantages of AJAX</strong></p><ul id="e4be9d6d-61f4-42e1-9072-6bf682c8dd29" class="bulleted-list"><li style="list-style-type:disc">Server traffic can be reduced and speed increased. Ajax&#x27;s primary advantage is its ability to improve performance and usability for web applications. ...</li></ul><ul id="7d9d3596-d44f-443d-87f9-247dcef7ea60" class="bulleted-list"><li style="list-style-type:disc">Enable asynchronous calls. ...</li></ul><ul id="69a000de-3515-4a96-8674-fc61b539f110" class="bulleted-list"><li style="list-style-type:disc">XMLHttpRequest. ...</li></ul><ul id="915bf4aa-cf5b-480d-8d2b-2e313ed0075b" class="bulleted-list"><li style="list-style-type:disc">Decrease bandwidth consumption. ...</li></ul><ul id="6188f6b0-0e7b-4e5c-ab31-858a29fd4100" class="bulleted-list"><li style="list-style-type:disc">Validation of Form.</li></ul></li></ol><ol type="1" id="bbf08989-0ce9-4eb4-ae74-73c639fd0618" class="numbered-list" start="8"><li><strong>XML Schema</strong><p id="5d1e020c-3f00-4170-b9fb-a1b82a968fab" class="">An XML Schema describes the structure of an XML document.</p><p id="6250ba0d-5910-48a5-bc54-7c37e5d7894a" class="">The XML Schema language is also referred to as XML Schema Definition (XSD).</p><p id="26ed0341-7276-4f1f-bbce-916aed24aa4e" class="">The <strong>purpose</strong> of an XML Schema is to define the legal building blocks of an XML document:</p><ul id="a1d10f82-674c-47f7-b855-9230e607b0b0" class="bulleted-list"><li style="list-style-type:disc">the elements and attributes that can appear in a document</li></ul><ul id="8e2a08e0-ad39-40fb-b762-010b53a52933" class="bulleted-list"><li style="list-style-type:disc">the number of (and order of) child elements</li></ul><ul id="88056780-eac0-4072-8cb2-734b2f17feb3" class="bulleted-list"><li style="list-style-type:disc">data types for elements and attributes</li></ul><ul id="51067b5b-9c06-4914-92f4-5b8e45245bd5" class="bulleted-list"><li style="list-style-type:disc">default and fixed values for elements and attributes</li></ul></li></ol><ol type="1" id="432e3194-4b67-4aa3-8274-5f372750527f" class="numbered-list" start="9"><li><strong>JavaScript variable declaration</strong><p id="4ee61bc1-5ee6-4c91-8efc-a7b07a013f08" class="">4 Ways to Declare a JavaScript Variable:</p><ul id="75401f29-c794-4ef8-bdcb-5816e5503a28" class="bulleted-list"><li style="list-style-type:disc">Using var</li></ul><ul id="75e72b4a-41c7-49a0-bcd4-09eed647256d" class="bulleted-list"><li style="list-style-type:disc">Using let</li></ul><ul id="7ceed678-d9e1-44f1-a6e0-387d779e1ace" class="bulleted-list"><li style="list-style-type:disc">Using const</li></ul><ul id="5aed9d6d-c8fb-49d6-9ddb-880c0771b22d" class="bulleted-list"><li style="list-style-type:disc">Using nothing</li></ul><p id="daec0773-49f7-4e92-a755-155b9b67e669" class=""><strong>When to Use JavaScript var?</strong></p><p id="3a0c313d-4c14-4d35-9279-bed2fd192ab2" class="">Always declare JavaScript variables with var,let, orconst.</p><p id="de820f1c-7f46-4b2a-8f93-a378f65c8ff6" class="">The <strong>var </strong>keyword is used in all JavaScript code from 1995 to 2015.</p><p id="a67d34f3-d893-48e0-bc2f-ecffd36bce17" class="">The <strong>let </strong>and <strong>const </strong>keywords were added to JavaScript in 2015.</p><p id="3dafcec8-c086-4f50-ac6d-b5a7ca604c74" class="">If you want your code to run in older browsers, you must use var.</p><p id="b3e9b914-1b6b-4558-93c4-50bb0eb40cf2" class=""><strong>When to Use JavaScript const?</strong></p><p id="15909a7f-40b5-4992-89e9-67d688d4c2a2" class="">If you want a general rule: always declare variables with const.</p><p id="c34aceac-3391-4aaf-86e3-8bd0bdac55ed" class="">If you think the value of the variable can change, use let.</p><p id="3cd35f60-2762-4303-91c3-32dfe69030b9" class="">In this example, price1, price2, and total, are variables:</p></li></ol><ol type="1" id="18d955d3-06a3-42c4-8888-1a40eeb67c44" class="numbered-list" start="10"><li><strong>JavaScript Libraries</strong><p id="7ebb068b-d40c-4125-8b6f-573f1f4a9b31" class=""><strong>1. DOJO toolkit</strong><div class="indented"><p id="73d0be9b-baf2-4bf8-8f41-241dc1577d53" class="">The Dojo is an open-source JavaScript library that helps develop cross-platform, JS, and Ajax-based web sites in a faster manner.</p></div></p><p id="ef54805f-71be-4a45-b4ab-b90eee05bc2f" class=""><strong>2. jQuery</strong><div class="indented"><p id="35fc337f-0876-44e1-93fe-54e3ab28e1bb" class="">jQuery dramatically simplifies JS programming and is easy to learn and use. It is highly extensible and makes web pages load faster.</p></div></p><p id="99fcfa54-a881-40ad-a148-3965a395dc6c" class=""><strong>3. Google polymer</strong><div class="indented"><p id="ecd6c4fe-345c-4fb6-973f-99aaf2c804db" class="">Created by Google, Polymer is a JS library that allows developers to reuse HTML elements and create custom elements using HTML, CSS, and JS to create more interactive applications.</p></div></p><p id="1cb9637e-af2b-4938-86ae-1541f191651c" class=""><strong>4. JavaScript InfoVis toolkit</strong><div class="indented"><p id="eb3f6279-e3e3-4f40-975d-7948403f3662" class="">If you want to create Data visualizations that are interactive and easy to pull together, InfoVis is the way to go.</p></div></p><p id="78a81beb-9fab-4a07-b3be-af32af04a5be" class=""><strong>5. D3.js</strong><div class="indented"><p id="963aa9f4-a340-4a51-bed9-ca77ece2e524" class="">D3 stands for Data-Driven Documents. With D3, you can apply data-driven transformations to DOM objects.</p></div></p><p id="31c60e40-e156-4ffb-b087-2def10213a8c" class=""><strong>6. Pixi.js</strong><div class="indented"><p id="62aec755-1121-4269-9d3f-ea85f1f55a98" class="">Pixi js can create stunning digital content. This open-source, cross-platform 2D engine helps create games and interactive, animation-based websites.</p></div></p><p id="ed20455d-0d40-41c4-87cd-239f996a9856" class=""><strong>7. SWFObject</strong><div class="indented"><p id="5efe4973-ebab-4e6a-821e-bd6991cc9da1" class="">This simple yet powerful JS library is mainly used to embed flash SWF files in HTML documents. It supports only SWF files, and no other media types can be embedded using SWFObject.</p></div></p><p id="b23f062f-0f47-488b-a3c9-e554b940a44e" class=""><strong>8. Three.js</strong><div class="indented"><p id="475b19e3-6b04-4664-b022-31a09b9fb5b0" class="">Cross-browser JS library and API that allows for the creation of beautiful animations, Three.js relies on WebGL rather than conventional browser-plugins.</p></div></p><p id="2b5e2bd9-bd46-4717-82e1-05884aad6a44" class=""><strong>9. Velocity.js</strong><div class="indented"><p id="b8500106-3544-4d07-aa7c-6635a395183a" class="">Web animation has become a breeze with velocity.js. It is a fast performance engine that simplifies website animations. It is free, open-source software. Velocity is as fast (or more) as CSS and jQuery, especially on mobile devices.</p></div></p><p id="94048a5e-8da7-4617-a04c-1c07cf8e6283" class=""><strong>10. React js</strong><div class="indented"><p id="df64cef4-8ab2-41a8-860e-1c985d0a27ce" class="">React is easy to understand and use the JS library to build user interfaces for web applications (front-view or model of MVC architecture).</p></div></p></li></ol><p id="da385a65-4040-489b-82eb-be478a4050fe" class="">
+</p></div></article></body></html>

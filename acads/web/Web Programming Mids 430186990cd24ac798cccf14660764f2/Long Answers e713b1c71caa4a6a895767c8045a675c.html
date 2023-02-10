@@ -1,0 +1,846 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Long Answers</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="e713b1c7-1caa-4a6a-8957-67c8045a675c" class="page sans"><header><h1 class="page-title">Long Answers</h1></header><div class="page-body"><ol type="1" id="b0b5971e-1176-4706-895b-7c6d484678b4" class="numbered-list" start="1"><li><strong>Form Validation in JavaScript</strong><p id="20f65207-e20f-4989-9295-9a8a3b6ded95" class="">HTML form validation can be done by JavaScript.</p><p id="28d0547a-95ff-43d8-a3fd-b6667d3eaa10" class="">If a form field (fname) is empty, this function alerts a message, and returns false, to prevent the form from being submitted:</p><pre id="72a896e2-b366-4e1c-80a9-1af1106e276d" class="code"><code>JavaScript Example
+function validateForm() {
+  let x = document.forms[&quot;myForm&quot;][&quot;fname&quot;].value;
+  if (x == &quot;&quot;) {
+    alert(&quot;Name must be filled out&quot;);
+    return false;
+  }
+}
+The function can be called when the form is submitted:</code></pre><pre id="4531242e-2226-4915-9c05-f09c27a11657" class="code"><code>HTML Form Example
+&lt;form name=&quot;myForm&quot; action=&quot;/action_page.php&quot; onsubmit=&quot;return validateForm()&quot; method=&quot;post&quot;&gt;
+Name: &lt;input type=&quot;text&quot; name=&quot;fname&quot;&gt;
+&lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;
+&lt;/form&gt;</code></pre><pre id="743aa49e-8f8e-4c3b-b093-152ff1e3bd2f" class="code"><code>Form Validation Example Program
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;script&gt;
+function validateForm() {
+  let x = document.forms[&quot;myForm&quot;][&quot;fname&quot;].value;
+  if (x == &quot;&quot;) {
+    alert(&quot;Name must be filled out&quot;);
+    return false;
+  }
+}
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h2&gt;JavaScript Validation&lt;/h2&gt;
+&lt;form name=&quot;myForm&quot; action=&quot;/action_page.php&quot; onsubmit=&quot;return validateForm()&quot; method=&quot;post&quot;&gt;
+  Name: &lt;input type=&quot;text&quot; name=&quot;fname&quot;&gt;
+  &lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;
+  &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+Output
+
+when you click on the button without entering any value you will get an alert box:
+Name must be filled out</code></pre></li></ol><ol type="1" id="1d8f9a15-cd91-47c7-9f72-bcf3e9bd2bd6" class="numbered-list" start="2"><li><strong>Difference b/w Web Applications and AJAX applications</strong><p id="b69b57c0-9d8f-4f0d-a264-c5fc9deb2633" class=""><strong>WEB APPLICATIONS                                                  AJAX  APPLICATIONS</strong></p><p id="70319ab9-7fb7-445b-8bae-8a8cb4595f6a" class="">1. Slow							1.Fast</p><p id="ce6cdd53-92a6-42e7-9a6f-e974f8886feb" class="">2.Entire page gets updated			2.Partial page is updated by using  								   callback function.</p><p id="5e7fe4a3-67fc-4855-b5d4-35e8c9aba70a" class="">3.High traffic						3.Low Traffic</p><p id="055906df-4d29-4b91-bd9e-a88711272ee3" class="">4.Higher Bandwith is required		4.Low Bandwidth is required</p><p id="b33e5c21-356a-43c8-b055-36bd1b7a499a" class="">5.Difficult to navigate				5.Easy to Navigate</p><p id="897bdf8b-9476-4383-826d-49ff9d148ddc" class="">6.Less Compatible					6.High Compatibility with different 								    languages</p><p id="efae5ace-1106-4b67-9082-5b2781d9a733" class="">7.Server communication is Synchronous7.Server Communication is 									   Asynchronous</p><p id="884809f5-e004-4d72-859f-be5301ed442d" class="">8.Slow and Error Prone				8.Fast and proper Form Validation</p><p id="1c62baa6-169d-4ef2-9092-b8e513f5a940" class="">9.Less Responsive					9.More Responsive</p><p id="413723c1-e041-4e48-a9bc-169e4d593968" class="">10.Gets interrupted					10.User experience is uninterrupted</p></li></ol><ol type="1" id="1246f0d3-a5d1-4855-81a9-79f9da5efd09" class="numbered-list" start="3"><li><strong>Data type Definition (DTD in XML)</strong><ul id="4142ece4-9af8-4922-b387-987a7dccd055" class="bulleted-list"><li style="list-style-type:disc">A DTD is a Document Type Definition.</li></ul><ul id="648c17c6-d5c2-41cf-b0da-94ebbcf45a04" class="bulleted-list"><li style="list-style-type:disc">A DTD defines the structure and the legal elements and attributes of an XML document.</li></ul><ul id="605fa02c-e310-4a3c-b9f2-f7106a6bac41" class="bulleted-list"><li style="list-style-type:disc">Why Use a DTD?</li></ul><ul id="22d3d44f-ec67-42e5-853a-4725448e2a3d" class="bulleted-list"><li style="list-style-type:disc">With a DTD, independent groups of people can agree on a standard DTD for interchanging data.</li></ul><ul id="e9f44dce-b45e-474c-b252-80c290df713c" class="bulleted-list"><li style="list-style-type:disc">An application can use a DTD to verify that XML data is valid.</li></ul><hr id="68bcd7ca-228b-47a4-a683-ec632bba5782"/><p id="3d8a9d4f-a856-4923-83a1-f127256860c6" class=""><strong>An Internal DTD Declaration</strong></p><p id="2381ae3d-778f-4922-8e40-9bccaa95b24b" class="">If the DTD is declared inside the XML file, it must be wrapped inside the &lt;!DOCTYPE&gt; definition:</p><p id="2b3a30f5-a1e4-4fbb-8d9d-0378297591c3" class=""><strong>XML document with an internal DTD</strong></p><pre id="2856488e-a67a-4c14-92ac-f8d57b12e9f9" class="code"><code>&lt;?xml version=&quot;1.0&quot;?&gt;
+
+&lt;!DOCTYPE note [
+&lt;!ELEMENT note (to,from,heading,body)&gt;
+&lt;!ELEMENT to (#PCDATA)&gt;
+&lt;!ELEMENT from (#PCDATA)&gt;
+&lt;!ELEMENT heading (#PCDATA)&gt;
+&lt;!ELEMENT body (#PCDATA)&gt;
+]&gt;
+&lt;note&gt;
+&lt;to&gt;Tove&lt;/to&gt;
+&lt;from&gt;Jani&lt;/from&gt;
+&lt;heading&gt;Reminder&lt;/heading&gt;
+&lt;body&gt;Don&#x27;t forget me this weekend&lt;/body&gt;
+&lt;/note&gt;</code></pre><p id="c46a8bbf-29c4-4408-8f92-985232ac1abd" class="">In the XML file, select &quot;view source&quot; to view the DTD.</p><p id="9edef9cf-38da-463d-a361-e06024bd4a70" class=""><strong>The DTD above is interpreted like this:</strong></p><ul id="86d2eb4a-5bd7-40b3-9258-c0c01612ac5f" class="bulleted-list"><li style="list-style-type:disc"><strong>!DOCTYPE </strong>note defines that the root element of this document is note</li></ul><ul id="b76d37e2-6d2b-4221-9a10-6ab468838092" class="bulleted-list"><li style="list-style-type:disc"><strong>!ELEMENT </strong>note defines that the note element must contain four elements: &quot;to,from,heading,body&quot;</li></ul><ul id="09fbf840-3b03-4e12-a878-60b9fe9f3578" class="bulleted-list"><li style="list-style-type:disc"><strong>!ELEMENT </strong>to defines the to element to be of type &quot;#PCDATA&quot;</li></ul><ul id="8b8f712e-11be-4012-a902-83e5923b94fa" class="bulleted-list"><li style="list-style-type:disc"><strong>!ELEMENT </strong>from defines the from element to be of type &quot;#PCDATA&quot;</li></ul><ul id="e574506c-a43b-4baa-8e17-1f414f3a022f" class="bulleted-list"><li style="list-style-type:disc"><strong>!ELEMENT </strong>heading defines the heading element to be of type &quot;#PCDATA&quot;</li></ul><ul id="f286b61c-c2b3-4064-8a8a-d4300423eb65" class="bulleted-list"><li style="list-style-type:disc"><strong>!ELEMENT </strong>body defines the body element to be of type &quot;#PCDATA&quot;</li></ul><p id="09a9809b-20dd-4941-a86d-450feb512fb3" class=""><strong>Seen from a DTD point of view, all XML documents are made up by the following building blocks:</strong></p><ol type="1" id="13b9fb01-b640-4906-bf46-94782ac3d7fe" class="numbered-list" start="1"><li><strong>Elements</strong></li></ol><ol type="1" id="6b416b7e-9c5d-4831-abd4-8331a3f0ac2b" class="numbered-list" start="2"><li><strong>Attributes</strong></li></ol><ol type="1" id="a25980d3-123b-479e-94fa-a6f9920f2148" class="numbered-list" start="3"><li><strong>Entities</strong></li></ol><ol type="1" id="4b57db6e-46b0-4926-81f5-6fae79de71c7" class="numbered-list" start="4"><li><strong>PCDATA</strong></li></ol><ol type="1" id="3da0a4a8-c9ef-46e8-92a6-6119a3a33691" class="numbered-list" start="5"><li><strong>CDATA</strong></li></ol><p id="097cbe10-dac2-4806-931f-36f908b4b8f9" class=""><strong>Elements</strong></p><p id="7992f857-2542-45f8-994a-c74d2e80508a" class="">Elements are the main building blocks of both XML and HTML documents.</p><p id="2aa75632-4bd3-4a72-b167-0336233ee28f" class="">Examples of HTML elements are &quot;body&quot; and &quot;table&quot;. Examples of XML elements could be &quot;note&quot; and &quot;message&quot;. Elements can contain text, other elements, or be empty. Examples of empty HTML elements are &quot;hr&quot;, &quot;br&quot; and &quot;img&quot;.</p><p id="88abcd80-48f2-49ea-bd5d-1f0b2af3f009" class=""><strong>Examples:</strong></p><p id="282dbd2f-43f8-4ec6-acff-e69d98e4f45f" class="">&lt;body&gt;some text&lt;/body&gt;</p><p id="ca7d0944-17b9-4935-b36e-1c3c87834153" class="">&lt;message&gt;some text&lt;/message&gt;</p><p id="bd003026-d67a-4fd8-bc95-71bfa81a1558" class=""><strong>Attributes</strong></p><p id="7cc43130-ad28-44ec-9238-2cada3d8ad9f" class="">Attributes provide extra information about elements.</p><p id="9a18466d-6894-4282-8771-b12e8fb99662" class="">Attributes are always placed inside the opening tag of an element. Attributes always come in name/value pairs. The following &quot;img&quot; element has additional information about a source file:</p><p id="8eb00087-8e30-47b0-84ce-dca593e7aba2" class="">&lt;img src=&quot;computer.gif&quot; /&gt;</p><p id="d481a886-a1e3-4012-a76a-51a5318ca54d" class="">The name of the element is &quot;img&quot;. The name of the attribute is &quot;src&quot;. The value of the attribute is &quot;computer.gif&quot;. Since the element itself is empty it is closed by a &quot; /&quot;.</p><p id="916c65b3-b618-4bc1-859f-734d90f4ecb4" class=""><strong>Entities</strong></p><p id="bfddbb45-2dd7-477e-9b89-055a84c6908e" class="">Some characters have a special meaning in XML, like the less than sign (&lt;) that defines the start of an XML tag.</p><p id="4d35ecb5-195f-403c-a0e0-ebdd5aa183a1" class="">Most of you know the HTML entity: &quot;&amp;nbsp;&quot;. This &quot;no-breaking-space&quot; entity is used in HTML to insert an extra space in a document. Entities are expanded when a document is parsed by an XML parser.</p><p id="8b56f094-efd7-4282-9641-21bd8225e6d9" class=""><strong>The following entities are predefined in XML:</strong><div class="indented"><p id="f916af8c-fa31-411b-83bb-575d4eb9da7e" class=""><strong>Entity References</strong><strong>	</strong><strong>Character</strong><div class="indented"><p id="cc7bf8d1-827c-46ff-a9db-4aaaa37259dc" class="">&amp;lt;		&lt;</p><p id="e492513a-3c44-43f7-95e3-5d58df7a47af" class="">&amp;gt;		&gt;</p><p id="d8a530bd-f2df-4594-85c6-3f338ccb3ed0" class="">&amp;amp;		&amp;</p><p id="80121668-1b17-4701-8c12-7ac6866e7000" class="">&amp;quot;		&quot;</p><p id="b471e39a-6dd5-4f03-a6cb-18eab3432c83" class="">&amp;apos;		&#x27;</p></div></p></div></p><hr id="41d5888a-0b9a-4131-879a-63898ed92c55"/><p id="96a542fd-d7d4-45be-8f0e-f2e63f8755ef" class=""><strong>PCDATA</strong><div class="indented"><p id="8c939523-103f-4426-9b39-8067ef181447" class="">PCDATA means parsed character data.</p><p id="f8ad69e3-2f6f-4407-a4c3-70245e18cfcd" class="">Think of character data as the text found between the start tag and the end tag of an XML element.</p><p id="2d5a967f-1a81-4c33-b2f5-8f19132e9c30" class="">PCDATA is text that WILL be parsed by a parser. The text will be examined by the parser for entities and markup.</p><p id="0882e756-0103-4836-87b7-c97d5cfefdc5" class="">Tags inside the text will be treated as markup and entities will be expanded.</p><p id="d6c17462-cfb8-4b66-9f22-6f72409f77a6" class="">However, parsed character data should not contain any &amp;, &lt;, or &gt; characters; these need to be represented by the &amp;amp; &amp;lt; and &amp;gt; entities, respectively.</p></div></p><p id="38eb25e8-5ee8-4ac8-a52c-3d8ad682904a" class=""><strong>CDATA</strong><div class="indented"><p id="13824a85-5e4a-4119-bb23-676fb13e6f3c" class="">CDATA means character data.</p><p id="d2ec2ae3-c70f-4329-aad4-1d3f11602378" class="">CDATA is text that will NOT be parsed by a parser. Tags inside the text will NOT be treated as markup and entities will not be expanded.</p></div></p><hr id="1c0f5fea-7716-475c-b796-cb6fe05ab96b"/></li></ol><ol type="1" id="8e36a931-ec1d-4588-b1b4-e6c0c1f0c979" class="numbered-list" start="4"><li><strong>Structuring data in XML</strong><p id="21639022-37b6-43cc-a04d-e3e2acb506e2" class="">XML documents form a tree structure that starts at &quot;the root&quot; and branches to &quot;the leaves&quot;.</p><p id="dd9a3091-7777-4b03-9336-4c342044c399" class=""><strong>Books.xml</strong></p><pre id="d12f35ec-bd2e-45c6-af12-a1a803e8f66b" class="code"><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;bookstore&gt;
+&lt;book category=&quot;cooking&quot;&gt;
+	&lt;title lang=&quot;en&quot;&gt;Everyday Italian&lt;/title&gt;
+	&lt;author&gt;Giada De Laurentiis&lt;/author&gt;
+	&lt;year&gt;2005&lt;/year&gt;
+	&lt;price&gt;30.00&lt;/price&gt;
+&lt;/book&gt;
+&lt;book category=&quot;children&quot;&gt;
+	&lt;title lang=&quot;en&quot;&gt;Harry Potter&lt;/title&gt;
+	&lt;author&gt;J K. Rowling&lt;/author&gt;
+	&lt;year&gt;2005&lt;/year&gt;
+	&lt;price&gt;29.99&lt;/price&gt;
+&lt;/book&gt;
+&lt;/bookstore&gt;</code></pre><p id="246614a3-725b-4f3e-a79e-9c3f9dada5cb" class="">
+</p><p id="841b6162-9683-4352-af50-3cef7ead13f9" class=""><strong>The XML Tree Structure for the above book.xml file</strong></p><p id="2ffe1c8a-e3f9-4699-b60e-77d31e09b625" class="">XML Tree Structure</p><p id="63faa1c9-4231-4eb2-afe4-710fcf29d99a" class="">XML documents are formed as element trees.</p><p id="e11e202f-e3ce-41a2-b20c-77d0c9dcb310" class="">An XML tree starts at a root element and branches from the root to child elements.</p><p id="fc7349b8-80fd-4916-9aaa-dae8cfe1104c" class="">All elements can have sub elements (child elements):</p><pre id="52f9bce5-4461-48f2-9b00-c4a73fe71f32" class="code"><code>&lt;root&gt;
+
+&lt;child&gt;
+
+&lt;subchild&gt;.....&lt;/subchild&gt;
+
+&lt;/child&gt;
+
+&lt;/root&gt;</code></pre><p id="8b07711e-d4b3-4fdf-9668-142646438d73" class="">
+</p><p id="f15c650c-68ab-4905-8816-815fc1148cfe" class="">The terms parent, child, and sibling are used to describe the relationships between elements.</p><p id="e5c2f549-1d9c-4357-926f-314a36bf3001" class="">Parents have children. Children have parents. Siblings are children on the same level (brothers and sisters).</p><p id="94872640-9d5e-4bca-bbff-6e37d0b048b0" class="">All elements can have text content (Harry Potter) and attributes (category=&quot;cooking&quot;).</p><p id="2ac1cbf9-b657-466c-b043-a700b0d20bee" class=""><strong>Self-Describing Syntax</strong></p><p id="5d3223d4-062f-4965-a008-810e99c1f8c7" class="">XML uses a much self-describing syntax.</p><p id="556cdc5a-77a6-45e8-9116-04038b9167d2" class="">A prolog defines the XML version and the character encoding:</p><pre id="0fb80ca0-0d17-454a-a70b-46740ea989b4" class="code"><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</code></pre><p id="0a5202d5-f0f1-47bc-b744-79da2c504a9b" class="">The next line is the root element of the document:</p><pre id="ce0069a8-8bd3-45ad-adfc-57a9a94e1e6e" class="code"><code>&lt;bookstore&gt;</code></pre><p id="b85330e8-cfdb-43e2-905b-5a076fac30e4" class="">The next line starts a &lt;book&gt; element:</p><pre id="aaf62902-b267-4171-b2c8-0ceb12df2a52" class="code"><code>&lt;book category=&quot;cooking&quot;&gt;</code></pre><p id="e9d1cbbb-4db8-43eb-b310-f398e4cd9c7f" class="">The &lt;book&gt; elements have 4 child elements: &lt;title&gt;, &lt;author&gt;, &lt;year&gt;, &lt;price&gt;.</p><pre id="e26a3cb8-659b-46cd-8587-c5ac08bae29f" class="code"><code>&lt;title lang=&quot;en&quot;&gt;Everyday Italian&lt;/title&gt;
+&lt;author&gt;Giada De Laurentiis&lt;/author&gt;
+&lt;year&gt;2005&lt;/year&gt;
+&lt;price&gt;30.00&lt;/price&gt;</code></pre><p id="4f6323fe-b822-4117-9b80-51972e3b4204" class="">The next line ends the book element:</p><pre id="11aa05dd-d4bb-4768-bd0e-bbd469e533bc" class="code"><code>&lt;/book&gt;</code></pre><p id="4475d36e-118e-4c13-a682-113538e0aa46" class="">You can assume, from this example, that the XML document contains information about books in a bookstore.</p></li></ol><ol type="1" id="1900065c-4c03-450b-9609-01805d63e4da" class="numbered-list" start="5"><li><strong>DOM in XML </strong><p id="eb3fe96f-d67a-4f67-9863-2d8f959f2c33" class="">The DOM defines a standard for accessing and manipulating documents:</p><ul id="c609ddc5-bce5-4848-86d2-d25d59b10ec0" class="bulleted-list"><li style="list-style-type:disc">&quot;The W3C Document Object Model (DOM) is a platform and language-neutral interface that allows programs and scripts to dynamically access and update the content, structure, and style of a document.&quot;</li></ul><ul id="7cce0a71-5410-4392-8675-b7a9dcdcef11" class="bulleted-list"><li style="list-style-type:disc">The HTML DOM defines a standard way for accessing and manipulating HTML documents. It presents an HTML document as a tree-structure.</li></ul><ul id="af94693e-5011-4616-9d30-b77ee274a4a2" class="bulleted-list"><li style="list-style-type:disc">The XML DOM defines a standard way for accessing and manipulating XML documents. It presents an XML document as a tree-structure.</li></ul><ul id="9e2a628a-56a3-4d23-9454-46eb754d1958" class="bulleted-list"><li style="list-style-type:disc">Understanding the DOM is a must for anyone working with HTML or XML.</li></ul><p id="eb1cafad-5360-42fe-a250-aabd7e400fc5" class="">All XML elements can be accessed through the XML DOM.</p><p id="f013278e-fda2-4359-a2d8-663c0bb13ef7" class=""><strong>The XML DOM is:</strong></p><ul id="33d2b5b7-ed14-4631-a5d3-5d609752023a" class="bulleted-list"><li style="list-style-type:disc">A standard object model for XML</li></ul><ul id="0e76be4f-9a8c-4e70-aedb-773fbe29bba5" class="bulleted-list"><li style="list-style-type:disc">A standard programming interface for XML</li></ul><ul id="4cdbbfdd-5090-489f-ac27-429a97a27119" class="bulleted-list"><li style="list-style-type:disc">Platform- and language-independent</li></ul><ul id="b2e9cf41-430a-445a-9c67-ae8862387ada" class="bulleted-list"><li style="list-style-type:disc">A W3C standard</li></ul><ul id="bad820a8-6137-4475-b899-d75a445b1094" class="bulleted-list"><li style="list-style-type:disc">In other words: The XML DOM is a standard for how to get, change, add, or delete XML elements.</li></ul><ul id="2e95fd4a-51f6-42d8-852f-c50f9cd7cc0a" class="bulleted-list"><li style="list-style-type:disc">Get the Value of an XML Element</li></ul><p id="92a9a3d2-0aac-486d-bede-13ed36ed2ff5" class="">This code retrieves the text value of the first &lt;title&gt; element in an XML document:</p><p id="336dc3fb-c909-4175-b605-d5f7debd9358" class=""><strong>Example</strong></p><pre id="89bc08d2-42ea-444b-9317-47b33ee99633" class="code"><code>txt = xmlDoc.getElementsByTagName(&quot;title&quot;)[0].childNodes[0].nodeValue;</code></pre><p id="0f84799c-7fac-44c0-a5f1-7ef48ce4c581" class="">Loading an XML File</p><p id="aa28cfc6-8aac-4ef4-b1cb-7b3f07255775" class="">The XML file used in the examples below is books.xml.</p><p id="d6f19c53-c633-498d-bf67-2a9072b3c5b0" class="">This example reads &quot;books.xml&quot; into xmlDoc and retrieves the text value of the first &lt;title&gt; element in books.xml:</p><p id="073095f4-3b42-44df-b881-bab48f87a710" class=""><strong>Books.xml</strong></p><pre id="2eae9fcb-9c59-42be-87da-4e1232c659df" class="code"><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+
+&lt;bookstore&gt;
+
+&lt;book category=&quot;cooking&quot;&gt;
+
+&lt;title lang=&quot;en&quot;&gt;Everyday Italian&lt;/title&gt;
+
+&lt;author&gt;Giada De Laurentiis&lt;/author&gt;
+
+&lt;year&gt;2005&lt;/year&gt;
+
+&lt;price&gt;30.00&lt;/price&gt;
+
+&lt;/book&gt;
+
+&lt;book category=&quot;children&quot;&gt;
+
+&lt;title lang=&quot;en&quot;&gt;Harry Potter&lt;/title&gt;
+
+&lt;author&gt;J K. Rowling&lt;/author&gt;
+
+&lt;year&gt;2005&lt;/year&gt;
+
+&lt;price&gt;29.99&lt;/price&gt;
+
+&lt;/book&gt;
+
+&lt;/bookstore&gt;</code></pre><p id="dcc085fb-49e5-4ac6-a7e6-aa14855fda7a" class=""><strong>Example program:</strong></p><pre id="d8459c71-dce5-42f3-881f-78a7ffbad002" class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;
+&lt;script&gt;
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 &amp;&amp; this.status == 200) {
+				myFunction(this);
+				}
+		};
+		xhttp.open(&quot;GET&quot;, &quot;books.xml&quot;, true);
+		xhttp.send();
+		function myFunction(xml) {
+		var xmlDoc = xml.responseXML;
+		document.getElementById(&quot;demo&quot;).innerHTML =
+		xmlDoc.getElementsByTagName(&quot;title&quot;)[0].childNodes[0].nodeValue;
+}
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre><p id="ef720cd5-432d-4892-8430-1dcd333ccb8e" class="">
+</p><p id="f2aeab0a-e085-42c0-aff3-890fbef9a2e1" class=""><strong>Output</strong>:</p><p id="57628d66-9b05-4380-9329-e6ed9d0fb417" class="">Everyday Italian</p><p id="ebe1a08d-1655-44f8-9e88-37e5dae02219" class=""><strong>Example Explained</strong></p><p id="7f5aa16d-8b22-4643-8928-d8f6e10e44a9" class="">xmlDoc - the XML DOM object created by the parser.</p><p id="b4c45ff5-051e-4132-a47f-1db14660eade" class="">getElementsByTagName(&quot;title&quot;)[0] - get the first &lt;title&gt; element</p><p id="f94a8ada-95cd-4b53-a5a7-0a74aefe4370" class="">childNodes[0] - the first child of the &lt;title&gt; element (the text node)</p><p id="b3da08b0-3729-4ba4-ba19-96949f38fe19" class="">nodeValue - the value of the node (the text itself)</p><p id="a608e8e5-e38f-4b90-a64b-52437c5ca927" class="">Loading an XML String</p><p id="df8f1048-e311-45c8-a26e-1667aa1cdcf1" class="">This example loads a text string into an XML DOM object, and extracts the info from it with JavaScript:</p><pre id="399c9567-6d3f-44e9-8afc-c3c3b2ca4dfa" class="code"><code>**Example program:**
+&lt;html&gt;
+&lt;body&gt;
+&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;
+&lt;script&gt;
+var text, parser, xmlDoc;
+		text = &quot;&lt;bookstore&gt;&lt;book&gt;&quot; +
+		&quot;&lt;title&gt;Everyday Italian&lt;/title&gt;&quot; +
+		&quot;&lt;author&gt;Giada De Laurentiis&lt;/author&gt;&quot; +
+		&quot;&lt;year&gt;2005&lt;/year&gt;&quot; +
+		&quot;&lt;/book&gt;&lt;/bookstore&gt;&quot;;
+		parser = new DOMParser();
+		xmlDoc = parser.parseFromString(text,&quot;text/xml&quot;);
+		document.getElementById(&quot;demo&quot;).innerHTML =
+		xmlDoc.getElementsByTagName(&quot;title&quot;)[0].childNodes[0].nodeValue;
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre><p id="6b8d7888-0416-40d3-86f7-0bd4a5aaa6a8" class="">
+</p><p id="59979602-b2a7-45f3-9102-97caef962aaf" class=""><strong>Output</strong>:</p><p id="14ac4a21-3780-4cac-bb37-d03e1b7dcef8" class="">Everyday Italian</p><p id="91abeb3e-daaa-4ac4-a7a1-7683d90a4f7d" class=""><strong>Programming Interface</strong></p><p id="e3d0abf9-a018-4b0d-9aa6-0545af9f2ab1" class="">The DOM models XML as a set of node objects. The nodes can be accessed with JavaScript or other programming languages. In this tutorial we use JavaScript.</p><p id="d0eecffc-df9f-44bb-9683-e24172d731e3" class="">The programming interface to the DOM is defined by a set standard properties and methods.</p><p id="25eee71f-a072-4787-b5fb-e0de35cd208b" class="">Properties are often referred to as something that is (i.e. nodename is &quot;book&quot;).</p><p id="b3dfb7ac-c847-4d6a-acbc-309cf409e2c0" class="">Methods are often referred to as something that is done (i.e. delete &quot;book&quot;).</p><p id="7fd9345f-5ef1-4f7c-90bc-46c5e0426e10" class=""><strong>XML DOM Properties</strong></p><p id="78b25bd7-66d1-4aad-be06-bb15e443bec5" class="">These are some typical DOM properties:</p><ul id="786abe94-7099-4be5-a9cf-5bb82780def6" class="bulleted-list"><li style="list-style-type:disc">x.nodeName - the name of x</li></ul><ul id="ceeaf9e0-2d34-423e-a54d-acf028982b81" class="bulleted-list"><li style="list-style-type:disc">x.nodeValue - the value of x</li></ul><ul id="ba4f70c4-ee35-4ef1-97d7-d056b1e889d2" class="bulleted-list"><li style="list-style-type:disc">x.parentNode - the parent node of x</li></ul><ul id="0e7fff9b-b352-4422-a4d0-2ab912f5b58b" class="bulleted-list"><li style="list-style-type:disc">x.childNodes - the child nodes of x</li></ul><ul id="6555dcd2-e1a2-4850-b473-7f99aa80b89d" class="bulleted-list"><li style="list-style-type:disc">x.attributes - the attributes nodes of x</li></ul><p id="dcca5f16-8389-42ef-8b15-855a2e10f998" class="">Note: In the list above, x is a node object.</p><p id="6127a095-4585-47b3-865f-487f201efd7e" class=""><strong>XML DOM Methods</strong></p><ul id="cb33f5a1-2476-4fa8-8f5e-a2c7bd259f3b" class="bulleted-list"><li style="list-style-type:disc">x.getElementsByTagName(name) - get all elements with a specified tag name</li></ul><ul id="5c9010ab-2b0c-47fe-8083-0ee8fb82e412" class="bulleted-list"><li style="list-style-type:disc">x.appendChild(node) - insert a child node to x</li></ul><ul id="71d8b4ab-d08f-4064-a2ae-467a58e13555" class="bulleted-list"><li style="list-style-type:disc">x.removeChild(node) - remove a child node from x</li></ul><p id="e07794c3-5e3b-4381-8168-2efb4583f916" class="">Note: In the list above, x is a node object.</p></li></ol><ol type="1" id="790ecc79-431e-4516-b829-2913a4792b6a" class="numbered-list" start="6"><li><strong>DOJO toolkit</strong><p id="089dfb3a-fe14-449d-93c6-d8a0cc9a8cad" class="">The Dojo Toolkit is a powerful open source JavaScript library that can be used to create rich and varied user interfaces running within a browser. The library requires no browser-side runtime plug-in and runs natively on all major browsers. This is boon for JavaScript developers since it helps abstract away the eccentricity of different browser implementations.</p><p id="e7d02b5f-6615-47fd-8648-50efe562f914" class="">The Dojo Toolkit is a powerful and flexible modular Ajax software development kit. It is broken down in to three major layers: Dojo Core, Dijit, and DojoX.</p><p id="0e14d3e2-b228-489b-87c0-cde8d0fef04c" class=""><strong>Dojo Core - </strong>All the major functions that are needed to do Ajax development, plus many features that are not found in other toolkits</p><p id="a33d16d2-ce8a-4b58-b673-83528ad2e076" class=""><strong>Dijit - </strong>A high quality set of interaction rich widgets and themes for use when developing Ajax applications.</p><p id="0308c5aa-6031-496f-b6e6-38cd7047a8ed" class=""><strong>DojoX (Dojo eXtensions) </strong>- A module to contain widgets and APIs that are useful for developing Ajax applications, but are not needed in all applications.</p><p id="09a3517d-2da8-4053-8a9e-7827f1ae5e98" class="">Dojo is an open-source library that is used for the development of fast, robust, and scalable web pages. It works on javascript. It is the same as another javascript toolkit that is used for designing web pages and cross -platforms applications. The main feature of this toolkit is that Dojo has a core component that is loaded asynchronously, and for this, It is loaded quickly.</p><p id="54c22f99-3436-4ca6-95dc-30682671344c" class="">Apart from that Dojo is not so popular as compared to other frameworks of javascript. But it is used by IBM for making sliders, and navigators for web pages. The dojo is used in the web pages because it has the following properties:</p><p id="5f769741-a4d3-4097-8f8e-df8c1fab6e25" class="">It can manage complex applications.</p><p id="4bad4175-a524-41ea-84e9-7af5d85f80f3" class="">The dojo is used to create efficient applications and also global applications,</p><p id="b2e1891c-477d-404a-8394-388d721f9bea" class=""><strong>Get The Dojo Toolkit: </strong>By the Google CDN, means we can put the following tag in our web page HTML file.</p><pre id="fa9b0029-75ce-4ff0-8117-ff2fa47d5eea" class="code"><code>&lt;script src=”//ajax.googleapis.com/ajax/libs/dojo/1.14.1/dojo/dojo.js”&gt;&lt;/script&gt;</code></pre><p id="afbd4cdc-fe73-440c-9d46-d2c916af155a" class=""><strong>Features of Dojo: </strong>There are many features of the Dojo. Some of them are described below:</p><ul id="16dcfeb4-8510-4e26-9877-9f9ad03f172a" class="bulleted-list"><li style="list-style-type:disc">The dojo is easy to learn.</li></ul><ul id="6517c4c4-f09e-488c-a737-51ef546de2d8" class="bulleted-list"><li style="list-style-type:disc">The dojo is the toolkit that is used to develop the application which is highly user interactive.</li></ul><ul id="cb3dd5d9-943e-4193-89d3-7741d9a5a8d7" class="bulleted-list"><li style="list-style-type:disc">Dojo has the functionality for making widgets, Routing, and also use for state management.</li></ul><p id="93f5a8f9-0195-41d8-a4e3-e98d20930a48" class=""><strong>Components Of Dojo: </strong>The Dojo toolkit is a javascript framework that is used for making the user interactive web pages. Dojo has three major components which are described below:</p><ul id="6179a257-08ea-4293-9b4e-1d7c29991fa8" class="bulleted-list"><li style="list-style-type:disc"><strong>Dojo Core: </strong>It included all the features which need to develop any web pages. It also included many features which are not included by any other framework of Javascript.</li></ul><ul id="10a9a992-7645-4291-865a-75e2d10e9fa7" class="bulleted-list"><li style="list-style-type:disc"><strong>Dijit: </strong>It is like the CSS which holds the Interactive widgets for developing the javascript and ajax applications. Which makes the applications user interactive.</li></ul><ul id="95784646-8ac8-4380-a82d-757179b1f9ca" class="bulleted-list"><li style="list-style-type:disc"><strong>Dojox: </strong>It has the Dojo extensions. It holds the widgets and API features that are used for developing the javascript and ajax applications for making the applications highly user interactive and fast loading capabilities.</li></ul><p id="6e8b8350-c774-463a-8824-28590910e08f" class=""><strong>Dojo Architecture: </strong>
+As we learn, about the Dojo toolkit it contained the above-mentioned components for making the applications. And some of them are also described here:</p><ul id="fe565730-8f2e-4d20-9c25-13a556b4c650" class="bulleted-list"><li style="list-style-type:disc"><strong>Dojo Base: </strong>It contains features that are included already. It doesn’t need to include using them.</li></ul><ul id="fb0c08b4-5ac8-4cc0-a4e0-43cc4b1b0030" class="bulleted-list"><li style="list-style-type:disc"><strong>Custom Code: </strong>It contains the whole other files that are necessary for making the application. Some of them like- HTML, JavaScript, CSS, etc.</li></ul><ul id="240dfa23-849a-4d39-9902-4cf5f16e77ad" class="bulleted-list"><li style="list-style-type:disc"><strong>Util: </strong>It contains the tools which need to make the application optimal, and is also used for code and syntax testing.</li></ul><p id="2082e6d0-99b0-40f1-9da9-f8c6c444fe60" class=""><strong>Advantage Of Dojo: </strong>Dojo has the following advantage which makes it different from any other javascript framework:</p><ul id="f76d7dcf-8806-4ea8-9000-4a82f5d4e18d" class="bulleted-list"><li style="list-style-type:disc">It has the normal means of loosely typed variables</li></ul><ul id="f2d96ad1-cc5f-4944-ab9b-b69ec8036606" class="bulleted-list"><li style="list-style-type:disc">It has the associative array properties</li></ul><ul id="75a033fb-9baf-464b-9a1f-7d1da64eadce" class="bulleted-list"><li style="list-style-type:disc">It also has Objects and classes.</li></ul><p id="f32aef82-eb03-45f9-8b18-2256d6088cc9" class=""><strong>Disadvantages Of Dojo:</strong></p><ul id="10475196-56af-4658-b13d-4a97c375dc51" class="bulleted-list"><li style="list-style-type:disc">Dojo doesn’t work on all types of web-browsers</li></ul><ul id="c023a82a-344f-49dc-be45-9b42c4c9192c" class="bulleted-list"><li style="list-style-type:disc">Dojo has not been featured for hiding the code. So for this reason we can not use it for developing the commercial application.</li></ul><ul id="70f24d3d-8fc6-4cca-8a4a-93ec7ae4b452" class="bulleted-list"><li style="list-style-type:disc">Dojo has many network requirements for working properly.</li></ul><p id="0a087521-9b59-4394-a66e-739a8522021d" class=""><strong>Example: Below is the basic example of “Hello World” by Dojo:</strong></p><pre id="550ad9e6-10ad-497e-b536-73be6b27b4c1" class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;DOJO WITH GFG&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h2&gt;HELLO WORLD&lt;/h2&gt;
+&lt;!-- loading Dojo by using google cdn--&gt;
+&lt;script src=&quot;//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js&quot;
+data-dojo-config=&quot;async: true&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></li></ol><ol type="1" id="bd1f6917-960f-4492-98ff-cefb86466b78" class="numbered-list" start="7"><li><strong>Extensible StyleSheet Language</strong><p id="90f1bedf-c945-4727-b765-7de9d3f49653" class="">XSL (eXtensible Stylesheet Language) is a styling language for XML.</p><p id="ce2d0dfb-57fa-4dc0-afd6-3ebd7d97c2c3" class="">XSLT stands for XSL Transformations.</p><p id="1de5e152-2a89-41f1-b6a8-15da74a3fc2f" class=""><strong>XSL</strong> = Style Sheets for XML</p><p id="99a05095-5e99-4493-8b48-7479bbdcde5a" class="">XML does not use predefined tags, and therefore the meaning of each tag is not well understood.</p><p id="0714b98d-451f-490a-a66c-c2dfa9f51516" class="">A &lt;table&gt; element could indicate an HTML table, a piece of furniture, or something else - and browsers do not know how to display it!</p><p id="24938c99-03dd-4f34-ace0-a33509fba8ad" class="">So, XSL describes how the XML elements should be displayed.</p><ul id="5dfcf042-9d0f-451d-ab27-4d44061864db" class="bulleted-list"><li style="list-style-type:disc"><strong>XSL - More Than a Style Sheet Language</strong></li></ul><ul id="20f1a088-da22-40d1-99dd-d470031325d8" class="bulleted-list"><li style="list-style-type:disc"><strong>XSL consists of four parts:</strong></li></ul><ul id="f4ea67a9-b172-4339-adf8-02bcd16b2a61" class="bulleted-list"><li style="list-style-type:disc"><strong>XSLT </strong>- a language for transforming XML documents</li></ul><ul id="c18cd375-d35e-4e26-9a41-263c79fe1cf5" class="bulleted-list"><li style="list-style-type:disc"><strong>XPath</strong> - a language for navigating in XML documents</li></ul><ul id="d7fa269f-038c-4224-9fd5-d96ed25e6ab9" class="bulleted-list"><li style="list-style-type:disc"><strong>XSL-FO </strong>- a language for formatting XML documents (discontinued in 2013)</li></ul><ul id="a7fdc7e4-ea2d-410c-a401-7910ef5af50f" class="bulleted-list"><li style="list-style-type:disc"><strong>XQuery</strong> - a language for querying XML documents</li></ul><p id="cf145859-b1ea-48e3-8d99-a0853384afda" class=""><strong>What is XSLT?</strong></p><ul id="4d15f7f2-8c2a-4862-bf5f-0272274029e8" class="bulleted-list"><li style="list-style-type:disc">XSLT stands for XSL Transformations</li></ul><ul id="184d88b9-e635-425d-957c-ecfdfb6cbec9" class="bulleted-list"><li style="list-style-type:disc">XSLT is the most important part of XSL</li></ul><ul id="bc8e4dc8-b069-491e-a37b-fce15f887283" class="bulleted-list"><li style="list-style-type:disc">XSLT transforms an XML document into another XML document</li></ul><ul id="f1a14f94-b6be-4a7c-a9af-f5ec1af5fac0" class="bulleted-list"><li style="list-style-type:disc">XSLT uses XPath to navigate in XML documents</li></ul><ul id="2cef75d6-d755-41a9-bd68-018512aa1845" class="bulleted-list"><li style="list-style-type:disc">XSLT is a W3C Recommendation</li></ul><ul id="e828179f-d86d-4335-94d8-8809da961c65" class="bulleted-list"><li style="list-style-type:disc">XSLT = XSL Transformations</li></ul><ul id="753eeb23-ad11-4d24-946c-6e2b2e4fca78" class="bulleted-list"><li style="list-style-type:disc">XSLT is the most important part of XSL.</li></ul><p id="e18e1e4f-e32b-4072-9b71-8fc7cda5a30e" class="">XSLT is used to transform an XML document into another XML document, or another type of document that is recognized by a browser, like HTML and XHTML. Normally XSLT does this by transforming each XML element into an (X)HTML element.</p><p id="30d197f9-4921-4717-a803-7c6b5500a8f4" class="">With XSLT you can add/remove elements and attributes to or from the output file. You can also rearrange and sort elements, perform tests and make decisions about which elements to hide and display, and a lot more.</p><p id="fbcb7120-4f67-4a8e-b2a9-56b6c78fd412" class="">A common way to describe the transformation process is to say that XSLT transforms an XML source-tree into an XML result-tree.</p><p id="1775105a-d2bd-4000-b13d-2bf403b4a32c" class=""><strong>XSLT Uses XPath</strong></p><ul id="da1440e7-2372-4cad-a6c4-07c3ee64eb03" class="bulleted-list"><li style="list-style-type:disc">XSLT uses XPath to find information in an XML document. XPath is used to navigate through elements and attributes in XML documents.</li></ul><p id="beb2728d-2469-4fb8-b68e-d5b67f0e1fc1" class=""><strong>How Does it Work?</strong></p><ul id="a99d388c-1829-4f36-845f-8084bc174d3a" class="bulleted-list"><li style="list-style-type:disc">In the transformation process, XSLT uses XPath to define parts of the source document that should match one or more predefined templates. When a match is found, XSLT will transform the matching part of the source document into the result document.</li></ul><p id="1419a0da-804b-4fa1-b14a-a99005edd19d" class=""><strong>XSLT Browser Support</strong></p><ul id="0423ee50-2175-4165-9219-61a2427ac0d9" class="bulleted-list"><li style="list-style-type:disc">All major browsers support XSLT and XPath.</li></ul></li></ol><ol type="1" id="222d04c2-a18d-42ba-8b15-d2d928709ffe" class="numbered-list" start="8"><li><strong>What is AJAX, advantages and disadvantages of AJAX</strong><p id="333beeba-2f89-43ed-8c5f-1c2452c7394d" class=""><strong>Advantages and Disadvantages of Ajax</strong></p><ul id="1beebcac-e94b-4b4c-8456-db367b27c5e2" class="bulleted-list"><li style="list-style-type:disc">When talking about technology and its uses, we usually discuss the pros and cons of everything. Of course, like many other techniques, Ajax itself comes with many different advantages and disadvantages.</li></ul><ul id="8307f5b2-b89a-44b9-8ed2-5f1a0ef979ee" class="bulleted-list"><li style="list-style-type:disc">Let’s have a deeper look at these 2 sides of Ajax technology these days.</li></ul><p id="8f8d91e1-3bcf-412e-9772-14bb142eb005" class=""><strong>Advantages of AJAX</strong></p><ul id="790169b0-861c-4bdb-88ac-763d55e5140b" class="bulleted-list"><li style="list-style-type:disc">Reduce server traffic and increase speed</li></ul><ul id="fb94b553-9189-4a9b-94ea-7583de24d22c" class="bulleted-list"><li style="list-style-type:disc">The first and foremost advantage of Ajax is its ability to improve the performance and usability of web applications.</li></ul><ul id="c4818e3f-54f8-4558-8f23-fd5f6d050a87" class="bulleted-list"><li style="list-style-type:disc">To explain more detailedly, Ajax techniques allow applications to render without data, which reduces the server traffic inside requests. That being said, web developers can lower the time consumption on both side’s responses significantly.</li></ul><ul id="76221c1e-c985-4649-a666-7733c05c5721" class="bulleted-list"><li style="list-style-type:disc">As a result, your web’s visitors will never have to see a white window and wait for pages to refresh with Ajax implementation.</li></ul><p id="7f876e01-dd95-46a1-9ef1-d0e599ccf537" class=""><strong>Enable asynchronous calls</strong></p><ul id="876859e1-9fab-4384-9ece-1032edf36b3d" class="bulleted-list"><li style="list-style-type:disc">Ajax benefits web developers in how its framework can be used for lazy loading. Those who don’t know what Lazy Loading is are an optimization technique that’s widely used for online content.</li></ul><ul id="75725f04-e84b-453b-b9f9-03ed2fcd52de" class="bulleted-list"><li style="list-style-type:disc">In essence, Ajax allows its users to make asynchronous calls to the web server without reloading the whole web page. As a web visitor, you don’t have to wait for the entire page to load entirely in order to access the entire page content.</li></ul><ul id="46ac4ef8-05b8-45d5-8920-0eb739fd8a6a" class="bulleted-list"><li style="list-style-type:disc">The concept of lazy loading assists in loading only the required section and delays the remaining, until it is needed by users. Thus, Ajax Lazy Loading not only improves a web page load it also has a positive impact on user experience and conversion rates.</li></ul><p id="3464650e-0a16-4a6b-abc6-745894c11ece" class=""><strong>XMLHttpRequest</strong><div class="indented"><p id="2a62b6fc-3c42-49ff-85a7-974757d65bb4" class="">XMLHttpRequest is a request type widely used for sending a request to Ajax pages. You can also call it with a different name: Asynchronous HTTP request. It plays a vital role in the implementation of Ajax techniques for web development.</p><p id="c95d3ba5-da07-4f7e-95fe-00f998006a5f" class="">XMLHttpRequest transfers and manipulates the XML data to and from a web service using HTTP. Its purpose is to establish an independent connection between the webpage’s client-side and server.</p></div></p><p id="fd040454-11d2-404e-86d6-abd43e55b4ab" class=""><strong>Reduce bandwidth usage</strong><div class="indented"><p id="810ce091-ef33-45af-b845-a36e16dbfe94" class="">One more advantage of Ajax comes from the bandwidth usage. This action is effective in improving web performance and load speed as well.</p><p id="6e795ea0-186b-422f-8015-be14f637771e" class="">Ajax makes the best use of the server’s bandwidth by fetching particle contents instead of transmitting the entire page’s content. This means that you can bring data from the database and store it into the database to perform background without reloading the page.</p></div></p><p id="ddf7352f-d5c3-40d3-90ba-362ec851db85" class=""><strong>Form Validation</strong><div class="indented"><p id="8ea02804-2a65-4d21-a0f3-95b86624b746" class="">In contrast to traditional form submission, where client-side validations occur after submission, the AJAX method enables precise and immediate form validation. AJAX provides speed, which is also one of its significant benefits.</p></div></p><p id="0f72d04a-8977-4f45-bfdb-820c14fa6dff" class=""><strong>Disadvantages of Ajax</strong><div class="indented"><p id="ede728a3-1fd1-457d-a1f0-c21ddb416f1f" class="">We’ve just listed out all the areas where Ajax can show its great potential in implementation. Let’s move on to some possible drawbacks you can meet when using Ajax.</p><p id="9e0fd464-b0ff-437a-973e-13b55fd47f94" class="">Open-source. View source is allowed, and anyone can view the code source written for Ajax, which makes it less secure compared to other technologies</p><p id="d17ac57c-69ed-4520-a179-efe55f213779" class="">Search Engines cannot index Ajax pages can not be indexed by Google as well as other search engines</p><p id="0462c4e5-0210-439e-b2da-aec73cf58d04" class="">The usage of Ajax can cause difficulties for your web pages to debug as well as make them prone to possible security issues in the future</p><p id="88478b77-38fa-4726-8bba-c1846254d418" class="">Most importantly, Ajax has a considerable dependency on JavaScript, so only browsers that support Javascripts or XMLHttpRequest can use pages with Ajax techniques</p><p id="6aab90ba-0b22-4cf2-a03b-26c8eadb0289" class="">Users will find it challenging to bookmark a specific state of the application due to the dynamic web page</p><p id="40dfca71-8de3-4db8-a5fe-01f372cc0aa6" class="">From the users’ perspective, when you click the back button on the browser, you may not return to the previous state of the page but the entire page. This happens because the pages with successive Ajax requests are unable to register with the browser’s history</p></div></p></li></ol><ol type="1" id="f2ff6b77-7f6f-4b97-86c0-046ce46c5236" class="numbered-list" start="9"><li><strong>Rich Internet Applications</strong><p id="98cd65aa-53d9-4985-ab07-19b8b981bdc6" class=""><strong>Rich Internet Applications (RIA)</strong></p><ul id="7e01471e-5c56-4554-9971-12a28ed5f971" class="bulleted-list"><li style="list-style-type:disc">RIAs are web applications that have most of the characteristics of desktop applications, typically delivered through web-browser plug-ins or independently via sandboxes or virtual machines.</li></ul><ul id="35c86231-24a5-424d-90af-7594962a8833" class="bulleted-list"><li style="list-style-type:disc">RIAs have always been about the user experience, it enhancing the end-user experience in different ways.</li></ul><ul id="15e27b30-1173-4562-a520-20b3bc76b264" class="bulleted-list"><li style="list-style-type:disc">RIAs can run faster and be more engaging. They can offer users a better visual experience, better accessibility, usability and more interactivity than traditional browser applications that use only HTML and HTTP.</li></ul><ul id="c999e74c-d340-48c0-a444-d66d43f65738" class="bulleted-list"><li style="list-style-type:disc">A RIA can perform computation on both the client side and server side. User Interface, its related activity and capability on the client side and the data manipulation and operation on the application server side.</li></ul><ul id="47ead75d-e10c-46bf-8d24-4ed1ae0b726a" class="bulleted-list"><li style="list-style-type:disc">RIA is developed using various technologies such as Java, Silverlight, JavaFX, JavaScript, REST/WS etc.</li></ul><p id="8e35db41-b5bb-46db-8fb2-13261cb27e93" class=""><strong>Characteristics of RIA</strong></p><ul id="bc70382c-f1d6-4cc3-ad49-1e521e648c81" class="bulleted-list"><li style="list-style-type:disc"><strong>Performance - </strong>RIAs can often perform better than traditional applications on the basis of the characteristics of network and applications, performance of server also improved by offloading possible processing work to the client system and also perceived performance in terms of UI responsiveness and smoother visual transitions and animations are key aspects of any RIA.</li></ul><ul id="56091cfc-37a6-4b41-99a2-87fed4ab8e97" class="bulleted-list"><li style="list-style-type:disc"><strong>Offline use </strong>- When connectivity is unavailable, it might still be possible to use an RIA. An RIA platform let the user work with the application without connecting to the Internet and synchronizing it automatically when the user goes live.</li></ul><ul id="d26a9904-318c-42ab-8751-47502e045735" class="bulleted-list"><li style="list-style-type:disc"><strong>Consistency of look and feel </strong>- With RIA tools, the user interface and experience with different browsers, devices and operating systems can be more carefully controlled and made consistent.</li></ul><ul id="81fa6101-c27c-4b73-9eb6-ef5235105b53" class="bulleted-list"><li style="list-style-type:disc"><strong>Security</strong> - RIAs should be as secure as any other web application, and the framework should be well equipped to enforce limitations appropriately when the user lacks the required privileges, especially when running within a constrained environment such as a sandbox.</li></ul><ul id="f017848e-0027-47d0-a034-1b334c8032f5" class="bulleted-list"><li style="list-style-type:disc"><strong>Advanced Communications </strong>- Sophisticated communications with supporting servers through optimized network protocols can considerably enhance the user experience.</li></ul><ul id="854c5120-f219-4326-9b60-9a318619e2e9" class="bulleted-list"><li style="list-style-type:disc"><strong>Rapid Development </strong>- An RIA Framework should facilitate rapid development of a rich user experience through its easy-to-use interfaces in ways that help developers.</li></ul><ul id="bd6989a8-7dcf-46bf-852f-3519a4a0af3a" class="bulleted-list"><li style="list-style-type:disc"><strong>Direct Interaction </strong>- An RIA can use a wider range of controls that allow greater efficiency and enhance the user experience. In RIAs, for example, users can interact directly with page elements through editing or drag-and-drop tools. They can also do things like pan across a map or other image.</li></ul><ul id="adc315a4-ad82-4e6d-9345-eafd148e0ce3" class="bulleted-list"><li style="list-style-type:disc"><strong>Better Feedback </strong>- Because of their ability to change parts of pages without reloading, RIAs can provide the user with fast and accurate feedback, real-time confirmation of actions and choices, and informative and detailed error messages.</li></ul><ul id="72b92d91-43ec-4f2a-9054-c26984cca686" class="bulleted-list"><li style="list-style-type:disc"><strong>Improved Features </strong>- RIA allow programmers to embed various functionalities in graphics-based web pages that look fascinating and engaging like desktop applications. RIA provide complex application screens on which various mixed media, including different fonts, vector graphic and bitmap files online conferencing etc. are paused by using different modern development tools.</li></ul><ul id="690d1b13-520f-4d42-94ef-38fdad76ec3a" class="bulleted-list"><li style="list-style-type:disc"><strong>Partial-page updating </strong>- RIAs incorporate additional technologies, such as real-time streaming, high-performance client-side virtual machines, and local caching mechanisms that reduce latency (wait times) and increase responsiveness.</li></ul></li></ol><ol type="1" id="f41b1966-2a64-44f9-93a5-e22dd8eda693" class="numbered-list" start="10"><li><strong>AJAX example using HTTP Request Object</strong><pre id="290b65bb-f10a-4a21-9b21-468de20954c5" class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+&lt;h1&gt;The XMLHttpRequest Object&lt;/h1&gt;
+&lt;button type=&quot;button&quot; onclick=&quot;loadDoc()&quot;&gt;Request data&lt;/button&gt;
+&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;
+&lt;script&gt;
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 &amp;&amp; this.status == 200) {
+      document.getElementById(&quot;demo&quot;).innerHTML = this.responseText;
+    }
+  };
+  xhttp.open(&quot;GET&quot;, &quot;demo_get.asp&quot;, true);
+  xhttp.send();
+}
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre><p id="a5e59b80-7533-4a47-a086-805e1dee518c" class=""><strong>output:</strong></p><ul id="1b2e8852-2315-4d57-b29c-57d8f5a131e2" class="bulleted-list"><li style="list-style-type:disc"><strong>when you click on the Request data button we will get the following output on the webpage:</strong></li></ul><ul id="08ae65e4-0432-4aa0-bdd6-2fb3b7ce2b27" class="bulleted-list"><li style="list-style-type:disc">This content was requested using the GET method.</li></ul><ul id="7da0e51a-ca11-45a7-ad91-7349a482f37a" class="bulleted-list"><li style="list-style-type:disc">Requested at: 2/7/2023 6:46:32 AM</li></ul><figure id="c2f49617-8d7e-4a58-a43e-b08867143eb2" class="image"><a href="Long%20Answers%20e713b1c71caa4a6a895767c8045a675c/Untitled.png"><img style="width:735px" src="Long%20Answers%20e713b1c71caa4a6a895767c8045a675c/Untitled.png"/></a></figure></li></ol></div></article></body></html>
