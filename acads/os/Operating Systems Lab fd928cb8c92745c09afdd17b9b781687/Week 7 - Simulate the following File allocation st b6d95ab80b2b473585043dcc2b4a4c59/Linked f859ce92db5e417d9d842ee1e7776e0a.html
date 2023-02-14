@@ -666,5 +666,43 @@ blockquote {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style></head><body><article id="f859ce92-db5e-417d-9d84-2ee1e7776e0a" class="page sans"><header><h1 class="page-title">Linked</h1></header><div class="page-body"><p id="feb4f5d3-2514-435d-a967-90876fd3c0be" class="">
-</p></div></article></body></html>
+</style></head><body><article id="f859ce92-db5e-417d-9d84-2ee1e7776e0a" class="page sans"><header><h1 class="page-title">Linked</h1></header><div class="page-body"><pre id="a6a16f2d-aacc-4441-a6ec-28751b502d31" class="code"><code>#include&lt;stdio.h&gt; 
+#include&lt;stdlib.h&gt; 
+int main()
+{
+    int f[50], p,i, st, len, j, c, k, a;
+    for(i=0;i&lt;50;i++)
+    f[i]=0;
+    printf(&quot;Enter how many blocks already allocated: &quot;); scanf(&quot;%d&quot;,&amp;p);
+    printf(&quot;Enter blocks already allocated: &quot;); 
+    for(i=0;i&lt;p;i++)
+    {
+        scanf(&quot;%d&quot;,&amp;a);
+        f[a]=1;
+    }
+    x: printf(&quot;Enter index starting block and length: &quot;); scanf(&quot;%d%d&quot;, &amp;st,&amp;len);
+    k=len;
+    if(f[st]==0)
+    {
+        for(j=st;j&lt;(st+k);j++)
+        {
+            if(f[j]==0)
+            {
+                f[j]=1;
+                printf(&quot;%d--------&gt;%d\n&quot;,j,f[j]);
+            }
+            else
+            {
+                printf(&quot;%d Block is already allocated \n&quot;,j);
+                k++;
+            }
+        }
+    }
+    else
+    printf(&quot;%d starting block is already allocated \n&quot;,st); printf(&quot;Do you want to enter more file(Yes - 1/No - 0)&quot;);
+    scanf(&quot;%d&quot;, &amp;c); 
+    if(c==1)
+        goto x;
+    else
+        exit(0);
+}</code></pre></div></article></body></html>

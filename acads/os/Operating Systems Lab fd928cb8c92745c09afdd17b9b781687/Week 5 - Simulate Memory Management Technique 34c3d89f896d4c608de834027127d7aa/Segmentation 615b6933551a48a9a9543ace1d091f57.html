@@ -666,4 +666,44 @@ blockquote {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style></head><body><article id="615b6933-551a-48a9-a954-3ace1d091f57" class="page sans"><header><h1 class="page-title">Segmentation</h1></header><div class="page-body"></div></article></body></html>
+</style></head><body><article id="615b6933-551a-48a9-a954-3ace1d091f57" class="page sans"><header><h1 class="page-title">Segmentation</h1></header><div class="page-body"><pre id="34d6387f-4778-41d1-9bbf-bcb715d9c904" class="code"><code>#include &lt;stdio.h&gt;
+int main()
+{
+    int n,nm,p,x=0,y=1,t=300,of,i; printf(&quot;Enter the memory size:\n&quot;); scanf(&quot;%d&quot;,&amp;nm);
+    printf(&quot;Enter the no.of segments:\n&quot;); scanf(&quot;%d&quot;,&amp;n);
+    int s[n];
+    for(i=0;i&lt;n;i++)
+    {
+        printf(&quot;enter the segment size of %d:&quot;,i+1); scanf(&quot;%d&quot;,&amp;s[i]);
+        x+=s[i];
+        if(x&gt;nm)
+        {
+            printf(&quot;Memory full!\nsegment %d is not allocated\n&quot;,i+1);
+            x-=s[i];
+            s[i]=0;
+        } 
+    }
+    printf(&quot;\n-----OPERATIONS------\n&quot;);
+    while(y==1)
+    {
+        printf(&quot;enter the no.of operations:\n&quot;);
+        scanf(&quot;%d&quot;,&amp;p);
+        printf(&quot;enter the offset:&quot;);
+        scanf(&quot;%d&quot;,&amp;of);
+        if(s[p-1]==0)
+        {
+            printf(&quot;segment is not allocated\n&quot;);
+        }
+        else if(of&gt;s[p-1])
+        {
+            printf(&quot;out of range!..\n&quot;);
+        }
+        else 
+        {
+        printf(&quot;the segment %d the physical address is ranged from %d to %d\n the address of operation is %d\n&quot;,p,t,t+s[p-1],t+of);
+        }
+        printf(&quot;press 1 to continue\n&quot;);
+        scanf(&quot;%d&quot;,&amp;y);
+    } 
+    return 0;
+}</code></pre></div></article></body></html>

@@ -689,41 +689,36 @@ void findWaitingTime(int processes[], int n,
 				if (rem_bt[i] &gt; quantum)
 				{
 					t += quantum;
-
 					rem_bt[i] -= quantum;
 				}
-
 				else
 				{
 					t = t + rem_bt[i];
-
 					wt[i] = t - bt[i];
-
 					rem_bt[i] = 0;
 				}
 			}
 		}
 		if (done == true)
-		break;
+				break; // All the processes have finished executing
 	}
 }
 
-void findTurnAroundTime(int processes[], int n,
-						int bt[], int wt[], int tat[])
+void findTurnAroundTime(int processes[], int n, int bt[], int wt[], int tat[])
 {
 	for (int i = 0; i &lt; n ; i++)
-		tat[i] = bt[i] + wt[i];
+			tat[i] = bt[i] + wt[i];
 }
 
 void findavgTime(int processes[], int n, int bt[],
 									int quantum)
 {
-	int wt[n], tat[n];
+		int wt[n], tat[n];
     float total_wt = 0, total_tat = 0;
 
-	findWaitingTime(processes, n, bt, wt, quantum);
+		findWaitingTime(processes, n, bt, wt, quantum);
 
-	findTurnAroundTime(processes, n, bt, wt, tat);
+		findTurnAroundTime(processes, n, bt, wt, tat);
 
     printf(&quot;Processes | Burst time | Waiting time | Turn around time\n&quot;);
     for (int i=0; i&lt;n; i++)
@@ -746,7 +741,7 @@ void findavgTime(int processes[], int n, int bt[],
 // Driver code
 int main()
 {
-	printf(&quot;Enter the number of processes: &quot;);
+		printf(&quot;Enter the number of processes: &quot;);
     int n;
     scanf(&quot;%d&quot;, &amp;n);
     int processes[n];
@@ -757,7 +752,7 @@ int main()
         scanf(&quot;%d&quot;, &amp;burst_time[i]);
         processes[i] = i+1;
     }
-	int quantum = 2;
+		int quantum = 2;
     // ask for quantum
     printf(&quot;Enter the quantum: &quot;);
     scanf(&quot;%d&quot;, &amp;quantum);
